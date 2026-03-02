@@ -57,7 +57,7 @@ html {
 }
 
 body {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   background: var(--bg);
   color: var(--text);
   min-height: 100vh;
@@ -135,7 +135,7 @@ body::before {
   padding: 6px 14px;
   border-radius: 20px;
   cursor: pointer;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: .8rem;
   font-weight: 700;
   transition: all .2s;
@@ -441,7 +441,7 @@ body::before {
   padding: 7px 14px;
   border-radius: 20px;
   text-decoration: none;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: .82rem;
   font-weight: 700;
   margin-bottom: 28px;
@@ -587,7 +587,7 @@ textarea.fi {
   border-radius: 11px;
   padding: 15px;
   color: #fff;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: .95rem;
   font-weight: 700;
   cursor: pointer;
@@ -700,7 +700,7 @@ textarea.fi {
   border-radius: 7px;
   padding: 9px;
   color: var(--muted);
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: .8rem;
   font-weight: 700;
   cursor: pointer;
@@ -902,7 +902,7 @@ tr:hover td {
   border-radius: 30px;
   padding: 8px 16px 8px 38px;
   color: var(--text);
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: .85rem;
   outline: none;
   transition: border-color .2s, box-shadow .2s;
@@ -1425,7 +1425,7 @@ tr:hover td {
 
 .formula-label {
   display: block;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: .72rem;
   font-weight: 700;
   color: var(--accent);
@@ -1448,7 +1448,7 @@ tr:hover td {
   gap: 4px;
   font-size: .78rem;
   color: var(--muted2);
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .formula-vars strong {
