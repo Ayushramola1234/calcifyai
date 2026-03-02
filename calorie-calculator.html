@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
+  <script>
+    // Prevent dark mode flash — apply saved theme before first paint
+    (function(){var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.classList.remove('dark')}else{document.documentElement.classList.add('dark')}})();
+  </script>
   <meta charset="UTF-8">
   <meta name="theme-color" content="#07070f">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Calorie Calculator – Daily Calorie Needs &amp; TDEE | CalcHub</title>
+  <title>Calorie Calculator – Daily Calorie Needs &amp; TDEE | CalcifyAI</title>
   <meta name="description" content="Free calorie calculator — find your daily calorie needs (TDEE) based on age, weight, height, sex, and activity level. Get weight loss, maintenance, and gain targets.">
   <meta name="keywords" content="calorie calculator, TDEE calculator, daily calorie needs, calorie intake calculator, weight loss calories, maintenance calories, how many calories should I eat, calorie counter, BMR calculator">
-  <meta name="author" content="CalcHub">
+  <meta name="author" content="CalcifyAI">
   <meta name="robots" content="index, follow">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Free Calorie Calculator – TDEE &amp; Daily Calorie Intake">
@@ -16,7 +20,7 @@
   <meta property="og:description" content="Calculate your Total Daily Energy Expenditure (TDEE) and get personalized calorie targets for weight loss, maintenance, or muscle gain.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://calchub.com/calorie-calculator.html">
-  <meta property="og:site_name" content="CalcHub">
+  <meta property="og:site_name" content="CalcifyAI">
   <link rel="canonical" href="https://calchub.com/calorie-calculator.html">
   <!-- Critical: preconnect to both font origins BEFORE font request -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

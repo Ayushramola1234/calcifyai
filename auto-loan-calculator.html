@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
+  <script>
+    // Prevent dark mode flash — apply saved theme before first paint
+    (function(){var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.classList.remove('dark')}else{document.documentElement.classList.add('dark')}})();
+  </script>
   <meta charset="UTF-8">
   <meta name="theme-color" content="#07070f">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Auto Loan Calculator – Car Payment, Interest &amp; Total Cost | CalcHub</title>
+  <title>Auto Loan Calculator – Car Payment, Interest &amp; Total Cost | CalcifyAI</title>
   <meta name="description" content="Free auto loan calculator — calculate your monthly car payment, total interest, and true cost of a vehicle loan. Includes trade-in value and sales tax support.">
   <meta name="keywords" content="auto loan calculator, car payment calculator, car loan calculator, monthly car payment, vehicle loan calculator, car financing calculator, auto loan interest, car loan with trade-in, used car loan calculator">
-  <meta name="author" content="CalcHub">
+  <meta name="author" content="CalcifyAI">
   <meta name="robots" content="index, follow">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Free Auto Loan Calculator – Monthly Car Payment &amp; Total Cost">
@@ -16,7 +20,7 @@
   <meta property="og:description" content="Calculate your monthly car loan payment, total interest, and true cost including taxes and trade-in value.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://calchub.com/auto-loan-calculator.html">
-  <meta property="og:site_name" content="CalcHub">
+  <meta property="og:site_name" content="CalcifyAI">
   <link rel="canonical" href="https://calchub.com/auto-loan-calculator.html">
   <!-- Critical: preconnect to both font origins BEFORE font request -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

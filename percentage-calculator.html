@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
+  <script>
+    // Prevent dark mode flash — apply saved theme before first paint
+    (function(){var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.classList.remove('dark')}else{document.documentElement.classList.add('dark')}})();
+  </script>
   <meta charset="UTF-8">
   <meta name="theme-color" content="#07070f">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Percentage Calculator – Percent Of, Change &amp; Increase | CalcHub</title>
+  <title>Percentage Calculator – Percent Of, Change &amp; Increase | CalcifyAI</title>
   <meta name="description" content="Free percentage calculator — calculate what percent of a number is, find percentage change or increase/decrease, or find what percent one number is of another. Instant results.">
   <meta name="keywords" content="percentage calculator, percent calculator, percentage change calculator, percent of number, percentage increase calculator, percentage decrease, what percent is, calculate percentage, percentage difference">
-  <meta name="author" content="CalcHub">
+  <meta name="author" content="CalcifyAI">
   <meta name="robots" content="index, follow">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Free Percentage Calculator – 3 Types of Percent Calculations">
@@ -16,7 +20,7 @@
   <meta property="og:description" content="Calculate percentages instantly: what percent of a number is, percentage change, or what percent one number is of another.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://calchub.com/percentage-calculator.html">
-  <meta property="og:site_name" content="CalcHub">
+  <meta property="og:site_name" content="CalcifyAI">
   <link rel="canonical" href="https://calchub.com/percentage-calculator.html">
   <!-- Critical: preconnect to both font origins BEFORE font request -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

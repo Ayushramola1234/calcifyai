@@ -2,15 +2,19 @@
 <html lang="en" class="dark">
 
 <head>
+  <script>
+    // Prevent dark mode flash — apply saved theme before first paint
+    (function(){var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.classList.remove('dark')}else{document.documentElement.classList.add('dark')}})();
+  </script>
   <meta charset="UTF-8">
   <meta name="theme-color" content="#07070f">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Mortgage Calculator – Monthly Payment, PITI &amp; Amortization | CalcHub</title>
+  <title>Mortgage Calculator – Monthly Payment, PITI &amp; Amortization | CalcifyAI</title>
   <meta name="description"
     content="Free mortgage calculator — instantly estimate your monthly mortgage payment including principal, interest, property tax, insurance (PITI), and PMI. See full amortization schedule.">
   <meta name="keywords"
     content="mortgage calculator, monthly mortgage payment calculator, home loan calculator, house payment calculator, PITI calculator, mortgage interest calculator, amortization calculator, mortgage payment estimator, how much house can I afford, 30 year mortgage calculator, 15 year mortgage calculator, fixed rate mortgage calculator, mortgage with taxes and insurance">
-  <meta name="author" content="CalcHub">
+  <meta name="author" content="CalcifyAI">
   <meta name="robots" content="index, follow">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Free Mortgage Calculator – Monthly Payment, PITI &amp; Amortization">
@@ -21,7 +25,7 @@
     content="Instantly calculate your monthly mortgage payment with principal, interest, taxes, insurance, and PMI. Includes full amortization table.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://calchub.com/mortgage-calculator.html">
-  <meta property="og:site_name" content="CalcHub">
+  <meta property="og:site_name" content="CalcifyAI">
   <link rel="canonical" href="https://calchub.com/mortgage-calculator.html">
   <!-- Critical: preconnect to both font origins BEFORE font request -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

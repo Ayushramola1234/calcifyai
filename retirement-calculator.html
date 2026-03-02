@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
+  <script>
+    // Prevent dark mode flash — apply saved theme before first paint
+    (function(){var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.classList.remove('dark')}else{document.documentElement.classList.add('dark')}})();
+  </script>
   <meta charset="UTF-8">
   <meta name="theme-color" content="#07070f">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Retirement Calculator – How Much Do You Need to Retire? | CalcHub</title>
+  <title>Retirement Calculator – How Much Do You Need to Retire? | CalcifyAI</title>
   <meta name="description" content="Free retirement calculator — find out how much you need to retire, project your savings growth, and estimate monthly retirement income. Plan your financial independence.">
   <meta name="keywords" content="retirement calculator, how much to retire, retirement savings calculator, 401k calculator, retirement planning calculator, FIRE calculator, how much do I need to retire, retirement income calculator, nest egg calculator">
-  <meta name="author" content="CalcHub">
+  <meta name="author" content="CalcifyAI">
   <meta name="robots" content="index, follow">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Free Retirement Calculator – Project Your Nest Egg">
@@ -16,7 +20,7 @@
   <meta property="og:description" content="Calculate how much you need to retire, project your savings growth, and see how much monthly income your nest egg will generate.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://calchub.com/retirement-calculator.html">
-  <meta property="og:site_name" content="CalcHub">
+  <meta property="og:site_name" content="CalcifyAI">
   <link rel="canonical" href="https://calchub.com/retirement-calculator.html">
   <!-- Critical: preconnect to both font origins BEFORE font request -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

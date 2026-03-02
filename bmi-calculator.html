@@ -2,15 +2,19 @@
 <html lang="en" class="dark">
 
 <head>
+  <script>
+    // Prevent dark mode flash — apply saved theme before first paint
+    (function(){var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.classList.remove('dark')}else{document.documentElement.classList.add('dark')}})();
+  </script>
   <meta charset="UTF-8">
   <meta name="theme-color" content="#07070f">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>BMI Calculator – Body Mass Index Chart &amp; Healthy Weight | CalcHub</title>
+  <title>BMI Calculator – Body Mass Index Chart &amp; Healthy Weight | CalcifyAI</title>
   <meta name="description"
     content="Free BMI calculator — calculate your Body Mass Index in metric or imperial units. Get your health category, ideal weight range, and visual gauge. Instant results.">
   <meta name="keywords"
     content="BMI calculator, body mass index calculator, BMI chart, healthy weight calculator, BMI categories, overweight calculator, obesity BMI, underweight BMI, imperial BMI, metric BMI, adult BMI">
-  <meta name="author" content="CalcHub">
+  <meta name="author" content="CalcifyAI">
   <meta name="robots" content="index, follow">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Free BMI Calculator – Body Mass Index &amp; Healthy Weight Range">
@@ -21,7 +25,7 @@
     content="Calculate your BMI instantly in kg/cm or lbs/in. See your health category and ideal weight range with a visual gauge.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://calchub.com/bmi-calculator.html">
-  <meta property="og:site_name" content="CalcHub">
+  <meta property="og:site_name" content="CalcifyAI">
   <link rel="canonical" href="https://calchub.com/bmi-calculator.html">
   <!-- Critical: preconnect to both font origins BEFORE font request -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
+  <script>
+    // Prevent dark mode flash — apply saved theme before first paint
+    (function(){var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.classList.remove('dark')}else{document.documentElement.classList.add('dark')}})();
+  </script>
   <meta charset="UTF-8">
   <meta name="theme-color" content="#07070f">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Compound Interest Calculator – Investment Growth Over Time | CalcHub</title>
+  <title>Compound Interest Calculator – Investment Growth Over Time | CalcifyAI</title>
   <meta name="description" content="Free compound interest calculator — see how your savings or investments grow over time with compound interest. Choose daily, monthly, or annual compounding. Free and instant.">
   <meta name="keywords" content="compound interest calculator, investment growth calculator, compound interest formula, daily compound interest, monthly compound interest, savings growth calculator, future value calculator, APY calculator">
-  <meta name="author" content="CalcHub">
+  <meta name="author" content="CalcifyAI">
   <meta name="robots" content="index, follow">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Free Compound Interest Calculator – See Your Money Grow">
@@ -16,7 +20,7 @@
   <meta property="og:description" content="Calculate how compound interest grows your investment over time. Compare daily, monthly, and annual compounding.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://calchub.com/compound-interest-calculator.html">
-  <meta property="og:site_name" content="CalcHub">
+  <meta property="og:site_name" content="CalcifyAI">
   <link rel="canonical" href="https://calchub.com/compound-interest-calculator.html">
   <!-- Critical: preconnect to both font origins BEFORE font request -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

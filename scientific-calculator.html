@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
+  <script>
+    // Prevent dark mode flash — apply saved theme before first paint
+    (function(){var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.classList.remove('dark')}else{document.documentElement.classList.add('dark')}})();
+  </script>
   <meta charset="UTF-8">
   <meta name="theme-color" content="#07070f">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Scientific Calculator – Free Online Calculator with Trig &amp; Log | CalcHub</title>
+  <title>Scientific Calculator – Free Online Calculator with Trig &amp; Log | CalcifyAI</title>
   <meta name="description" content="Free online scientific calculator with trigonometry (sin, cos, tan), logarithms, powers, square roots, factorial, π, and e. Works in degrees or radians.">
   <meta name="keywords" content="scientific calculator, online calculator, trig calculator, sin cos tan calculator, logarithm calculator, scientific calculator online free, advanced calculator, degrees radians calculator">
-  <meta name="author" content="CalcHub">
+  <meta name="author" content="CalcifyAI">
   <meta name="robots" content="index, follow">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Free Scientific Calculator Online – Trig, Log, Powers">
@@ -16,7 +20,7 @@
   <meta property="og:description" content="Full-featured scientific calculator with sin, cos, tan, log, ln, square root, factorial, π, e, and degree/radian mode.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://calchub.com/scientific-calculator.html">
-  <meta property="og:site_name" content="CalcHub">
+  <meta property="og:site_name" content="CalcifyAI">
   <link rel="canonical" href="https://calchub.com/scientific-calculator.html">
   <!-- Critical: preconnect to both font origins BEFORE font request -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
