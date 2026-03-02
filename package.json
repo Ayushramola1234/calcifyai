@@ -1,0 +1,24 @@
+{
+  "name": "calchub",
+  "version": "1.0.0",
+  "description": "Production-ready static site with 40+ calculator pages. Deploys to Firebase Hosting (or any static CDN) with zero backend.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayushramola1234/calcifyai.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ayushramola1234/calcifyai/issues"
+  },
+  "homepage": "https://github.com/ayushramola1234/calcifyai#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}
