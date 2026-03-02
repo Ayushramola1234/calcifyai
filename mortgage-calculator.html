@@ -481,7 +481,7 @@
                                     </div>
                                     <input
                                         class="mercury-input block w-full pl-8 text-xl font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-3.5 focus:ring-sky-500 focus:border-sky-500 text-right tabular-nums"
-                                        type="text" id="mg-down" value="300,000" />
+                                        type="text" id="mg-down" id="mg-down" value="300,000" />
                                 </div>
                                 <div class="relative rounded-lg shadow-sm">
                                     <input
@@ -515,7 +515,7 @@
                             <div class="relative rounded-lg shadow-sm group/input">
                                 <input
                                     class="mercury-input block w-full pl-4 pr-10 text-xl font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-3.5 focus:ring-sky-500 focus:border-sky-500 text-right tabular-nums"
-                                    type="text" id="mg-rate" value="6.35" />
+                                    type="text" id="mg-rate" id="mg-rate" value="6.35" />
                                 <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
                                     <span class="text-slate-400 text-base font-medium">%</span>
                                 </div>
@@ -536,7 +536,7 @@
                                     </div>
                                     <input
                                         class="mercury-input block w-full pl-8 text-xl font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-3.5 focus:ring-sky-500 focus:border-sky-500 text-right tabular-nums"
-                                        type="text" id="mg-tax" value="18,750" />
+                                        type="text" id="mg-tax" id="mg-tax" value="18,750" />
                                     <span
                                         class="absolute right-4 top-4 text-xs font-bold text-sky-700 dark:text-sky-300 bg-sky-100 dark:bg-sky-900/40 px-2 py-0.5 rounded border border-sky-200 dark:border-sky-800 opacity-0 focus-within:opacity-100 group-hover:opacity-100 transition-opacity duration-250 pointer-events-none">1.25%</span>
                                 </div>
@@ -550,7 +550,7 @@
                                     </div>
                                     <input
                                         class="mercury-input block w-full pl-8 text-xl font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-3.5 focus:ring-sky-500 focus:border-sky-500 text-right tabular-nums"
-                                        type="text" id="mg-ins" value="4,200" /><input type="hidden" id="mg-pmi" value="0.5">
+                                        type="text" id="mg-ins" id="mg-ins" value="4,200" /><input type="hidden" id="mg-pmi" value="0.5"><input type="hidden" id="mg-pmi" value="0.5">
                                 </div>
                             </div>
                         </div>
@@ -1478,7 +1478,159 @@
       }
     }
     
-    // Automatically calculate on load
+    // Chart Configuration
+        Chart.defaults.font.family = 'Inter';
+        let donutChart, areaChart;
+        function getChartColors() {
+            const isDark = document.documentElement.classList.contains('dark');
+            return {
+                text: isDark ? '#94a3b8' : '#64748b', // Slate-400 / Slate-500
+                grid: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)',
+                donutColors: isDark
+                    ? ['#0ea5e9', '#94a3b8', '#475569', '#1e293b'] // Sky-500, Slate-400...
+                    : ['#0ea5e9', '#94a3b8', '#64748b', '#cbd5e1'],
+                areaPrincipal: '#0ea5e9',
+                areaInterest: '#94a3b8'
+            };
+        }
+        function initCharts() {
+            const colors = getChartColors();
+            // 1. Donut Chart
+            const ctxDonut = document.getElementById('paymentDonutChart').getContext('2d');
+            donutChart = new Chart(ctxDonut, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Principal', 'Taxes', 'Insurance', 'PMI'],
+                    datasets: [{
+                        data: [75, 18, 7, 0],
+                        backgroundColor: colors.donutColors,
+                        borderWidth: 0,
+                        hoverOffset: 6
+                    }]
+                },
+                options: {
+                    cutout: '82%',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: {
+                        animateScale: true,
+                        animateRotate: true,
+                        duration: 1000,
+                        easing: 'easeOutQuart'
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: '#0f172a',
+                            titleColor: '#fff',
+                            bodyColor: '#e2e8f0',
+                            borderColor: '#334155',
+                            borderWidth: 1,
+                            padding: 16,
+                            cornerRadius: 8,
+                            displayColors: true,
+                            boxPadding: 6,
+                            titleFont: { family: 'Inter', size: 14, weight: 'bold' },
+                            bodyFont: { family: 'Inter', size: 13 }
+                        }
+                    }
+                }
+            });
+            // 2. Area Chart (Amortization)
+            const ctxArea = document.getElementById('amortizationChart').getContext('2d');
+            // Gradient Setup
+            const gradientPrincipal = ctxArea.createLinearGradient(0, 0, 0, 400);
+            gradientPrincipal.addColorStop(0, 'rgba(14, 165, 233, 0.15)'); // Sky-500 low opacity
+            gradientPrincipal.addColorStop(1, 'rgba(14, 165, 233, 0.0)');
+            const gradientInterest = ctxArea.createLinearGradient(0, 0, 0, 400);
+            gradientInterest.addColorStop(0, 'rgba(148, 163, 184, 0.15)'); // Slate low opacity
+            gradientInterest.addColorStop(1, 'rgba(148, 163, 184, 0.0)');
+            areaChart = new Chart(ctxArea, {
+                type: 'line',
+                data: {
+                    labels: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+                    datasets: [
+                        {
+                            label: 'Principal',
+                            data: [500, 650, 850, 1100, 1350, 1600, 1850, 2000, 2150, 2300, 2500],
+                            borderColor: colors.areaPrincipal,
+                            backgroundColor: gradientPrincipal,
+                            fill: true,
+                            tension: 0.4,
+                            pointRadius: 0,
+                            pointHoverRadius: 6,
+                            pointHoverBackgroundColor: colors.areaPrincipal,
+                            pointHoverBorderColor: '#fff',
+                            pointHoverBorderWidth: 2,
+                            borderWidth: 3
+                        },
+                        {
+                            label: 'Interest',
+                            data: [2200, 2050, 1850, 1600, 1350, 1100, 950, 800, 650, 500, 350],
+                            borderColor: colors.areaInterest,
+                            backgroundColor: gradientInterest,
+                            fill: true,
+                            tension: 0.4,
+                            pointRadius: 0,
+                            pointHoverRadius: 6,
+                            pointHoverBackgroundColor: colors.areaInterest,
+                            pointHoverBorderColor: '#fff',
+                            pointHoverBorderWidth: 2,
+                            borderWidth: 3
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: {
+                        duration: 1200,
+                        easing: 'easeOutQuart'
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: '#0f172a',
+                            titleColor: '#fff',
+                            bodyColor: '#e2e8f0',
+                            borderColor: '#334155',
+                            borderWidth: 1,
+                            padding: 12,
+                            intersect: false,
+                            mode: 'index',
+                            titleFont: { family: 'Inter', size: 13, weight: 'bold' },
+                            bodyFont: { family: 'Inter', size: 12 }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { display: false, drawBorder: false },
+                            ticks: {
+                                font: { size: 11, family: 'Inter', weight: 500 },
+                                color: colors.text
+                            }
+                        },
+                        y: {
+                            grid: {
+                                color: colors.grid,
+                                drawBorder: false,
+                                borderDash: [4, 4]
+                            },
+                            ticks: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+        function updateCharts() {
+            if (donutChart) donutChart.destroy();
+            if (areaChart) areaChart.destroy();
+            initCharts();
+        }
+        // Init
+        initCharts();
+    
+      // Automatically calculate on load
     document.addEventListener('DOMContentLoaded', calcMortgage);
     
 </script>
