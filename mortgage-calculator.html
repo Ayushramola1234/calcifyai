@@ -44,7 +44,7 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
   </noscript>
   <link rel="preload" href="css/styles.css" as="style">
-  <link rel="stylesheet" href="css/home-tailwind.v3.css">
+  <link rel="stylesheet" href="css/home-tailwind.v5.css">
   <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/mortgage-tailwind.css">
 
@@ -449,17 +449,17 @@
   <site-header category="financial"></site-header>
 
   
-  <main class="max-w-[1600px] mx-auto px-4 md:px-[40px] py-12" id="main-content">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            <div class="lg:col-span-7 space-y-8">
+  <main class="max-w-[1280px] mx-auto px-4 md:px-[40px] py-10" id="main-content">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+            <div class="lg:col-span-7 space-y-6">
                 <div
-                    class="bg-white dark:bg-slate-900 rounded-xl p-8 border border-gray-200 dark:border-gray-700 shadow-depth transition-all duration-250 hover:shadow-depth-hover">
+                    class="bg-white dark:bg-slate-900 rounded-lg p-5 border border-gray-200 dark:border-gray-700 shadow-depth transition-all duration-250 hover:shadow-depth-hover">
                     <h2
-                        class="text-lg font-extrabold mb-8 flex items-center text-slate-900 dark:text-white uppercase tracking-wider border-b border-gray-100 dark:border-gray-800 pb-4">
+                        class="text-base font-bold mb-5 flex items-center text-slate-900 dark:text-white uppercase tracking-wider border-b border-gray-100 dark:border-gray-800 pb-3">
                         <span class="material-symbols-outlined text-sky-600 mr-3 text-2xl">account_balance</span> Loan
                         Configuration
                     </h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
                         <div class="space-y-3">
                             <label class="block text-sm font-bold text-slate-700 dark:text-slate-300">Home Price</label>
                             <div class="relative rounded-lg shadow-sm">
@@ -467,7 +467,7 @@
                                     <span class="text-slate-400 text-lg font-medium">$</span>
                                 </div>
                                 <input
-                                    class="mercury-input block w-full pl-8 pr-4 text-xl font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-3.5 placeholder-gray-400 focus:ring-sky-500 focus:border-sky-500 text-right tabular-nums"
+                                    class="mercury-input block w-full pl-8 pr-4 text-lg font-semibold border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-2.5 placeholder-gray-400 focus:ring-sky-500 focus:border-sky-500 text-right tabular-nums"
                                     id="mg-price" placeholder="0.00" type="text" value="1,500,000" />
                             </div>
                         </div>
@@ -480,12 +480,12 @@
                                         <span class="text-slate-400 text-lg font-medium">$</span>
                                     </div>
                                     <input
-                                        class="mercury-input block w-full pl-8 text-xl font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-3.5 focus:ring-sky-500 focus:border-sky-500 text-right tabular-nums"
+                                        class="mercury-input block w-full pl-8 text-lg font-semibold border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-2.5 focus:ring-sky-500 focus:border-sky-500 text-right tabular-nums"
                                         type="text" id="mg-down" id="mg-down" value="300,000" />
                                 </div>
                                 <div class="relative rounded-lg shadow-sm">
                                     <input
-                                        class="mercury-input block w-full pr-10 text-right text-xl font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-3.5 focus:ring-sky-500 focus:border-sky-500 tabular-nums"
+                                        class="mercury-input block w-full pr-10 text-right text-lg font-semibold border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-2.5 focus:ring-sky-500 focus:border-sky-500 tabular-nums"
                                         type="text" value="20" />
                                     <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
                                         <span class="text-slate-400 text-base font-medium">%</span>
@@ -497,7 +497,7 @@
                             <label class="block text-sm font-bold text-slate-700 dark:text-slate-300">Loan Term</label>
                             <div class="relative">
                                 <select
-                                    class="mercury-input appearance-none block w-full pl-4 pr-10 py-3.5 text-lg font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-sky-500 focus:border-sky-500">
+                                    class="mercury-input appearance-none block w-full pl-4 pr-10 py-2.5 text-lg font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-sky-500 focus:border-sky-500">
                                     <option value="30">30 years</option>
                                     <option value="20">20 years</option>
                                     <option value="15">15 years</option>
@@ -514,7 +514,7 @@
                                 Rate</label>
                             <div class="relative rounded-lg shadow-sm group/input">
                                 <input
-                                    class="mercury-input block w-full pl-4 pr-10 text-xl font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-3.5 focus:ring-sky-500 focus:border-sky-500 text-right tabular-nums"
+                                    class="mercury-input block w-full pl-4 pr-10 text-lg font-semibold border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-2.5 focus:ring-sky-500 focus:border-sky-500 text-right tabular-nums"
                                     type="text" id="mg-rate" id="mg-rate" value="6.35" />
                                 <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
                                     <span class="text-slate-400 text-base font-medium">%</span>
@@ -524,9 +524,9 @@
                     </div>
                     <div class="border-t border-gray-100 dark:border-gray-800 pt-8 mt-4">
                         <h3
-                            class="text-sm font-extrabold text-slate-900 dark:text-slate-200 uppercase tracking-wider mb-6">
+                            class="text-sm font-extrabold text-slate-900 dark:text-slate-200 uppercase tracking-wider mb-5">
                             Taxes &amp; Insurance</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                             <div class="space-y-3">
                                 <label class="block text-sm font-bold text-slate-700 dark:text-slate-300">Property Tax /
                                     Year</label>
@@ -535,7 +535,7 @@
                                         <span class="text-slate-400 text-lg font-medium">$</span>
                                     </div>
                                     <input
-                                        class="mercury-input block w-full pl-8 text-xl font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-3.5 focus:ring-sky-500 focus:border-sky-500 text-right tabular-nums"
+                                        class="mercury-input block w-full pl-8 text-lg font-semibold border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-2.5 focus:ring-sky-500 focus:border-sky-500 text-right tabular-nums"
                                         type="text" id="mg-tax" id="mg-tax" value="18,750" />
                                     <span
                                         class="absolute right-4 top-4 text-xs font-bold text-sky-700 dark:text-sky-300 bg-sky-100 dark:bg-sky-900/40 px-2 py-0.5 rounded border border-sky-200 dark:border-sky-800 opacity-0 focus-within:opacity-100 group-hover:opacity-100 transition-opacity duration-250 pointer-events-none">1.25%</span>
@@ -549,7 +549,7 @@
                                         <span class="text-slate-400 text-lg font-medium">$</span>
                                     </div>
                                     <input
-                                        class="mercury-input block w-full pl-8 text-xl font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-3.5 focus:ring-sky-500 focus:border-sky-500 text-right tabular-nums"
+                                        class="mercury-input block w-full pl-8 text-lg font-semibold border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-2.5 focus:ring-sky-500 focus:border-sky-500 text-right tabular-nums"
                                         type="text" id="mg-ins" id="mg-ins" value="4,200" /><input type="hidden" id="mg-pmi" value="0.5"><input type="hidden" id="mg-pmi" value="0.5">
                                 </div>
                             </div>
@@ -557,9 +557,9 @@
                     </div>
                 </div>
                 <div
-                    class="bg-white dark:bg-slate-900 rounded-xl p-8 border border-gray-200 dark:border-gray-700 shadow-depth transition-all duration-250 hover:shadow-depth-hover">
+                    class="bg-white dark:bg-slate-900 rounded-lg p-5 border border-gray-200 dark:border-gray-700 shadow-depth transition-all duration-250 hover:shadow-depth-hover">
                     <div
-                        class="flex justify-between items-center mb-8 border-b border-gray-100 dark:border-gray-800 pb-4">
+                        class="flex justify-between items-center mb-5 border-b border-gray-100 dark:border-gray-800 pb-3">
                         <h2
                             class="text-lg font-extrabold flex items-center text-slate-900 dark:text-white uppercase tracking-wider">
                             <span class="material-symbols-outlined text-slate-400 mr-3 text-2xl">tune</span> Advanced
@@ -571,7 +571,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
                         <div class="col-span-2">
                             <div
-                                class="flex items-center gap-2 mb-4 border-b border-gray-100 dark:border-gray-800 pb-2">
+                                class="flex items-center gap-2 mb-3 border-b border-gray-100 dark:border-gray-800 pb-2">
                                 <h4 class="text-sm font-bold text-slate-800 dark:text-slate-200">Annual Cost Growth</h4>
                                 <div class="group relative flex items-center">
                                     <span
@@ -582,7 +582,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
                                 <div class="space-y-2">
                                     <label class="text-xs text-slate-500 uppercase tracking-wide block font-bold">Tax %
                                         Inc.</label>
@@ -615,7 +615,7 @@
                         </div>
                         <div class="col-span-2 pt-2">
                             <div
-                                class="flex justify-between items-center mb-4 border-b border-gray-100 dark:border-gray-800 pb-2">
+                                class="flex justify-between items-center mb-3 border-b border-gray-100 dark:border-gray-800 pb-2">
                                 <div class="flex items-center gap-2">
                                     <h4 class="text-sm font-bold text-slate-800 dark:text-slate-200">Extra Payments</h4>
                                     <div class="group relative flex items-center">
@@ -641,7 +641,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
                                 <div class="space-y-2">
                                     <label
                                         class="text-xs text-slate-500 uppercase tracking-wide block font-bold">Monthly
@@ -683,7 +683,7 @@
                 </div>
                 <div class="space-y-4">
                     <button
-                        class="w-full bg-slate-900 hover:bg-slate-800 dark:bg-sky-600 dark:hover:bg-sky-500 text-white font-bold text-lg py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-250 transform active:scale-[0.99] flex items-center justify-center gap-3 focus:outline-none focus:ring-4 focus:ring-sky-200 dark:focus:ring-sky-900/50">
+                        class="w-full bg-slate-900 hover:bg-slate-800 dark:bg-sky-600 dark:hover:bg-sky-500 text-white font-bold text-lg py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-250 transform active:scale-[0.99] flex items-center justify-center gap-3 focus:outline-none focus:ring-4 focus:ring-sky-200 dark:focus:ring-sky-900/50">
                         <span class="material-symbols-outlined">calculate</span>
                         <span>CALCULATE MORTGAGE</span>
                     </button>
@@ -693,9 +693,9 @@
                     </div>
                 </div>
                 <div
-                    class="bg-white dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-gray-700 shadow-depth overflow-hidden transition-all duration-250 hover:shadow-depth-hover">
+                    class="bg-white dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-gray-700 shadow-depth overflow-hidden transition-all duration-250 hover:shadow-depth-hover">
                     <div
-                        class="p-6 border-b border-gray-100 dark:border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4 bg-slate-50/50 dark:bg-slate-900">
+                        class="p-5 border-b border-gray-100 dark:border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4 bg-slate-50/50 dark:bg-slate-900">
                         <h2 class="text-base font-extrabold text-slate-800 dark:text-white uppercase tracking-wider">
                             Amortization Schedule</h2>
                         <div class="flex items-center gap-3">
@@ -783,8 +783,8 @@
             </div>
             <div class="lg:col-span-5 space-y-8">
                 <div
-                    class="bg-white dark:bg-slate-900 rounded-xl p-8 border border-gray-200 dark:border-gray-700 shadow-depth relative transition-all duration-250 hover:shadow-depth-hover">
-                    <div class="flex justify-between items-center mb-6">
+                    class="bg-white dark:bg-slate-900 rounded-lg p-5 border border-gray-200 dark:border-gray-700 shadow-depth relative transition-all duration-250 hover:shadow-depth-hover">
+                    <div class="flex justify-between items-center mb-5">
                         <h2 class="text-base font-extrabold text-slate-800 dark:text-white uppercase tracking-wider">
                             Payment Breakdown</h2>
                         <span
@@ -797,7 +797,7 @@
                             <span
                                 class="text-slate-400 dark:text-slate-500 text-xs uppercase tracking-widest font-bold">Monthly</span>
                             <span
-                                class="text-4xl font-extrabold text-slate-900 dark:text-white mt-1 tracking-tight">$7,488</span>
+                                class="text-3xl font-bold text-slate-900 dark:text-white mt-1 tracking-tight">$7,488</span>
                         </div>
                     </div>
                     <div class="space-y-6">
@@ -844,7 +844,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="grid grid-cols-2 gap-4 mt-8 pt-8 border-t border-gray-100 dark:border-gray-800">
+                    <div class="grid grid-cols-2 gap-4 mt-6 pt-8 border-t border-gray-100 dark:border-gray-800">
                         <div>
                             <p class="text-xs text-slate-500 uppercase tracking-wide font-bold">Total Interest</p>
                             <p class="text-lg font-extrabold text-slate-900 dark:text-white mt-1 tabular-nums">$582,450
@@ -858,18 +858,18 @@
                     </div>
                 </div>
                 <div
-                    class="bg-emerald-50/50 dark:bg-emerald-950/20 rounded-xl p-8 border border-emerald-100 dark:border-emerald-900 shadow-sm relative overflow-hidden transition-all duration-250">
+                    class="bg-emerald-50/50 dark:bg-emerald-950/20 rounded-lg p-5 border border-emerald-100 dark:border-emerald-900 shadow-sm relative overflow-hidden transition-all duration-250">
                     <h3
-                        class="text-emerald-700 dark:text-emerald-400 font-extrabold uppercase tracking-wide text-xs mb-6 flex items-center">
+                        class="text-emerald-700 dark:text-emerald-400 font-extrabold uppercase tracking-wide text-xs mb-5 flex items-center">
                         <span class="material-symbols-outlined mr-2 text-lg">trending_up</span> Savings Projection
                     </h3>
-                    <div class="grid grid-cols-2 gap-6 relative z-10 mb-6">
+                    <div class="grid grid-cols-2 gap-5 relative z-10 mb-5">
                         <div
                             class="p-4 rounded-lg bg-white dark:bg-slate-900 border border-emerald-100 dark:border-emerald-900 shadow-sm">
                             <p
                                 class="text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wide mb-2 font-bold">
                                 Interest Saved</p>
-                            <p class="text-2xl font-extrabold text-emerald-600 dark:text-emerald-400 tabular-nums">
+                            <p class="text-xl font-bold text-emerald-600 dark:text-emerald-400 tabular-nums">
                                 $82,450</p>
                         </div>
                         <div
@@ -888,8 +888,8 @@
                     </div>
                 </div>
                 <div
-                    class="bg-white dark:bg-slate-900 rounded-xl p-8 border border-gray-200 dark:border-gray-700 shadow-depth transition-all duration-250 hover:shadow-depth-hover">
-                    <div class="flex justify-between items-center mb-6">
+                    class="bg-white dark:bg-slate-900 rounded-lg p-5 border border-gray-200 dark:border-gray-700 shadow-depth transition-all duration-250 hover:shadow-depth-hover">
+                    <div class="flex justify-between items-center mb-5">
                         <h2 class="text-base font-extrabold text-slate-800 dark:text-white uppercase tracking-wider">
                             Equity Curve</h2>
                         <div class="flex items-center gap-4 text-xs uppercase tracking-wide font-bold">
@@ -903,13 +903,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="h-56 w-full">
+                    <div class="w-full min-h-[220px] h-[260px]">
                         <canvas id="amortizationChart"></canvas>
                     </div>
                 </div>
-                <div class="grid grid-cols-2 gap-6">
+                <div class="grid grid-cols-2 gap-5">
                     <div
-                        class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-depth flex flex-col justify-between h-32 transition-all duration-250 hover:shadow-depth-hover">
+                        class="bg-white dark:bg-slate-900 rounded-lg p-5 border border-gray-200 dark:border-gray-700 shadow-depth flex flex-col justify-between h-32 transition-all duration-250 hover:shadow-depth-hover">
                         <span class="text-xs text-slate-400 uppercase tracking-widest font-extrabold">Principal
                             Paid</span>
                         <div class="flex items-end justify-between">
@@ -919,7 +919,7 @@
                         </div>
                     </div>
                     <div
-                        class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-depth flex flex-col justify-between h-32 transition-all duration-250 hover:shadow-depth-hover">
+                        class="bg-white dark:bg-slate-900 rounded-lg p-5 border border-gray-200 dark:border-gray-700 shadow-depth flex flex-col justify-between h-32 transition-all duration-250 hover:shadow-depth-hover">
                         <span class="text-xs text-slate-400 uppercase tracking-widest font-extrabold">Equity
                             Gained</span>
                         <div class="flex items-end justify-between">
