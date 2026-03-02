@@ -791,7 +791,7 @@
                             class="text-xs font-bold font-mono text-sky-700 dark:text-sky-300 bg-sky-50 dark:bg-sky-900/30 px-3 py-1.5 rounded-full border border-sky-200 dark:border-sky-800/50">LIVE
                             ESTIMATE</span>
                     </div>
-                    <div class="relative w-64 h-64 mx-auto mb-10">
+                    <div class="relative w-[220px] h-[220px] mx-auto mb-8">
                         <canvas id="paymentDonutChart"></canvas>
                         <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
                             <span
@@ -903,7 +903,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-full min-h-[220px] h-[260px]">
+                    <div class="relative w-full h-[280px] md:h-[320px]">
                         <canvas id="amortizationChart"></canvas>
                     </div>
                 </div>
@@ -1627,11 +1627,24 @@
             if (areaChart) areaChart.destroy();
             initCharts();
         }
-        // Init
-        initCharts();
-    
-      // Automatically calculate on load
-    document.addEventListener('DOMContentLoaded', calcMortgage);
+
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+             clearTimeout(resizeTimer);
+             resizeTimer = setTimeout(() => {
+                 updateCharts();
+                 calcMortgage(); // Trigger recalculation to refill the chart data and adjust canvas size
+             }, 250);
+        });
+
+        // Initialize strictly after DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+             // Let the DOM fully paint before taking layout dimensions
+             setTimeout(() => {
+                 initCharts();
+                 calcMortgage();
+             }, 50);
+        });
     
 </script>
 </body>
