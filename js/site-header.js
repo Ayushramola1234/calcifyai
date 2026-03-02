@@ -40,9 +40,9 @@ class SiteHeader extends HTMLElement {
               </a>
               <nav class="hidden md:flex items-center gap-8">
                   <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="index.html">Tools</a>
-                  <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">API</a>
-                  <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Pricing</a>
-                  <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Company</a>
+                  <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="coming-soon.html">API</a>
+                  <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="coming-soon.html">Pricing</a>
+                  <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="coming-soon.html">Company</a>
               </nav>
               <div class="flex items-center gap-3">
                   <button id="theme-toggle" class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white p-2 rounded-full transition-colors flex items-center justify-center" aria-label="Toggle Dark Mode" style="background:none; border:none; cursor:pointer;">

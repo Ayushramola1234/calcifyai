@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <!--
+  ┌─────────────────────────────────────────────────────────────┐
+  │  CalcHub – Base Page Template                               │
+  │                                                             │
+  │  HOW TO USE:                                               │
+<!--
+  ┌─────────────────────────────────────────────────────────────┐
+  │  CalcHub – Coming Soon Template                             │
+  └─────────────────────────────────────────────────────────────┘
+-->
+
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#07070f">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Calculator Coming Soon | CalcHub</title>
+  <meta name="description" content="This calculator is currently under development. Check back soon!">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- FOUC Preventer -->
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Inter:wght@400;500;600;700;900&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Inter:wght@400;500;600;700;900&display=swap">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+  </noscript>
+
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="stylesheet" href="css/home-tailwind.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script src="js/common.js" defer></script>
+  <script src="js/site-header.js" defer></script>
+  <script src="js/site-footer.js" defer></script>
+</head>
+
+<body>
+  <site-header category="other"></site-header>
+
+  <div class="page-wrap flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
+    <span class="material-symbols-outlined text-6xl text-slate-400 dark:text-slate-600 mb-6">construction</span>
+    <h1 class="text-3xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-white mb-4">Coming Soon</h1>
+    <p class="text-lg text-slate-600 dark:text-slate-400 max-w-lg mx-auto mb-8">
+      We're currently building and testing this calculator to ensure it meets our accuracy standards. Check back
+      shortly!
+    </p>
+    <a href="index.html"
+      class="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-blue-600 text-white font-medium rounded-xl transition-colors shadow-md shadow-blue-500/20">
+      <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+      Browse Available Tools
+    </a>
+  </div>
+
+  <site-footer></site-footer>
+  <script src="js/page-init.js"></script>
+</body>
+
+</html>
