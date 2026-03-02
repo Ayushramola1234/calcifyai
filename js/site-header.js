@@ -32,17 +32,17 @@ class SiteHeader extends HTMLElement {
     this.innerHTML = `
       <header class="border-b border-slate-200/50 dark:border-slate-800/50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-              <a href="index.html" class="flex items-center gap-3" style="text-decoration: none;">
+              <a href="/" class="flex items-center gap-3" style="text-decoration: none;">
                   <div class="size-8 rounded-lg bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center text-white shadow-lg shadow-blue-500/20" style="width: 32px; height: 32px;">
                       <span class="material-symbols-outlined text-[20px]" style="font-size: 20px;">calculate</span>
                   </div>
                   <h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white" style="margin: 0; font-size: 1.25rem;">CalcifyAI</h1>
               </a>
               <nav class="hidden md:flex items-center gap-8">
-                  <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="index.html">Tools</a>
-                  <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="coming-soon.html">API</a>
-                  <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="coming-soon.html">Pricing</a>
-                  <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="coming-soon.html">Company</a>
+                  <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="/">Tools</a>
+                  <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="/coming-soon.html">API</a>
+                  <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="/coming-soon.html">Pricing</a>
+                  <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="/coming-soon.html">Company</a>
               </nav>
               <div class="flex items-center gap-3">
                   <button id="theme-toggle" class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white p-2 rounded-full transition-colors flex items-center justify-center" aria-label="Toggle Dark Mode" style="background:none; border:none; cursor:pointer;">

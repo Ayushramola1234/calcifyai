@@ -1,7 +1,6 @@
 {
   "hosting": {
     "public": ".",
-
     "ignore": [
       "firebase.json",
       ".firebaserc",
@@ -10,11 +9,9 @@
       "node_modules/**",
       ".git/**"
     ],
-
     "cleanUrls": true,
     "trailingSlash": false,
     "404": "_404.html",
-
     "headers": [
       {
         "source": "**/*.html",
@@ -27,49 +24,144 @@
             "key": "Content-Security-Policy",
             "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://adservice.google.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.googlesyndication.com https://*.google.com https://*.doubleclick.net; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; connect-src 'self' https://pagead2.googlesyndication.com; frame-ancestors 'none'"
           },
-          { "key": "X-Content-Type-Options",  "value": "nosniff" },
-          { "key": "X-Frame-Options",          "value": "DENY" },
-          { "key": "Referrer-Policy",          "value": "strict-origin-when-cross-origin" },
-          { "key": "X-DNS-Prefetch-Control",   "value": "on" },
-          { "key": "Permissions-Policy",       "value": "geolocation=(), microphone=(), camera=()" }
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "key": "X-Frame-Options",
+            "value": "DENY"
+          },
+          {
+            "key": "Referrer-Policy",
+            "value": "strict-origin-when-cross-origin"
+          },
+          {
+            "key": "X-DNS-Prefetch-Control",
+            "value": "on"
+          },
+          {
+            "key": "Permissions-Policy",
+            "value": "geolocation=(), microphone=(), camera=()"
+          }
         ]
       },
       {
         "source": "sitemap.xml",
         "headers": [
-          { "key": "Content-Type",  "value": "application/xml; charset=utf-8" },
-          { "key": "Cache-Control", "value": "public, max-age=86400" }
+          {
+            "key": "Content-Type",
+            "value": "application/xml; charset=utf-8"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=86400"
+          }
         ]
       },
       {
         "source": "robots.txt",
         "headers": [
-          { "key": "Content-Type",  "value": "text/plain; charset=utf-8" },
-          { "key": "Cache-Control", "value": "public, max-age=86400" }
+          {
+            "key": "Content-Type",
+            "value": "text/plain; charset=utf-8"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=86400"
+          }
         ]
       },
       {
         "source": "css/**",
         "headers": [
-          { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
         ]
       },
       {
         "source": "js/**",
         "headers": [
-          { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
         ]
       },
       {
         "source": "**/*.{woff,woff2,ttf,eot}",
         "headers": [
-          { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
         ]
       }
     ],
-
     "rewrites": [
-      { "source": "/", "destination": "/index.html" }
+      {
+        "source": "/",
+        "destination": "/index.html"
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/age-calculator.html",
+        "destination": "/calculators/age/",
+        "type": 301
+      },
+      {
+        "source": "/auto-loan-calculator.html",
+        "destination": "/calculators/auto-loan/",
+        "type": 301
+      },
+      {
+        "source": "/bmi-calculator.html",
+        "destination": "/calculators/bmi/",
+        "type": 301
+      },
+      {
+        "source": "/calorie-calculator.html",
+        "destination": "/calculators/calorie/",
+        "type": 301
+      },
+      {
+        "source": "/compound-interest-calculator.html",
+        "destination": "/calculators/compound-interest/",
+        "type": 301
+      },
+      {
+        "source": "/gpa-calculator.html",
+        "destination": "/calculators/gpa/",
+        "type": 301
+      },
+      {
+        "source": "/loan-calculator.html",
+        "destination": "/calculators/loan/",
+        "type": 301
+      },
+      {
+        "source": "/mortgage-calculator.html",
+        "destination": "/calculators/mortgage/",
+        "type": 301
+      },
+      {
+        "source": "/percentage-calculator.html",
+        "destination": "/calculators/percentage/",
+        "type": 301
+      },
+      {
+        "source": "/retirement-calculator.html",
+        "destination": "/calculators/retirement/",
+        "type": 301
+      },
+      {
+        "source": "/scientific-calculator.html",
+        "destination": "/calculators/scientific/",
+        "type": 301
+      }
     ]
   }
 }

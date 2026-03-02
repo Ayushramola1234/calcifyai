@@ -1,7 +1,8 @@
 module.exports = {
     content: [
         "./*.html",
-        "./js/**/*.js"
+        "./js/**/*.js",
+        "./calculators/**/*.html",
     ],
     darkMode: "class",
     theme: {

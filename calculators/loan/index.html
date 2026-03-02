@@ -38,9 +38,9 @@
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
   </noscript>
-  <link rel="preload" href="css/styles.css" as="style">
-  <link rel="stylesheet" href="css/home-tailwind.v5.css">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preload" href="/css/variables.css" as="style">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/variables.css">
 
 
   <script type="application/ld+json">
@@ -146,10 +146,10 @@
 }
   </script>
 
-  <script src="js/common.js" defer></script>
-  <script src="js/site-header.js" defer></script>
-  <script src="js/site-footer.js" defer></script>
-  <script src="js/ads.js" defer></script>
+  <script src="/js/common.js" defer></script>
+  <script src="/js/site-header.js" defer></script>
+  <script src="/js/site-footer.js" defer></script>
+  <script src="/js/ads.js" defer></script>
 </head>
 <body>
 
@@ -159,14 +159,14 @@
   <main class="calc-page">
 
     <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="index.html">Home</a>
+      <a href="/">Home</a>
       <span>›</span>
       <a href="index.html#financial">Financial Calculators</a>
       <span>›</span>
       <span>Loan Calculator</span>
     </nav>
 
-    <a href="index.html" class="back-btn">← All Calculators</a>
+    <a href="/" class="back-btn">← All Calculators</a>
 
     <h1 class="calc-title">🏦 Loan Calculator</h1>
     <p class="calc-subtitle">Calculate your monthly EMI (Equated Monthly Installment), total interest payable, and see the complete principal vs interest breakdown for any loan.</p>
@@ -183,15 +183,7 @@
       <div class="rr"><span class="rl">Total Interest</span><span class="rv bad" id="r-int">—</span></div>
       <div class="rr"><span class="rl">Total Payment</span><span class="rv" id="r-tot">—</span></div>
     </div>
-    <script>
-    function calcLoan(){
-      const P=parseFloat($('ln-amt').value),r=parseFloat($('ln-rate').value)/100/12,n=parseFloat($('ln-yr').value)*12;
-      if(!P||!r||!n)return alert('Fill all fields.');
-      const emi=P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1),tot=emi*n,int=tot-P;
-      $('r-emi').textContent='$'+fmt(emi);$('r-int').textContent='$'+fmt(int);$('r-tot').textContent='$'+fmt(tot);
-      showResult('r');
-    }
-    </script>
+    
 
     
     <!-- ── AD SLOT A: Post-result (highest intent) ─────────
@@ -259,12 +251,12 @@
   <li><strong>Improve your credit score before applying</strong> — Moving from 680 to 740 can cut your rate by 1–2%, saving thousands.</li>
   <li><strong>Choose a shorter tenure</strong> — A 3-year loan costs far less in total interest than a 5-year loan, though monthly payments are higher.</li>
   <li><strong>Make one extra payment per year</strong> — This alone can cut a 5-year loan to under 4.5 years.</li>
-  <li><strong>Refinance if rates drop</strong> — Use our <a href="interest-rate-calculator.html">interest rate calculator</a> to check if refinancing makes sense.</li>
+  <li><strong>Refinance if rates drop</strong> — Use our <a href="/calculators/interest-rate/">interest rate calculator</a> to check if refinancing makes sense.</li>
   <li><strong>Compare lenders</strong> — Even 0.5% difference on a $50,000 loan saves $1,300+ over 5 years.</li>
 </ul>
 <p>
-  For secured borrowing against property, see our <a href="mortgage-calculator.html">mortgage calculator</a>.
-  For vehicle financing, try the <a href="auto-loan-calculator.html">auto loan calculator</a>.
+  For secured borrowing against property, see our <a href="/calculators/mortgage/">mortgage calculator</a>.
+  For vehicle financing, try the <a href="/calculators/auto-loan/">auto loan calculator</a>.
 </p>
 
       </article>
@@ -272,12 +264,12 @@
       <div class="related-calcs">
         <p class="related-title">Related Calculators</p>
         <div class="related-grid">
-          <a href="mortgage-calculator.html" class="related-card"><span class="related-card-icon">🏠</span><span class="related-card-name">Mortgage Calculator</span></a>
-          <a href="auto-loan-calculator.html" class="related-card"><span class="related-card-icon">🚗</span><span class="related-card-name">Auto Loan Calculator</span></a>
-          <a href="amortization-calculator.html" class="related-card"><span class="related-card-icon">📋</span><span class="related-card-name">Amortization Schedule</span></a>
-          <a href="interest-rate-calculator.html" class="related-card"><span class="related-card-icon">🔢</span><span class="related-card-name">Interest Rate Calculator</span></a>
-          <a href="payment-calculator.html" class="related-card"><span class="related-card-icon">💳</span><span class="related-card-name">Payment Calculator</span></a>
-          <a href="compound-interest-calculator.html" class="related-card"><span class="related-card-icon">🌱</span><span class="related-card-name">Compound Interest</span></a>
+          <a href="/calculators/mortgage/" class="related-card"><span class="related-card-icon">🏠</span><span class="related-card-name">Mortgage Calculator</span></a>
+          <a href="/calculators/auto-loan/" class="related-card"><span class="related-card-icon">🚗</span><span class="related-card-name">Auto Loan Calculator</span></a>
+          <a href="/calculators/amortization/" class="related-card"><span class="related-card-icon">📋</span><span class="related-card-name">Amortization Schedule</span></a>
+          <a href="/calculators/interest-rate/" class="related-card"><span class="related-card-icon">🔢</span><span class="related-card-name">Interest Rate Calculator</span></a>
+          <a href="/calculators/payment/" class="related-card"><span class="related-card-icon">💳</span><span class="related-card-name">Payment Calculator</span></a>
+          <a href="/calculators/compound-interest/" class="related-card"><span class="related-card-icon">🌱</span><span class="related-card-name">Compound Interest</span></a>
         </div>
       </div>
 
@@ -325,6 +317,7 @@
 </div>
 
 <site-footer></site-footer>
-<script src="js/page-init.js"></script>
+<script src="/js/page-init.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

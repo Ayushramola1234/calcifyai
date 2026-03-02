@@ -38,9 +38,9 @@
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
   </noscript>
-  <link rel="preload" href="css/styles.css" as="style">
-  <link rel="stylesheet" href="css/home-tailwind.v5.css">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preload" href="/css/variables.css" as="style">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/variables.css">
 
 
   <script type="application/ld+json">
@@ -146,10 +146,10 @@
 }
   </script>
 
-  <script src="js/common.js" defer></script>
-  <script src="js/site-header.js" defer></script>
-  <script src="js/site-footer.js" defer></script>
-  <script src="js/ads.js" defer></script>
+  <script src="/js/common.js" defer></script>
+  <script src="/js/site-header.js" defer></script>
+  <script src="/js/site-footer.js" defer></script>
+  <script src="/js/ads.js" defer></script>
 </head>
 <body>
 
@@ -159,14 +159,14 @@
   <main class="calc-page">
 
     <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="index.html">Home</a>
+      <a href="/">Home</a>
       <span>›</span>
       <a href="index.html#health">Health &amp; Fitness Calculators</a>
       <span>›</span>
       <span>Calorie Calculator</span>
     </nav>
 
-    <a href="index.html" class="back-btn">← All Calculators</a>
+    <a href="/" class="back-btn">← All Calculators</a>
 
     <h1 class="calc-title">🔥 Calorie Calculator</h1>
     <p class="calc-subtitle">Find your Total Daily Energy Expenditure (TDEE) — the number of calories your body burns each day. Get personalized targets for weight loss, maintenance, and muscle gain.</p>
@@ -232,7 +232,7 @@
   A <strong>deficit of 500 calories per day</strong> produces approximately 1 lb (0.45 kg) of fat loss
   per week — the most cited and safest rate for sustained loss. A 750-calorie deficit yields ~1.5 lbs/week.
   Never go below 1,200 kcal (women) or 1,500 kcal (men) without medical supervision, as this risks
-  muscle loss, nutrient deficiency, and metabolic adaptation. Check your <a href="bmr-calculator.html">BMR</a>
+  muscle loss, nutrient deficiency, and metabolic adaptation. Check your <a href="/calculators/bmr/">BMR</a>
   to ensure you're always eating above your minimum energy requirement.
 </p>
 
@@ -249,7 +249,7 @@
   As you lose weight, your TDEE decreases — your lighter body burns fewer calories at rest and during
   exercise. This is why most dieters hit plateaus: they're no longer in a deficit. Recalculate your TDEE
   every 5–10 lbs of weight change and adjust your intake accordingly. Pair this with our
-  <a href="bmi-calculator.html">BMI calculator</a> and <a href="ideal-weight-calculator.html">ideal weight
+  <a href="/calculators/bmi/">BMI calculator</a> and <a href="/calculators/ideal-weight/">ideal weight
   calculator</a> to track your progress toward a healthy range.
 </p>
 
@@ -258,12 +258,12 @@
       <div class="related-calcs">
         <p class="related-title">Related Calculators</p>
         <div class="related-grid">
-          <a href="bmi-calculator.html" class="related-card"><span class="related-card-icon">⚖️</span><span class="related-card-name">BMI Calculator</span></a>
-          <a href="bmr-calculator.html" class="related-card"><span class="related-card-icon">💗</span><span class="related-card-name">BMR Calculator</span></a>
-          <a href="body-fat-calculator.html" class="related-card"><span class="related-card-icon">📐</span><span class="related-card-name">Body Fat Calculator</span></a>
-          <a href="ideal-weight-calculator.html" class="related-card"><span class="related-card-icon">🎯</span><span class="related-card-name">Ideal Weight Calculator</span></a>
-          <a href="pace-calculator.html" class="related-card"><span class="related-card-icon">🏃</span><span class="related-card-name">Running Pace Calculator</span></a>
-          <a href="age-calculator.html" class="related-card"><span class="related-card-icon">🎂</span><span class="related-card-name">Age Calculator</span></a>
+          <a href="/calculators/bmi/" class="related-card"><span class="related-card-icon">⚖️</span><span class="related-card-name">BMI Calculator</span></a>
+          <a href="/calculators/bmr/" class="related-card"><span class="related-card-icon">💗</span><span class="related-card-name">BMR Calculator</span></a>
+          <a href="/calculators/body-fat/" class="related-card"><span class="related-card-icon">📐</span><span class="related-card-name">Body Fat Calculator</span></a>
+          <a href="/calculators/ideal-weight/" class="related-card"><span class="related-card-icon">🎯</span><span class="related-card-name">Ideal Weight Calculator</span></a>
+          <a href="/calculators/pace/" class="related-card"><span class="related-card-icon">🏃</span><span class="related-card-name">Running Pace Calculator</span></a>
+          <a href="/calculators/age/" class="related-card"><span class="related-card-icon">🎂</span><span class="related-card-name">Age Calculator</span></a>
         </div>
       </div>
 
@@ -311,6 +311,6 @@
 </div>
 
 <site-footer></site-footer>
-<script src="js/page-init.js"></script>
+<script src="/js/page-init.js"></script>
 </body>
 </html>

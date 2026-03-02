@@ -62,9 +62,9 @@
   </noscript>
 
         <!-- Shared CSS — do not modify path -->
-        <link rel="preload" href="css/styles.css" as="style">
-        <link rel="stylesheet" href="css/home-tailwind.v5.css">
-  <link rel="stylesheet" href="css/styles.css">
+        <link rel="preload" href="/css/variables.css" as="style">
+        <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/variables.css">
 
         <!-- ═════════════════════ EDIT: Page-specific styles (if needed) ═ -->
         <style>
@@ -99,11 +99,11 @@
     Shared JS: load common.js FIRST so CALCS[] and utilities are
     available before the web components render.
   -->
-        <script src="js/common.js" defer></script>
-        <script src="js/site-header.js" defer></script>
-        <script src="js/site-footer.js" defer></script>
+        <script src="/js/common.js" defer></script>
+        <script src="/js/site-header.js" defer></script>
+        <script src="/js/site-footer.js" defer></script>
         <!-- AdSense component — uncomment when publisher ID is set -->
-        <!-- <script src="js/ads.js" defer></script> -->
+        <!-- <script src="/js/ads.js" defer></script> -->
 </head>
 
 <body>
@@ -131,14 +131,14 @@
 
       <!-- ── Breadcrumb (for SEO + UX) ──────────────────────── -->
       <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="index.html">Home</a>
+        <a href="/">Home</a>
         <span aria-hidden="true">›</span>
         <!-- EDIT: Calculator name -->
         <span><!-- Calculator Name --></span>
       </nav>
 
       <!-- ── Back link ───────────────────────────────────────── -->
-      <a href="index.html" class="back-btn">← All Calculators</a>
+      <a href="/" class="back-btn">← All Calculators</a>
 
       <!-- ── Page heading ────────────────────────────────────── -->
       <!-- EDIT: icon + H1. H1 must contain the primary keyword. -->
@@ -283,15 +283,15 @@
         <p class="related-title">Related Calculators</p>
         <div class="related-grid">
           <!-- EDIT: Replace with actual related calculator links -->
-          <a href="mortgage-calculator.html" class="related-card">
+          <a href="/calculators/mortgage/" class="related-card">
             <span class="related-card-icon">🏠</span>
             <span class="related-card-name">Mortgage Calculator</span>
           </a>
-          <a href="loan-calculator.html" class="related-card">
+          <a href="/calculators/loan/" class="related-card">
             <span class="related-card-icon">🏦</span>
             <span class="related-card-name">Loan Calculator</span>
           </a>
-          <a href="compound-interest-calculator.html" class="related-card">
+          <a href="/calculators/compound-interest/" class="related-card">
             <span class="related-card-icon">🌱</span>
             <span class="related-card-name">Compound Interest</span>
           </a>
@@ -331,7 +331,7 @@
   <site-footer></site-footer>
 
   <!-- ── Bootstrap (keyboard shortcuts, scroll effects, analytics) -->
-  <script src="js/page-init.js"></script>
+  <script src="/js/page-init.js"></script>
 
   <!-- ╔═══════════════════════════════════════════════════════════╗
        ║  PAGE-SPECIFIC JAVASCRIPT                                 ║

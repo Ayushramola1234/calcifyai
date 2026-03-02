@@ -38,9 +38,9 @@
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
   </noscript>
-  <link rel="preload" href="css/styles.css" as="style">
-  <link rel="stylesheet" href="css/home-tailwind.v5.css">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preload" href="/css/variables.css" as="style">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/variables.css">
 
 
   <script type="application/ld+json">
@@ -146,10 +146,10 @@
 }
   </script>
 
-  <script src="js/common.js" defer></script>
-  <script src="js/site-header.js" defer></script>
-  <script src="js/site-footer.js" defer></script>
-  <script src="js/ads.js" defer></script>
+  <script src="/js/common.js" defer></script>
+  <script src="/js/site-header.js" defer></script>
+  <script src="/js/site-footer.js" defer></script>
+  <script src="/js/ads.js" defer></script>
 </head>
 <body>
 
@@ -159,14 +159,14 @@
   <main class="calc-page">
 
     <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="index.html">Home</a>
+      <a href="/">Home</a>
       <span>›</span>
       <a href="index.html#financial">Financial Calculators</a>
       <span>›</span>
       <span>Retirement Calculator</span>
     </nav>
 
-    <a href="index.html" class="back-btn">← All Calculators</a>
+    <a href="/" class="back-btn">← All Calculators</a>
 
     <h1 class="calc-title">👴 Retirement Calculator</h1>
     <p class="calc-subtitle">Find out how much you need to retire comfortably, project your savings to retirement age, and estimate the monthly income your nest egg will generate.</p>
@@ -216,7 +216,7 @@
   If you invest <strong>$500/month starting at 25</strong> with a 7% return, you'll have $1,311,000 by 65.
   Starting at 35 with the same contributions yields only $612,000 — less than half, for only 10 years less
   of investing. Those first ten years account for the majority of the final balance.
-  <a href="compound-interest-calculator.html">Compound interest</a> rewards those who start early
+  <a href="/calculators/compound-interest/">Compound interest</a> rewards those who start early
   far more than those who invest more later.
 </p>
 
@@ -243,8 +243,8 @@
   any retirement age; enter your target to see if your trajectory gets you there.
 </p>
 <p>
-  Complement this with our <a href="investment-calculator.html">investment calculator</a> and
-  <a href="compound-interest-calculator.html">compound interest calculator</a> to model different
+  Complement this with our <a href="/calculators/investment/">investment calculator</a> and
+  <a href="/calculators/compound-interest/">compound interest calculator</a> to model different
   contribution and return scenarios.
 </p>
 
@@ -253,12 +253,12 @@
       <div class="related-calcs">
         <p class="related-title">Related Calculators</p>
         <div class="related-grid">
-          <a href="compound-interest-calculator.html" class="related-card"><span class="related-card-icon">🌱</span><span class="related-card-name">Compound Interest</span></a>
-          <a href="investment-calculator.html" class="related-card"><span class="related-card-icon">📊</span><span class="related-card-name">Investment Calculator</span></a>
-          <a href="inflation-calculator.html" class="related-card"><span class="related-card-icon">💸</span><span class="related-card-name">Inflation Calculator</span></a>
-          <a href="salary-calculator.html" class="related-card"><span class="related-card-icon">💼</span><span class="related-card-name">Salary Calculator</span></a>
-          <a href="income-tax-calculator.html" class="related-card"><span class="related-card-icon">🧾</span><span class="related-card-name">Income Tax Calculator</span></a>
-          <a href="mortgage-calculator.html" class="related-card"><span class="related-card-icon">🏠</span><span class="related-card-name">Mortgage Calculator</span></a>
+          <a href="/calculators/compound-interest/" class="related-card"><span class="related-card-icon">🌱</span><span class="related-card-name">Compound Interest</span></a>
+          <a href="/calculators/investment/" class="related-card"><span class="related-card-icon">📊</span><span class="related-card-name">Investment Calculator</span></a>
+          <a href="/calculators/inflation/" class="related-card"><span class="related-card-icon">💸</span><span class="related-card-name">Inflation Calculator</span></a>
+          <a href="/calculators/salary/" class="related-card"><span class="related-card-icon">💼</span><span class="related-card-name">Salary Calculator</span></a>
+          <a href="/calculators/income-tax/" class="related-card"><span class="related-card-icon">🧾</span><span class="related-card-name">Income Tax Calculator</span></a>
+          <a href="/calculators/mortgage/" class="related-card"><span class="related-card-icon">🏠</span><span class="related-card-name">Mortgage Calculator</span></a>
         </div>
       </div>
 
@@ -306,6 +306,6 @@
 </div>
 
 <site-footer></site-footer>
-<script src="js/page-init.js"></script>
+<script src="/js/page-init.js"></script>
 </body>
 </html>

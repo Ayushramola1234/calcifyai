@@ -38,9 +38,9 @@
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
   </noscript>
-  <link rel="preload" href="css/styles.css" as="style">
-  <link rel="stylesheet" href="css/home-tailwind.v5.css">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preload" href="/css/variables.css" as="style">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/variables.css">
 
 
   <script type="application/ld+json">
@@ -146,10 +146,10 @@
 }
   </script>
 
-  <script src="js/common.js" defer></script>
-  <script src="js/site-header.js" defer></script>
-  <script src="js/site-footer.js" defer></script>
-  <script src="js/ads.js" defer></script>
+  <script src="/js/common.js" defer></script>
+  <script src="/js/site-header.js" defer></script>
+  <script src="/js/site-footer.js" defer></script>
+  <script src="/js/ads.js" defer></script>
 </head>
 <body>
 
@@ -159,14 +159,14 @@
   <main class="calc-page">
 
     <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="index.html">Home</a>
+      <a href="/">Home</a>
       <span>›</span>
       <a href="index.html#financial">Financial Calculators</a>
       <span>›</span>
       <span>Compound Interest Calculator</span>
     </nav>
 
-    <a href="index.html" class="back-btn">← All Calculators</a>
+    <a href="/" class="back-btn">← All Calculators</a>
 
     <h1 class="calc-title">🌱 Compound Interest Calculator</h1>
     <p class="calc-subtitle">See exactly how your savings or investments grow over time with the power of compound interest. Compare compounding frequencies and understand why starting early matters so much.</p>
@@ -245,8 +245,8 @@
 
 <p>
   For projecting retirement savings with regular contributions, see our
-  <a href="retirement-calculator.html">retirement calculator</a>. For comparing investment strategies
-  or one-off investments, try the <a href="investment-calculator.html">investment calculator</a>.
+  <a href="/calculators/retirement/">retirement calculator</a>. For comparing investment strategies
+  or one-off investments, try the <a href="/calculators/investment/">investment calculator</a>.
 </p>
 
       </article>
@@ -254,12 +254,12 @@
       <div class="related-calcs">
         <p class="related-title">Related Calculators</p>
         <div class="related-grid">
-          <a href="investment-calculator.html" class="related-card"><span class="related-card-icon">📊</span><span class="related-card-name">Investment Calculator</span></a>
-          <a href="retirement-calculator.html" class="related-card"><span class="related-card-icon">👴</span><span class="related-card-name">Retirement Calculator</span></a>
-          <a href="interest-calculator.html" class="related-card"><span class="related-card-icon">📈</span><span class="related-card-name">Interest Calculator</span></a>
-          <a href="inflation-calculator.html" class="related-card"><span class="related-card-icon">💸</span><span class="related-card-name">Inflation Calculator</span></a>
-          <a href="savings-calculator.html" class="related-card"><span class="related-card-icon">💰</span><span class="related-card-name">Mortgage Calculator</span></a>
-          <a href="salary-calculator.html" class="related-card"><span class="related-card-icon">💼</span><span class="related-card-name">Salary Calculator</span></a>
+          <a href="/calculators/investment/" class="related-card"><span class="related-card-icon">📊</span><span class="related-card-name">Investment Calculator</span></a>
+          <a href="/calculators/retirement/" class="related-card"><span class="related-card-icon">👴</span><span class="related-card-name">Retirement Calculator</span></a>
+          <a href="/calculators/interest/" class="related-card"><span class="related-card-icon">📈</span><span class="related-card-name">Interest Calculator</span></a>
+          <a href="/calculators/inflation/" class="related-card"><span class="related-card-icon">💸</span><span class="related-card-name">Inflation Calculator</span></a>
+          <a href="/calculators/savings/" class="related-card"><span class="related-card-icon">💰</span><span class="related-card-name">Mortgage Calculator</span></a>
+          <a href="/calculators/salary/" class="related-card"><span class="related-card-icon">💼</span><span class="related-card-name">Salary Calculator</span></a>
         </div>
       </div>
 
@@ -307,6 +307,6 @@
 </div>
 
 <site-footer></site-footer>
-<script src="js/page-init.js"></script>
+<script src="/js/page-init.js"></script>
 </body>
 </html>

@@ -23,13 +23,13 @@
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
   </noscript>
-  <link rel="preload" href="css/styles.css" as="style">
-  <link rel="stylesheet" href="css/home-tailwind.v5.css">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preload" href="/css/variables.css" as="style">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/variables.css">
 
-  <script src="js/common.js" defer></script>
-  <script src="js/site-header.js" defer></script>
-  <script src="js/site-footer.js" defer></script>
+  <script src="/js/common.js" defer></script>
+  <script src="/js/site-header.js" defer></script>
+  <script src="/js/site-footer.js" defer></script>
 
   <style>
     .error-page {
@@ -121,26 +121,26 @@
     </div>
 
     <!-- Go home -->
-    <a href="index.html" class="calc-btn" style="display:inline-block;text-decoration:none;margin-bottom:32px;">
+    <a href="/" class="calc-btn" style="display:inline-block;text-decoration:none;margin-bottom:32px;">
       ⌂ Browse All Calculators
     </a>
 
     <!-- Popular picks -->
     <p style="font-size:.75rem;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;">Popular Calculators</p>
     <div class="popular-grid">
-      <a href="mortgage-calculator.html"         class="related-card"><span class="related-card-icon">🏠</span><span class="related-card-name">Mortgage</span></a>
-      <a href="bmi-calculator.html"              class="related-card"><span class="related-card-icon">⚖️</span><span class="related-card-name">BMI</span></a>
-      <a href="compound-interest-calculator.html" class="related-card"><span class="related-card-icon">🌱</span><span class="related-card-name">Compound Interest</span></a>
-      <a href="scientific-calculator.html"       class="related-card"><span class="related-card-icon">🔬</span><span class="related-card-name">Scientific</span></a>
-      <a href="age-calculator.html"              class="related-card"><span class="related-card-icon">🎂</span><span class="related-card-name">Age</span></a>
-      <a href="gpa-calculator.html"              class="related-card"><span class="related-card-icon">🎓</span><span class="related-card-name">GPA</span></a>
+      <a href="/calculators/mortgage/"         class="related-card"><span class="related-card-icon">🏠</span><span class="related-card-name">Mortgage</span></a>
+      <a href="/calculators/bmi/"              class="related-card"><span class="related-card-icon">⚖️</span><span class="related-card-name">BMI</span></a>
+      <a href="/calculators/compound-interest/" class="related-card"><span class="related-card-icon">🌱</span><span class="related-card-name">Compound Interest</span></a>
+      <a href="/calculators/scientific/"       class="related-card"><span class="related-card-icon">🔬</span><span class="related-card-name">Scientific</span></a>
+      <a href="/calculators/age/"              class="related-card"><span class="related-card-icon">🎂</span><span class="related-card-name">Age</span></a>
+      <a href="/calculators/gpa/"              class="related-card"><span class="related-card-icon">🎓</span><span class="related-card-name">GPA</span></a>
     </div>
 
   </main>
 </div>
 
 <site-footer></site-footer>
-<script src="js/page-init.js"></script>
+<script src="/js/page-init.js"></script>
 
 <script>
   function errSearch(q) {

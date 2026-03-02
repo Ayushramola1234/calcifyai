@@ -38,9 +38,9 @@
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
   </noscript>
-  <link rel="preload" href="css/styles.css" as="style">
-  <link rel="stylesheet" href="css/home-tailwind.v5.css">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preload" href="/css/variables.css" as="style">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/variables.css">
 
 
   <script type="application/ld+json">
@@ -146,10 +146,10 @@
 }
   </script>
 
-  <script src="js/common.js" defer></script>
-  <script src="js/site-header.js" defer></script>
-  <script src="js/site-footer.js" defer></script>
-  <script src="js/ads.js" defer></script>
+  <script src="/js/common.js" defer></script>
+  <script src="/js/site-header.js" defer></script>
+  <script src="/js/site-footer.js" defer></script>
+  <script src="/js/ads.js" defer></script>
 </head>
 <body>
 
@@ -159,14 +159,14 @@
   <main class="calc-page">
 
     <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="index.html">Home</a>
+      <a href="/">Home</a>
       <span>›</span>
       <a href="index.html#other">Utility Calculators</a>
       <span>›</span>
       <span>Age Calculator</span>
     </nav>
 
-    <a href="index.html" class="back-btn">← All Calculators</a>
+    <a href="/" class="back-btn">← All Calculators</a>
 
     <h1 class="calc-title">🎂 Age Calculator</h1>
     <p class="calc-subtitle">Calculate your exact age in years, months, days, and hours from any date of birth. Discover your next birthday countdown, what day of the week you were born, and more.</p>
@@ -232,7 +232,7 @@
 <h3>Calculating Age Differences Between Two People</h3>
 <p>
   To find the age difference between two people, enter each person's birth date separately and subtract
-  the results. Alternatively, use the "date between" mode of our <a href="date-calculator.html">date
+  the results. Alternatively, use the "date between" mode of our <a href="/calculators/date/">date
   calculator</a> to find the exact days, months, and years between any two dates, which gives the
   precise age gap to the day.
 </p>
@@ -250,12 +250,12 @@
       <div class="related-calcs">
         <p class="related-title">Related Calculators</p>
         <div class="related-grid">
-          <a href="date-calculator.html" class="related-card"><span class="related-card-icon">📅</span><span class="related-card-name">Date Calculator</span></a>
-          <a href="time-calculator.html" class="related-card"><span class="related-card-icon">⏰</span><span class="related-card-name">Time Calculator</span></a>
-          <a href="bmi-calculator.html" class="related-card"><span class="related-card-icon">⚖️</span><span class="related-card-name">BMI Calculator</span></a>
-          <a href="pregnancy-calculator.html" class="related-card"><span class="related-card-icon">🤰</span><span class="related-card-name">Pregnancy Calculator</span></a>
-          <a href="due-date-calculator.html" class="related-card"><span class="related-card-icon">📅</span><span class="related-card-name">Due Date Calculator</span></a>
-          <a href="hours-calculator.html" class="related-card"><span class="related-card-icon">⏱️</span><span class="related-card-name">Hours Calculator</span></a>
+          <a href="/calculators/date/" class="related-card"><span class="related-card-icon">📅</span><span class="related-card-name">Date Calculator</span></a>
+          <a href="/calculators/time/" class="related-card"><span class="related-card-icon">⏰</span><span class="related-card-name">Time Calculator</span></a>
+          <a href="/calculators/bmi/" class="related-card"><span class="related-card-icon">⚖️</span><span class="related-card-name">BMI Calculator</span></a>
+          <a href="/calculators/pregnancy/" class="related-card"><span class="related-card-icon">🤰</span><span class="related-card-name">Pregnancy Calculator</span></a>
+          <a href="/calculators/due-date/" class="related-card"><span class="related-card-icon">📅</span><span class="related-card-name">Due Date Calculator</span></a>
+          <a href="/calculators/hours/" class="related-card"><span class="related-card-icon">⏱️</span><span class="related-card-name">Hours Calculator</span></a>
         </div>
       </div>
 
@@ -286,7 +286,7 @@
               <span>How do I calculate the age difference between two people?</span>
               <span class="faq-arrow" aria-hidden="true">›</span>
             </summary>
-            <div class="faq-a"><p>Calculate each person's age using their birth date and today's date, then subtract. Or more precisely: (1) Subtract the earlier birth year from the later birth year. (2) Check if the younger person's birthday has passed relative to the older person's — adjust by 1 if needed. For exact calculation to the day, use our <a href="date-calculator.html">date calculator</a> to find the number of days between the two birth dates and divide by 365.25. Example: Born Oct 5, 1985 and April 12, 1992 — the difference is approximately 6 years, 6 months, 7 days.</p></div>
+            <div class="faq-a"><p>Calculate each person's age using their birth date and today's date, then subtract. Or more precisely: (1) Subtract the earlier birth year from the later birth year. (2) Check if the younger person's birthday has passed relative to the older person's — adjust by 1 if needed. For exact calculation to the day, use our <a href="/calculators/date/">date calculator</a> to find the number of days between the two birth dates and divide by 365.25. Example: Born Oct 5, 1985 and April 12, 1992 — the difference is approximately 6 years, 6 months, 7 days.</p></div>
           </details>          <details class="faq-item">
             <summary class="faq-q">
               <span>How old am I in days, hours, and minutes?</span>
@@ -303,6 +303,6 @@
 </div>
 
 <site-footer></site-footer>
-<script src="js/page-init.js"></script>
+<script src="/js/page-init.js"></script>
 </body>
 </html>
