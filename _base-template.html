@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <!--
+  ┌─────────────────────────────────────────────────────────────┐
+  │  CalcHub – Base Page Template                               │
+  │                                                             │
+  │  HOW TO USE:                                               │
+  │  1. Copy this file and rename it  my-calculator.html       │
+  │  2. Fill in every <!-- EDIT --> comment below │
+  │ 3. Write your calculator HTML inside <main> │
+    │ 4. Add page-specific JS at the bottom │
+    │ 5. Add the calc entry to CALCS[] in js/common.js │
+    │ 6. Add a card to the right section in index.html │
+    │ │
+    │ The three shared JS files handle everything else: │
+    │ common.js → data + utilities │
+    │ site-header.js → <site-header> web component │
+      │ site-footer.js → <site-footer> web component │
+        │ page-init.js → scroll, shortcuts, analytics │
+        └─────────────────────────────────────────────────────────────┘
+        -->
+
+        <meta charset="UTF-8">
+        <meta name="theme-color" content="#07070f">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+        <!-- ═══════════════════════════════ EDIT: SEO meta per page ═══ -->
+        <title><!-- Calculator Name --> – Free <!-- Description --> | CalcHub</title>
+        <meta name="description" content="<!-- 150-160 chars. Lead with primary keyword. -->">
+        <meta name="keywords" content="<!-- 8-12 comma-separated keyword phrases -->">
+        <meta name="google-site-verification" content="QxkYUtxABsnadXvf7zwoMlMHEMdV3ulgyU869b3JX0I" />
+        <meta name="robots" content="index, follow">
+
+        <!-- Open Graph (social sharing) -->
+        <meta property="og:title" content="<!-- Calculator Name --> | CalcHub">
+        <meta property="og:description" content="<!-- Short description for social previews -->">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://calchub.com/<!-- page-filename.html -->">
+
+        <!-- Canonical URL (prevents duplicate content) -->
+        <link rel="canonical" href="https://calchub.com/<!-- page-filename.html -->">
+        <!-- ════════════════════════════════════════════════════════════ -->
+
+        <!-- Fonts -->
+        <!-- Critical: preconnect to both font origins BEFORE font request -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- Non-blocking async font load — eliminates render-blocking resource -->
+          <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Inter:wght@400;500;600;700;900&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Inter:wght@400;500;600;700;900&display=swap">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+  </noscript>
+
+        <!-- Shared CSS — do not modify path -->
+        <link rel="preload" href="css/styles.css" as="style">
+        <link rel="stylesheet" href="css/home-tailwind.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+        <!-- ═════════════════════ EDIT: Page-specific styles (if needed) ═ -->
+        <style>
+          /*
+     * Keep this minimal. Only styles unique to this calculator page.
+     * All design tokens, layout classes, and components live in styles.css.
+     *
+     * Example:
+     *   .bmi-gauge { position: relative; height: 12px; ... }
+     */
+        </style>
+        <!-- ════════════════════════════════════════════════════════════ -->
+
+        <!-- ════════════ EDIT: Structured data for this page ══════════ -->
+        <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "<!-- Calculator Name -->",
+    "description": "<!-- Same as meta description -->",
+    "url": "https://calchub.com/<!-- page-filename.html -->",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "CalcHub",
+      "url": "https://calchub.com"
+    }
+  }
+  </script>
+        <!-- ════════════════════════════════════════════════════════════ -->
+
+        <!--
+    Shared JS: load common.js FIRST so CALCS[] and utilities are
+    available before the web components render.
+  -->
+        <script src="js/common.js" defer></script>
+        <script src="js/site-header.js" defer></script>
+        <script src="js/site-footer.js" defer></script>
+        <!-- AdSense component — uncomment when publisher ID is set -->
+        <!-- <script src="js/ads.js" defer></script> -->
+</head>
+
+<body>
+
+  <!-- ── Shared header (web component) ────────────────────────── -->
+  <!--
+    The `category` attribute is optional.
+    Values: "financial" | "health" | "math" | "other"
+    Used to colour the breadcrumb badge on the page.
+  -->
+  <site-header category="<!-- financial | health | math | other -->"></site-header>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       MAIN PAGE CONTENT
+       Everything between <site-header> and <site-footer> is
+       unique to this calculator page.
+       ═══════════════════════════════════════════════════════════ -->
+
+  <div class="page-wrap">
+    <main class="calc-page" id="main-content">
+      <!--
+        Use class="calc-page wide" for calculators that need more horizontal space
+        (e.g. amortization table, unit converter). Default max-width: 580px. Wide: 740px.
+      -->
+
+      <!-- ── Breadcrumb (for SEO + UX) ──────────────────────── -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span aria-hidden="true">›</span>
+        <!-- EDIT: Calculator name -->
+        <span><!-- Calculator Name --></span>
+      </nav>
+
+      <!-- ── Back link ───────────────────────────────────────── -->
+      <a href="index.html" class="back-btn">← All Calculators</a>
+
+      <!-- ── Page heading ────────────────────────────────────── -->
+      <!-- EDIT: icon + H1. H1 must contain the primary keyword. -->
+      <h1 class="calc-title"><!-- 🏠 Calculator Name --></h1>
+      <p class="calc-subtitle">
+        <!-- 1-2 sentences. Describe what the calculator does. -->
+        <!-- Include secondary keywords naturally. -->
+      </p>
+
+      <!-- ╔═══════════════════════════════════════════════════╗
+           ║  CALCULATOR FORM                                  ║
+           ╚═══════════════════════════════════════════════════╝ -->
+
+      <!--
+        FORM FIELD PATTERNS — use these class combos:
+
+        Single field:
+          <div class="fg">
+            <label class="fl" for="id">Label</label>
+            <input class="fi" id="id" type="number" placeholder="…">
+          </div>
+
+        Two-column row:
+          <div class="row2">
+            <div class="fg">…</div>
+            <div class="fg">…</div>
+          </div>
+
+        Three-column row:
+          <div class="row3">
+            <div class="fg">…</div><div class="fg">…</div><div class="fg">…</div>
+          </div>
+
+        Select / dropdown:
+          <select class="fs" id="id">
+            <option value="a">Option A</option>
+          </select>
+
+        Pill preset buttons:
+          <div class="pill-row">
+            <button class="pill" onclick="...">Label</button>
+          </div>
+
+        Tab switcher:
+          <div class="tabs">
+            <button class="tab active" onclick="switchTab(0, this)">Tab 1</button>
+            <button class="tab"        onclick="switchTab(1, this)">Tab 2</button>
+          </div>
+
+        Checkbox:
+          <div class="check-row">
+            <input type="checkbox" id="cb" checked>
+            <label for="cb">Label text</label>
+          </div>
+      -->
+
+      <!-- DELETE THIS PLACEHOLDER AND INSERT YOUR FORM FIELDS -->
+      <div class="fg">
+        <label class="fl" for="example-input">Example Input</label>
+        <input class="fi" id="example-input" type="number" placeholder="e.g. 100">
+      </div>
+
+      <!-- Primary calculate button -->
+      <button class="calc-btn" onclick="calculate()">Calculate</button>
+
+      <!-- Optional reset -->
+      <!-- <button class="calc-btn secondary" onclick="reset()" style="margin-top:8px;">Reset</button> -->
+
+
+      <!-- ╔═══════════════════════════════════════════════════╗
+           ║  RESULT BOX                                       ║
+           ║  Hidden by default. JS calls showResult('result') ║
+           ╚═══════════════════════════════════════════════════╝ -->
+      <section class="result-box" id="result" aria-label="Calculation results" aria-live="polite">
+        <!--
+          RESULT ROW PATTERNS:
+
+          Standard row:
+            <div class="rr">
+              <span class="rl">Label</span>
+              <span class="rv" id="r-value">—</span>
+            </div>
+
+          Large/primary result:
+            <div class="rr big">
+              <span class="rl">Monthly Payment</span>
+              <span class="rv" id="r-main">—</span>
+            </div>
+
+          Colour variants on .rv:
+            .rv        → cyan (default)
+            .rv.good   → green  (positive outcomes)
+            .rv.warn   → yellow (caution)
+            .rv.bad    → red    (negative, costs, deficits)
+
+          Status badge (below results):
+            <span class="badge good">Normal weight ✓</span>
+            <span class="badge warn">Overweight</span>
+            <span class="badge bad">Obese</span>
+            <span class="badge info">Info label</span>
+
+          Progress bar:
+            <div style="height:8px;background:var(--surf);border-radius:4px;overflow:hidden;">
+              <div id="bar" style="height:100%;width:0%;background:var(--accent);transition:width .5s;"></div>
+            </div>
+
+          Data table:
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Col 1</th><th>Col 2</th></tr></thead>
+                <tbody id="tbl-body"></tbody>
+              </table>
+            </div>
+        -->
+
+        <!-- EDIT: Replace with your actual result rows -->
+        <div class="rr big">
+          <span class="rl">Result</span>
+          <span class="rv" id="r-main">—</span>
+        </div>
+        <div class="rr">
+          <span class="rl">Detail</span>
+          <span class="rv" id="r-detail">—</span>
+        </div>
+
+      </section><!-- /.result-box -->
+
+
+      <!-- ── Optional tip / disclaimer ───────────────────────── -->
+      <!-- Uncomment and edit as appropriate:
+      <div class="info-box" style="margin-top:24px;">
+        💡 <strong>Tip:</strong> Brief helpful tip or disclaimer for the user.
+      </div>
+      -->
+
+
+      <!-- ╔═══════════════════════════════════════════════════╗
+           ║  RELATED CALCULATORS                              ║
+           ║  Pick 3-4 logically related pages.                ║
+           ╚═══════════════════════════════════════════════════╝ -->
+      <div class="related-calcs">
+        <p class="related-title">Related Calculators</p>
+        <div class="related-grid">
+          <!-- EDIT: Replace with actual related calculator links -->
+          <a href="mortgage-calculator.html" class="related-card">
+            <span class="related-card-icon">🏠</span>
+            <span class="related-card-name">Mortgage Calculator</span>
+          </a>
+          <a href="loan-calculator.html" class="related-card">
+            <span class="related-card-icon">🏦</span>
+            <span class="related-card-name">Loan Calculator</span>
+          </a>
+          <a href="compound-interest-calculator.html" class="related-card">
+            <span class="related-card-icon">🌱</span>
+            <span class="related-card-name">Compound Interest</span>
+          </a>
+        </div>
+      </div>
+
+
+      <!-- ╔═══════════════════════════════════════════════════╗
+           ║  SEO CONTENT ARTICLE                              ║
+           ║  ~200 words. Target 1-2 long-tail keywords.       ║
+           ╚═══════════════════════════════════════════════════╝ -->
+      <article class="seo-content">
+        <!-- EDIT: Replace headings and paragraphs below -->
+        <h2>How to Use the <!-- Calculator Name --></h2>
+        <p>
+          Explain step by step how users should fill in the form.
+          Mention the primary keyword naturally.
+        </p>
+
+        <h2><!-- Calculator Name --> Formula</h2>
+        <p>
+          If applicable, explain the formula used.
+          Example: Monthly Payment = P × [r(1+r)ⁿ] / [(1+r)ⁿ − 1]
+        </p>
+
+        <h2>Frequently Asked Questions</h2>
+        <p>
+          <strong>Q: What does this calculator do?</strong><br>
+          A: It calculates… (1-2 sentence answer that includes the target keyword)
+        </p>
+      </article>
+
+    </main>
+  </div><!-- /.page-wrap -->
+
+  <!-- ── Shared footer (web component) ────────────────────────── -->
+  <site-footer></site-footer>
+
+  <!-- ── Bootstrap (keyboard shortcuts, scroll effects, analytics) -->
+  <script src="js/page-init.js"></script>
+
+  <!-- ╔═══════════════════════════════════════════════════════════╗
+       ║  PAGE-SPECIFIC JAVASCRIPT                                 ║
+       ║                                                           ║
+       ║  Rules:                                                    ║
+       ║  • Use window.$ / window.fmt / window.showResult etc.     ║
+       ║  • Do NOT re-declare utilities already in common.js       ║
+       ║  • Call window.trackCalc('calc-id') on successful calc    ║
+       ║  • Keep this block focused: inputs → compute → display    ║
+       ╚═══════════════════════════════════════════════════════════╝ -->
+  <script>
+    /* EDIT: Replace this stub with your calculator logic */
+
+    function calculate() {
+      // 1. Read inputs
+      const val = parseFloat($('example-input').value);
+      if (!val || isNaN(val)) {
+        alert('Please enter a valid number.');
+        return;
+      }
+
+      // 2. Compute
+      const result = val * 2; // replace with real formula
+
+      // 3. Display
+      $('r-main').textContent = fmt(result);
+      $('r-detail').textContent = fmt(val) + ' × 2';
+
+      // 4. Show result box
+      showResult('result');
+
+      // 5. Track (fires if analytics is configured in page-init.js)
+      // trackCalc('your-calc-id');
+    }
+
+    /* Optional: reset form */
+    // function reset() {
+    //   $('example-input').value = '';
+    //   hideResult('result');
+    // }
+
+    /* Optional: allow pressing Enter on inputs */
+    // document.addEventListener('keydown', e => {
+    //   if (e.key === 'Enter') calculate();
+    // });
+  </script>
+
+</body>
+
+</html>

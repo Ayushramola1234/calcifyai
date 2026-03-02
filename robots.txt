@@ -1,0 +1,66 @@
+# ============================================================
+# CalcHub – robots.txt
+# https://calchub.com/robots.txt
+# ============================================================
+#
+# This file tells search engine crawlers which pages to index.
+#
+# Test this file at:
+#   Google Search Console → URL Inspection → Test robots.txt
+#   https://www.google.com/webmasters/tools/robots-testing-tool
+#
+# Submit your sitemap at:
+#   Google Search Console → Sitemaps
+#   Bing Webmaster Tools  → Sitemaps
+# ============================================================
+
+# ── Allow all well-behaved crawlers ────────────────────────
+User-agent: *
+
+# Allow everything by default
+Allow: /
+
+# Block template and internal files (not useful to crawl)
+Disallow: /_base-template.html
+Disallow: /README.md
+
+# Block query strings on calculator pages
+# (prevents duplicate content from URL params)
+Disallow: /*?*
+
+# ── Google-specific directives ──────────────────────────────
+User-agent: Googlebot
+Allow: /
+Disallow: /_base-template.html
+Disallow: /README.md
+
+# Allow Google to crawl AdSense ad files
+User-agent: Mediapartners-Google
+Allow: /
+
+# ── Bing ────────────────────────────────────────────────────
+User-agent: Bingbot
+Allow: /
+Disallow: /_base-template.html
+Disallow: /README.md
+Crawl-delay: 2
+
+# ── Block known bad bots (saves crawl budget) ──────────────
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# ── Sitemap location ────────────────────────────────────────
+# Submit this URL to Google Search Console and Bing Webmaster Tools
+Sitemap: https://calchub.com/sitemap.xml

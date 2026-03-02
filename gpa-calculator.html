@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#07070f">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>GPA Calculator – Semester &amp; Cumulative GPA Calculator | CalcHub</title>
+  <meta name="description" content="Free GPA calculator — calculate your semester GPA and cumulative GPA by entering your courses, grades, and credit hours. Supports A–F letter grades and +/− grades.">
+  <meta name="keywords" content="GPA calculator, grade point average calculator, semester GPA calculator, cumulative GPA calculator, college GPA calculator, how to calculate GPA, weighted GPA calculator, GPA from grades">
+  <meta name="author" content="CalcHub">
+  <meta name="robots" content="index, follow">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free GPA Calculator – Semester and Cumulative GPA">
+  <meta name="twitter:description" content="Calculate your semester and cumulative GPA by entering courses, letter grades, and credit hours. Fast and accurate.">
+  <meta property="og:title" content="Free GPA Calculator – Semester and Cumulative GPA">
+  <meta property="og:description" content="Calculate your semester and cumulative GPA by entering courses, letter grades, and credit hours. Fast and accurate.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calchub.com/gpa-calculator.html">
+  <meta property="og:site_name" content="CalcHub">
+  <link rel="canonical" href="https://calchub.com/gpa-calculator.html">
+  <!-- Critical: preconnect to both font origins BEFORE font request -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Non-blocking async font load — eliminates render-blocking resource -->
+    <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Inter:wght@400;500;600;700;900&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Inter:wght@400;500;600;700;900&display=swap">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+  </noscript>
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="stylesheet" href="css/home-tailwind.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "GPA Calculator",
+  "url": "https://calchub.com/gpa-calculator.html",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "description": "Free GPA calculator \u2014 calculate your semester GPA and cumulative GPA by entering your courses, grades, and credit hours. Supports A\u2013F letter grades and +/\u2212 grades.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "Free gpa calculation",
+    "Instant results",
+    "Mobile-friendly interface",
+    "No sign-up required"
+  ],
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "CalcHub",
+    "url": "https://calchub.com"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate my GPA from letter grades?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Convert each letter grade to grade points (A=4.0, B=3.0, C=2.0, D=1.0, F=0.0, with +/\u2212 adjustments of \u00b10.3), then multiply each by the course's credit hours. Sum all those products, then divide by total credit hours. Example: English (3 credits, A = 4.0) + Math (4 credits, B+ = 3.3) + History (3 credits, A\u2212 = 3.7). Totals: (4.0\u00d73) + (3.3\u00d74) + (3.7\u00d73) = 12 + 13.2 + 11.1 = 36.3 quality points \u00f7 10 credit hours = 3.63 GPA. Enter your courses above for automatic calculation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good GPA in college?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Context matters, but general benchmarks: 3.7\u20134.0 is excellent (Dean's List, magna/summa cum laude territory). 3.3\u20133.7 is very good (strong candidate for most graduate programs). 3.0\u20133.3 is above average (meets minimum requirements for most grad schools). 2.5\u20133.0 is average (some employers and programs have 3.0 minimum requirements). Below 2.5 may limit opportunities. Note: GPA standards vary by major \u2014 a 3.0 in engineering or pre-med is often more respected than a 3.8 in an easier major."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is a weighted GPA different from unweighted?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most common college GPA is weighted by credit hours \u2014 a 4-credit course counts more than a 2-credit course (this is what this calculator computes). Some high schools use a different type of \"weighted\" GPA that gives extra points for AP or honors courses (e.g., A in AP = 5.0 instead of 4.0). College GPA almost always means credit-hour weighted on a 4.0 scale \u2014 not the AP-style weighting. When someone asks about your college GPA, they mean the credit-weighted 4.0 scale version."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What GPA do I need to graduate with honors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Graduation honor thresholds vary by institution, but common standards: Cum Laude (\"with honor\") typically requires 3.5\u20133.6+ GPA. Magna Cum Laude (\"with great honor\") requires 3.7\u20133.8+. Summa Cum Laude (\"with highest honor\") requires 3.9\u20134.0. Some schools use a class rank system instead of fixed GPA thresholds (e.g., top 10% = Cum Laude, top 5% = Magna, top 2% = Summa). Check your school's specific requirements \u2014 they vary widely. Enter your current and projected grades above to see if you can reach your target threshold."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a bad freshman GPA ruin my chances for grad school?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not necessarily. Graduate admissions committees often look at grade trends, and a strong upward trajectory from a weak start demonstrates resilience and growth. Strategies: (1) Earn consistently high grades for the rest of college to maximize cumulative GPA improvement. (2) Prepare for and excel on standardized tests (GRE/GMAT) to demonstrate ability. (3) Get strong recommendation letters from professors who know your work well. (4) Address your freshman performance directly in your personal statement if relevant. (5) Consider a post-bac academic record program to prove consistent academic capability at a higher level."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://calchub.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Utility Calculators",
+      "item": "https://calchub.com/#other"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "GPA Calculator",
+      "item": "https://calchub.com/gpa-calculator.html"
+    }
+  ]
+}
+  </script>
+
+  <script src="js/common.js" defer></script>
+  <script src="js/site-header.js" defer></script>
+  <script src="js/site-footer.js" defer></script>
+  <script src="js/ads.js" defer></script>
+</head>
+<body>
+
+<site-header category="other"></site-header>
+
+<div class="page-wrap">
+  <main class="calc-page">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="index.html#other">Utility Calculators</a>
+      <span>›</span>
+      <span>GPA Calculator</span>
+    </nav>
+
+    <a href="index.html" class="back-btn">← All Calculators</a>
+
+    <h1 class="calc-title">🎓 GPA Calculator</h1>
+    <p class="calc-subtitle">Calculate your semester GPA and cumulative GPA by entering your courses, letter grades, and credit hours. Supports all standard A–F grades including + and − variants.</p>
+
+
+    <div class="fg"><label class="fl" for="inp1">Enter Value</label><input class="fi" id="inp1" type="number" placeholder="Enter a value"></div>
+    <button class="calc-btn" onclick="alert('This calculator is coming soon!')">Calculate</button>
+    <div class="info-box" style="margin-top:20px;">⚙️ Full calculator functionality for this tool is being added. The SEO content and structure are complete.</div>
+
+    
+    <!-- ── AD SLOT A: Post-result (highest intent) ─────────
+         User just got their answer. Natural pause before article.
+         Replace slot-id with real value from AdSense dashboard. -->
+    <ad-unit slot-id="1111111111" format="auto"></ad-unit>
+
+    <div class="seo-content-wrap">
+
+      <article class="seo-article" aria-label="Guide to GPA Calculator">
+
+<h2>How GPA Is Calculated</h2>
+<p>
+  GPA (Grade Point Average) is calculated by multiplying each course's <strong>grade points</strong> by its
+  <strong>credit hours</strong>, summing all those products, and dividing by total credit hours. This is a
+  <strong>weighted average</strong> — a 4-credit course counts twice as much as a 2-credit course.
+</p>
+<div class="formula-box">
+  <span class="formula-label">GPA Formula</span>
+  <span class="formula">GPA = &sum;(Grade Points &times; Credit Hours) / &sum;(Credit Hours)</span>
+  <div class="formula-vars">
+    <span>A = 4.0 &nbsp; A&minus; = 3.7 &nbsp; B+ = 3.3 &nbsp; B = 3.0 &nbsp; B&minus; = 2.7</span>
+    <span>C+ = 2.3 &nbsp; C = 2.0 &nbsp; C&minus; = 1.7 &nbsp; D = 1.0 &nbsp; F = 0.0</span>
+  </div>
+</div>
+
+<h3>Understanding the 4.0 Scale</h3>
+<p>
+  Most US colleges use a <strong>4.0 scale</strong> where A = 4.0 and F = 0.0. Some schools use a
+  4.33 scale where A+ = 4.33, but many cap A+ at 4.0. For graduate school applications, most programs
+  prefer a GPA of 3.0 or above (B average); competitive programs often require 3.5+. Medical and law
+  schools typically want 3.5–4.0.
+</p>
+
+
+
+        <!-- ── AD SLOT B: Mid-article ─────────────────────────────
+             Placed between article sections. High viewability — user
+             is actively reading. Replace slot-id with real AdSense value. -->
+        <ad-unit slot-id="2222222222" format="rectangle"></ad-unit>
+<h3>Semester vs Cumulative GPA</h3>
+<p>
+  <strong>Semester GPA</strong> only includes courses from the current term — useful for measuring
+  one semester's performance. <strong>Cumulative GPA</strong> averages all courses taken throughout
+  your college career. Admissions, scholarships, and honors programs typically evaluate cumulative GPA.
+  Your semester GPA can pull your cumulative up or down depending on how it compares to your cumulative average.
+</p>
+
+<h3>What GPA Do You Need for Grad School?</h3>
+<ul class="seo-list">
+  <li><strong>Top-tier PhD programs / medical school:</strong> 3.7–4.0</li>
+  <li><strong>Competitive master's programs:</strong> 3.3–3.7</li>
+  <li><strong>Standard graduate admission:</strong> 3.0 minimum at most schools</li>
+  <li><strong>MBA programs (top schools):</strong> 3.5+ average for admitted students</li>
+  <li><strong>Law school (T14):</strong> 3.7+ is competitive</li>
+</ul>
+
+<h3>Can You Raise Your GPA Significantly?</h3>
+<p>
+  GPA is slow to change due to accumulated credit hours. With 60 credits at 2.8, even getting straight A's
+  (4.0) for the next 30 credits only brings your cumulative GPA to: (2.8×60 + 4.0×30) / 90 = 3.2.
+  Start improving immediately — the earlier in your academic career, the more leverage you have.
+  Use this calculator to simulate the impact of different grade scenarios in upcoming courses.
+</p>
+
+      </article>
+
+      <div class="related-calcs">
+        <p class="related-title">Related Calculators</p>
+        <div class="related-grid">
+          <a href="grade-calculator.html" class="related-card"><span class="related-card-icon">📝</span><span class="related-card-name">Grade Calculator</span></a>
+          <a href="percentage-calculator.html" class="related-card"><span class="related-card-icon">%</span><span class="related-card-name">Percentage Calculator</span></a>
+          <a href="standard-deviation-calculator.html" class="related-card"><span class="related-card-icon">σ</span><span class="related-card-name">Standard Deviation</span></a>
+          <a href="salary-calculator.html" class="related-card"><span class="related-card-icon">💼</span><span class="related-card-name">Salary Calculator</span></a>
+          <a href="age-calculator.html" class="related-card"><span class="related-card-icon">🎂</span><span class="related-card-name">Age Calculator</span></a>
+          <a href="hours-calculator.html" class="related-card"><span class="related-card-icon">⏱️</span><span class="related-card-name">Hours Calculator</span></a>
+        </div>
+      </div>
+
+      <section class="faq-section" aria-label="Frequently asked questions">
+        <h2>Frequently Asked Questions</h2>
+        <p class="faq-intro">Common questions about how do i calculate... and more.</p>
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary class="faq-q">
+              <span>How do I calculate my GPA from letter grades?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>Convert each letter grade to grade points (A=4.0, B=3.0, C=2.0, D=1.0, F=0.0, with +/− adjustments of ±0.3), then multiply each by the course's credit hours. Sum all those products, then divide by total credit hours. Example: English (3 credits, A = 4.0) + Math (4 credits, B+ = 3.3) + History (3 credits, A− = 3.7). Totals: (4.0×3) + (3.3×4) + (3.7×3) = 12 + 13.2 + 11.1 = 36.3 quality points ÷ 10 credit hours = 3.63 GPA. Enter your courses above for automatic calculation.</p></div>
+          </details>          <details class="faq-item">
+            <summary class="faq-q">
+              <span>What is a good GPA in college?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>Context matters, but general benchmarks: <strong>3.7–4.0</strong> is excellent (Dean's List, magna/summa cum laude territory). <strong>3.3–3.7</strong> is very good (strong candidate for most graduate programs). <strong>3.0–3.3</strong> is above average (meets minimum requirements for most grad schools). <strong>2.5–3.0</strong> is average (some employers and programs have 3.0 minimum requirements). <strong>Below 2.5</strong> may limit opportunities. Note: GPA standards vary by major — a 3.0 in engineering or pre-med is often more respected than a 3.8 in an easier major.</p></div>
+          </details>          <details class="faq-item">
+            <summary class="faq-q">
+              <span>How is a weighted GPA different from unweighted?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>The most common college GPA is <strong>weighted by credit hours</strong> — a 4-credit course counts more than a 2-credit course (this is what this calculator computes). Some high schools use a different type of "weighted" GPA that gives extra points for AP or honors courses (e.g., A in AP = 5.0 instead of 4.0). College GPA almost always means credit-hour weighted on a 4.0 scale — not the AP-style weighting. When someone asks about your college GPA, they mean the credit-weighted 4.0 scale version.</p></div>
+          </details>          <details class="faq-item">
+            <summary class="faq-q">
+              <span>What GPA do I need to graduate with honors?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>Graduation honor thresholds vary by institution, but common standards: <strong>Cum Laude</strong> ("with honor") typically requires 3.5–3.6+ GPA. <strong>Magna Cum Laude</strong> ("with great honor") requires 3.7–3.8+. <strong>Summa Cum Laude</strong> ("with highest honor") requires 3.9–4.0. Some schools use a class rank system instead of fixed GPA thresholds (e.g., top 10% = Cum Laude, top 5% = Magna, top 2% = Summa). Check your school's specific requirements — they vary widely. Enter your current and projected grades above to see if you can reach your target threshold.</p></div>
+          </details>          <details class="faq-item">
+            <summary class="faq-q">
+              <span>Does a bad freshman GPA ruin my chances for grad school?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>Not necessarily. Graduate admissions committees often look at <strong>grade trends</strong>, and a strong upward trajectory from a weak start demonstrates resilience and growth. Strategies: (1) Earn consistently high grades for the rest of college to maximize cumulative GPA improvement. (2) Prepare for and excel on standardized tests (GRE/GMAT) to demonstrate ability. (3) Get strong recommendation letters from professors who know your work well. (4) Address your freshman performance directly in your personal statement if relevant. (5) Consider a post-bac academic record program to prove consistent academic capability at a higher level.</p></div>
+          </details>
+        </div>
+      </section>
+
+    </div><!-- /.seo-content-wrap -->
+
+  </main>
+</div>
+
+<site-footer></site-footer>
+<script src="js/page-init.js"></script>
+</body>
+</html>

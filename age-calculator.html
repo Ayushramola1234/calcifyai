@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#07070f">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Age Calculator – Exact Age in Years, Months &amp; Days | CalcHub</title>
+  <meta name="description" content="Free age calculator — find your exact age in years, months, days, and hours from any birth date. See your next birthday countdown and the day of the week you were born.">
+  <meta name="keywords" content="age calculator, how old am I, calculate age from birthday, exact age calculator, age in years months days, birthday calculator, age difference calculator, next birthday calculator, days old calculator">
+  <meta name="author" content="CalcHub">
+  <meta name="robots" content="index, follow">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Age Calculator – Find Your Exact Age from Birthdate">
+  <meta name="twitter:description" content="Calculate your exact age in years, months, days, and hours from any birth date. See next birthday countdown and day of the week you were born.">
+  <meta property="og:title" content="Free Age Calculator – Find Your Exact Age from Birthdate">
+  <meta property="og:description" content="Calculate your exact age in years, months, days, and hours from any birth date. See next birthday countdown and day of the week you were born.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calchub.com/age-calculator.html">
+  <meta property="og:site_name" content="CalcHub">
+  <link rel="canonical" href="https://calchub.com/age-calculator.html">
+  <!-- Critical: preconnect to both font origins BEFORE font request -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Non-blocking async font load — eliminates render-blocking resource -->
+    <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Inter:wght@400;500;600;700;900&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Inter:wght@400;500;600;700;900&display=swap">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+  </noscript>
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="stylesheet" href="css/home-tailwind.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Age Calculator",
+  "url": "https://calchub.com/age-calculator.html",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "description": "Free age calculator \u2014 find your exact age in years, months, days, and hours from any birth date. See your next birthday countdown and the day of the week you were born.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "Free age calculation",
+    "Instant results",
+    "Mobile-friendly interface",
+    "No sign-up required"
+  ],
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "CalcHub",
+    "url": "https://calchub.com"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate my exact age from my birth date?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To calculate your exact age: (1) Start with the difference in calendar years. (2) Check if your birthday this year has passed \u2014 if not, subtract 1 from the years. (3) Count remaining months since your last birthday. (4) Count remaining days within the current month. Example: Born June 15, 1990; today is March 10, 2024. Full years: 2024 \u2212 1990 = 34, minus 1 because June hasn't come yet = 33. Months since last birthday (June 15): July, Aug, Sep, Oct, Nov, Dec, Jan, Feb = 8 months, plus partial March = 8 months 24 days. Age: 33 years, 8 months, 23 days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What day of the week was I born on?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the Zeller's Congruence or Doomsday algorithm to calculate the day of the week for any historical date \u2014 or simply enter your birth date above and the calculator shows it instantly. Fun facts: more babies are born on weekdays (especially Tuesday and Wednesday) than weekends because many planned births and C-sections are scheduled Monday\u2013Friday. Saturday and Sunday have the lowest birth counts. The most common birthday in the US is September 9 \u2014 nine months after December's holiday season."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if my birthday is February 29 (leap day)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Leap day birthdays (February 29) occur only in leap years \u2014 roughly every 4 years (with exceptions for century years). People born on Feb 29 are called \"leaplings\" or \"leap year babies.\" In non-leap years, most leaplings celebrate on either February 28 or March 1 depending on personal preference and local law. The UK and Hong Kong legally recognize March 1 as the birthday for non-leap years; the US has no federal standard. This calculator handles Feb 29 birthdays correctly, displaying February 28 as the anniversary in non-leap years."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate the age difference between two people?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Calculate each person's age using their birth date and today's date, then subtract. Or more precisely: (1) Subtract the earlier birth year from the later birth year. (2) Check if the younger person's birthday has passed relative to the older person's \u2014 adjust by 1 if needed. For exact calculation to the day, use our date calculator to find the number of days between the two birth dates and divide by 365.25. Example: Born Oct 5, 1985 and April 12, 1992 \u2014 the difference is approximately 6 years, 6 months, 7 days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How old am I in days, hours, and minutes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Calculate your total days old by multiplying your full years by 365 and adding the remaining days (accounting for leap years). Then multiply by 24 for hours and 1,440 for minutes. Approximately: 20 years = 7,305 days = 175,320 hours. 30 years = 10,958 days = 263,000 hours. 40 years = 14,610 days = 350,640 hours. 50 years = 18,263 days = 438,315 hours. Enter your birthdate above \u2014 the calculator handles all the leap year math and shows your precise total in days, hours, weeks, and months."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://calchub.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Utility Calculators",
+      "item": "https://calchub.com/#other"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Age Calculator",
+      "item": "https://calchub.com/age-calculator.html"
+    }
+  ]
+}
+  </script>
+
+  <script src="js/common.js" defer></script>
+  <script src="js/site-header.js" defer></script>
+  <script src="js/site-footer.js" defer></script>
+  <script src="js/ads.js" defer></script>
+</head>
+<body>
+
+<site-header category="other"></site-header>
+
+<div class="page-wrap">
+  <main class="calc-page">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="index.html#other">Utility Calculators</a>
+      <span>›</span>
+      <span>Age Calculator</span>
+    </nav>
+
+    <a href="index.html" class="back-btn">← All Calculators</a>
+
+    <h1 class="calc-title">🎂 Age Calculator</h1>
+    <p class="calc-subtitle">Calculate your exact age in years, months, days, and hours from any date of birth. Discover your next birthday countdown, what day of the week you were born, and more.</p>
+
+
+    <div class="fg"><label class="fl" for="inp1">Enter Value</label><input class="fi" id="inp1" type="number" placeholder="Enter a value"></div>
+    <button class="calc-btn" onclick="alert('This calculator is coming soon!')">Calculate</button>
+    <div class="info-box" style="margin-top:20px;">⚙️ Full calculator functionality for this tool is being added. The SEO content and structure are complete.</div>
+
+    
+    <!-- ── AD SLOT A: Post-result (highest intent) ─────────
+         User just got their answer. Natural pause before article.
+         Replace slot-id with real value from AdSense dashboard. -->
+    <ad-unit slot-id="1111111111" format="auto"></ad-unit>
+
+    <div class="seo-content-wrap">
+
+      <article class="seo-article" aria-label="Guide to Age Calculator">
+
+<h2>How Age Calculation Works</h2>
+<p>
+  Age calculation sounds simple — subtract birth year from current year — but accurate age requires
+  accounting for <strong>whether the current year's birthday has occurred yet</strong>. If today is
+  March 15 and your birthday is April 1, you haven't turned your next age yet even though the year
+  subtraction suggests you have.
+</p>
+<p>
+  This calculator computes the <strong>exact age</strong>: years complete, then remaining months, then
+  remaining days. It also handles edge cases like <strong>February 29 birthdays</strong> (leap day birthdays)
+  and gives your total age in days, hours, and minutes for the curious.
+</p>
+
+<h2>Exact Age Calculation Method</h2>
+<div class="formula-box">
+  <span class="formula-label">Age Calculation Steps</span>
+  <span class="formula">Years = Current Year &minus; Birth Year (adjusted for birthday)</span>
+  <span class="formula">Months = Remaining months after full years</span>
+  <span class="formula">Days = Remaining days after full months</span>
+</div>
+
+<h3>Age Milestones Worth Knowing</h3>
+<p>
+  Various age thresholds carry legal or cultural significance in the United States and internationally:
+</p>
+<ul class="seo-list">
+  <li><strong>13</strong> — COPPA age threshold for online services; teenager age begins</li>
+  <li><strong>16</strong> — Driving age in most US states</li>
+  <li><strong>18</strong> — Legal adult in most countries; US voting age; military service</li>
+  <li><strong>21</strong> — Legal drinking age in the United States</li>
+  <li><strong>25</strong> — Car rental without surcharge; prefrontal cortex fully developed</li>
+  <li><strong>59½</strong> — IRA/401(k) withdrawals allowed without penalty</li>
+  <li><strong>62</strong> — Earliest Social Security retirement benefits</li>
+  <li><strong>65</strong> — Medicare eligibility in the US</li>
+  <li><strong>67</strong> — Full Social Security retirement age for those born after 1960</li>
+</ul>
+
+
+
+        <!-- ── AD SLOT B: Mid-article ─────────────────────────────
+             Placed between article sections. High viewability — user
+             is actively reading. Replace slot-id with real AdSense value. -->
+        <ad-unit slot-id="2222222222" format="rectangle"></ad-unit>
+<h3>Calculating Age Differences Between Two People</h3>
+<p>
+  To find the age difference between two people, enter each person's birth date separately and subtract
+  the results. Alternatively, use the "date between" mode of our <a href="date-calculator.html">date
+  calculator</a> to find the exact days, months, and years between any two dates, which gives the
+  precise age gap to the day.
+</p>
+
+<h3>How Many Days Old Are You?</h3>
+<p>
+  Enter your birthday and the calculator shows your total age in days. Most 30-year-olds are around
+  <strong>10,950 days old</strong>; a 40-year-old around <strong>14,610 days</strong>; and a 50-year-old
+  approximately <strong>18,250 days</strong>. Seeing age in days gives a different and often surprising
+  perspective on time — especially useful for reminding yourself how many days you have to pursue a goal.
+</p>
+
+      </article>
+
+      <div class="related-calcs">
+        <p class="related-title">Related Calculators</p>
+        <div class="related-grid">
+          <a href="date-calculator.html" class="related-card"><span class="related-card-icon">📅</span><span class="related-card-name">Date Calculator</span></a>
+          <a href="time-calculator.html" class="related-card"><span class="related-card-icon">⏰</span><span class="related-card-name">Time Calculator</span></a>
+          <a href="bmi-calculator.html" class="related-card"><span class="related-card-icon">⚖️</span><span class="related-card-name">BMI Calculator</span></a>
+          <a href="pregnancy-calculator.html" class="related-card"><span class="related-card-icon">🤰</span><span class="related-card-name">Pregnancy Calculator</span></a>
+          <a href="due-date-calculator.html" class="related-card"><span class="related-card-icon">📅</span><span class="related-card-name">Due Date Calculator</span></a>
+          <a href="hours-calculator.html" class="related-card"><span class="related-card-icon">⏱️</span><span class="related-card-name">Hours Calculator</span></a>
+        </div>
+      </div>
+
+      <section class="faq-section" aria-label="Frequently asked questions">
+        <h2>Frequently Asked Questions</h2>
+        <p class="faq-intro">Common questions about how do i calculate... and more.</p>
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary class="faq-q">
+              <span>How do I calculate my exact age from my birth date?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>To calculate your exact age: (1) Start with the difference in calendar years. (2) Check if your birthday this year has passed — if not, subtract 1 from the years. (3) Count remaining months since your last birthday. (4) Count remaining days within the current month. Example: Born June 15, 1990; today is March 10, 2024. Full years: 2024 − 1990 = 34, minus 1 because June hasn't come yet = 33. Months since last birthday (June 15): July, Aug, Sep, Oct, Nov, Dec, Jan, Feb = 8 months, plus partial March = 8 months 24 days. Age: 33 years, 8 months, 23 days.</p></div>
+          </details>          <details class="faq-item">
+            <summary class="faq-q">
+              <span>What day of the week was I born on?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>Use the Zeller's Congruence or Doomsday algorithm to calculate the day of the week for any historical date — or simply enter your birth date above and the calculator shows it instantly. Fun facts: more babies are born on weekdays (especially Tuesday and Wednesday) than weekends because many planned births and C-sections are scheduled Monday–Friday. Saturday and Sunday have the lowest birth counts. The most common birthday in the US is September 9 — nine months after December's holiday season.</p></div>
+          </details>          <details class="faq-item">
+            <summary class="faq-q">
+              <span>What if my birthday is February 29 (leap day)?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>Leap day birthdays (February 29) occur only in leap years — roughly every 4 years (with exceptions for century years). People born on Feb 29 are called <strong>"leaplings"</strong> or <strong>"leap year babies."</strong> In non-leap years, most leaplings celebrate on either February 28 or March 1 depending on personal preference and local law. The UK and Hong Kong legally recognize March 1 as the birthday for non-leap years; the US has no federal standard. This calculator handles Feb 29 birthdays correctly, displaying February 28 as the anniversary in non-leap years.</p></div>
+          </details>          <details class="faq-item">
+            <summary class="faq-q">
+              <span>How do I calculate the age difference between two people?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>Calculate each person's age using their birth date and today's date, then subtract. Or more precisely: (1) Subtract the earlier birth year from the later birth year. (2) Check if the younger person's birthday has passed relative to the older person's — adjust by 1 if needed. For exact calculation to the day, use our <a href="date-calculator.html">date calculator</a> to find the number of days between the two birth dates and divide by 365.25. Example: Born Oct 5, 1985 and April 12, 1992 — the difference is approximately 6 years, 6 months, 7 days.</p></div>
+          </details>          <details class="faq-item">
+            <summary class="faq-q">
+              <span>How old am I in days, hours, and minutes?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>Calculate your total days old by multiplying your full years by 365 and adding the remaining days (accounting for leap years). Then multiply by 24 for hours and 1,440 for minutes. Approximately: 20 years = 7,305 days = 175,320 hours. 30 years = 10,958 days = 263,000 hours. 40 years = 14,610 days = 350,640 hours. 50 years = 18,263 days = 438,315 hours. Enter your birthdate above — the calculator handles all the leap year math and shows your precise total in days, hours, weeks, and months.</p></div>
+          </details>
+        </div>
+      </section>
+
+    </div><!-- /.seo-content-wrap -->
+
+  </main>
+</div>
+
+<site-footer></site-footer>
+<script src="js/page-init.js"></script>
+</body>
+</html>

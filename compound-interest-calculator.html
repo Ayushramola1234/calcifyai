@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#07070f">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Compound Interest Calculator – Investment Growth Over Time | CalcHub</title>
+  <meta name="description" content="Free compound interest calculator — see how your savings or investments grow over time with compound interest. Choose daily, monthly, or annual compounding. Free and instant.">
+  <meta name="keywords" content="compound interest calculator, investment growth calculator, compound interest formula, daily compound interest, monthly compound interest, savings growth calculator, future value calculator, APY calculator">
+  <meta name="author" content="CalcHub">
+  <meta name="robots" content="index, follow">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Compound Interest Calculator – See Your Money Grow">
+  <meta name="twitter:description" content="Calculate how compound interest grows your investment over time. Compare daily, monthly, and annual compounding.">
+  <meta property="og:title" content="Free Compound Interest Calculator – See Your Money Grow">
+  <meta property="og:description" content="Calculate how compound interest grows your investment over time. Compare daily, monthly, and annual compounding.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calchub.com/compound-interest-calculator.html">
+  <meta property="og:site_name" content="CalcHub">
+  <link rel="canonical" href="https://calchub.com/compound-interest-calculator.html">
+  <!-- Critical: preconnect to both font origins BEFORE font request -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Non-blocking async font load — eliminates render-blocking resource -->
+    <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Inter:wght@400;500;600;700;900&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Inter:wght@400;500;600;700;900&display=swap">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+  </noscript>
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="stylesheet" href="css/home-tailwind.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Compound Interest Calculator",
+  "url": "https://calchub.com/compound-interest-calculator.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "description": "Free compound interest calculator \u2014 see how your savings or investments grow over time with compound interest. Choose daily, monthly, or annual compounding. Free and instant.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "Free compound calculation",
+    "Instant results",
+    "Mobile-friendly interface",
+    "No sign-up required"
+  ],
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "CalcHub",
+    "url": "https://calchub.com"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does compound interest work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compound interest works by adding earned interest back to the principal, so that in subsequent periods you earn interest on a larger base. For example: $1,000 at 10% earns $100 in year one (total: $1,100). In year two, you earn 10% of $1,100 = $110 (total: $1,210). Year three: 10% of $1,210 = $121 (total: $1,331). Each year the interest payment grows because the base grows. Over decades, this creates exponential growth \u2014 which is why compound interest is so powerful for long-term savings and so costly for long-term debt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between APR and APY?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "APR (Annual Percentage Rate) is the stated interest rate without accounting for compounding within the year. APY (Annual Percentage Yield) includes the effect of compounding and represents the actual return you'll earn over a year. APY is always equal to or higher than APR. For savings accounts, banks advertise APY so you can compare apples to apples. For loans, lenders advertise APR (plus fees). When investing, always focus on APY \u2014 it's the true return you'll compound on."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to double money with compound interest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the Rule of 72: divide 72 by the annual interest rate to get the approximate doubling time in years. At 4%: 18 years. At 6%: 12 years. At 8%: 9 years. At 10%: 7.2 years. At 12%: 6 years. For more precision, use the exact formula: t = ln(2) / ln(1+r). The Rule of 72 is accurate to within a few months for rates between 4\u201315% and is useful for quick mental estimates. Enter your rate above to see the exact answer for your situation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is compound interest good or bad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compound interest is powerful in both directions. For savings and investments, it's enormously beneficial \u2014 your wealth grows exponentially over time. For debt (credit cards, personal loans), it works against you \u2014 unpaid balances grow exponentially, which is why credit card debt can spiral so quickly. A $5,000 credit card balance at 24% APR compounded monthly grows to $15,987 after 10 years with no payments. The key: maximize compound interest working for you (invest early, invest consistently) and minimize it working against you (pay off high-interest debt aggressively)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does $1,000 grow with compound interest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the rate and time. At 7% compounded annually: 10 years \u2192 $1,967 | 20 years \u2192 $3,870 | 30 years \u2192 $7,612 | 40 years \u2192 $14,974. At 10%: 10 years \u2192 $2,594 | 20 years \u2192 $6,727 | 30 years \u2192 $17,449 | 40 years \u2192 $45,259. Notice how the gains accelerate in later years \u2014 this is the compounding effect at work. The longer your time horizon, the more dramatic the growth. Enter your own numbers above to see your specific projection."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://calchub.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Financial Calculators",
+      "item": "https://calchub.com/#financial"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Compound Interest Calculator",
+      "item": "https://calchub.com/compound-interest-calculator.html"
+    }
+  ]
+}
+  </script>
+
+  <script src="js/common.js" defer></script>
+  <script src="js/site-header.js" defer></script>
+  <script src="js/site-footer.js" defer></script>
+  <script src="js/ads.js" defer></script>
+</head>
+<body>
+
+<site-header category="financial"></site-header>
+
+<div class="page-wrap">
+  <main class="calc-page">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="index.html#financial">Financial Calculators</a>
+      <span>›</span>
+      <span>Compound Interest Calculator</span>
+    </nav>
+
+    <a href="index.html" class="back-btn">← All Calculators</a>
+
+    <h1 class="calc-title">🌱 Compound Interest Calculator</h1>
+    <p class="calc-subtitle">See exactly how your savings or investments grow over time with the power of compound interest. Compare compounding frequencies and understand why starting early matters so much.</p>
+
+
+    <div class="fg"><label class="fl" for="inp1">Enter Value</label><input class="fi" id="inp1" type="number" placeholder="Enter a value"></div>
+    <button class="calc-btn" onclick="alert('This calculator is coming soon!')">Calculate</button>
+    <div class="info-box" style="margin-top:20px;">⚙️ Full calculator functionality for this tool is being added. The SEO content and structure are complete.</div>
+
+    
+    <!-- ── AD SLOT A: Post-result (highest intent) ─────────
+         User just got their answer. Natural pause before article.
+         Replace slot-id with real value from AdSense dashboard. -->
+    <ad-unit slot-id="1111111111" format="auto"></ad-unit>
+
+    <div class="seo-content-wrap">
+
+      <article class="seo-article" aria-label="Guide to Compound Interest Calculator">
+
+<h2>What Is Compound Interest?</h2>
+<p>
+  <strong>Compound interest</strong> is interest calculated on both the initial principal <em>and</em> the
+  accumulated interest from previous periods. Albert Einstein reportedly called it the "eighth wonder of the
+  world" — and the math bears this out: a $10,000 investment at 7% annual compound interest becomes $76,123
+  after 30 years, even with no additional contributions.
+</p>
+<p>
+  This contrasts with <strong>simple interest</strong>, which is calculated only on the original principal.
+  The same $10,000 at 7% simple interest would only reach $31,000 after 30 years — $45,000 less.
+  The difference is entirely due to the compounding effect.
+</p>
+
+<h2>The Compound Interest Formula</h2>
+<div class="formula-box">
+  <span class="formula-label">Future Value</span>
+  <span class="formula">A = P(1 + r/n)&sup;(nt) + PMT &times; [(1+r/n)&sup;(nt) &minus; 1] / (r/n)</span>
+  <div class="formula-vars">
+    <span><strong>A</strong> = Final amount &nbsp; <strong>P</strong> = Principal</span>
+    <span><strong>r</strong> = Annual interest rate &nbsp; <strong>n</strong> = Compounds per year</span>
+    <span><strong>t</strong> = Time in years &nbsp; <strong>PMT</strong> = Monthly contribution</span>
+  </div>
+</div>
+<p>
+  The critical insight: the more frequently interest compounds, the faster your money grows. Daily compounding
+  earns slightly more than monthly, which earns more than annual — though for most savings accounts and
+  investments the difference is modest.
+</p>
+
+<h3>Why Time Is the Most Powerful Variable</h3>
+<p>
+  Investing <strong>$200/month for 40 years</strong> at 7% yields $525,000. Starting just 10 years later and
+  investing the same $200/month for 30 years yields only $242,000 — less than half, despite only 10 fewer
+  years. The first decade alone accounts for the majority of the final balance due to compounding.
+  The lesson: start investing as early as possible, even small amounts.
+</p>
+
+
+
+        <!-- ── AD SLOT B: Mid-article ─────────────────────────────
+             Placed between article sections. High viewability — user
+             is actively reading. Replace slot-id with real AdSense value. -->
+        <ad-unit slot-id="2222222222" format="rectangle"></ad-unit>
+<h3>Compound Interest in Savings Accounts</h3>
+<p>
+  High-yield savings accounts (HYSAs) and money market accounts advertise <strong>APY (Annual Percentage
+  Yield)</strong>, which already accounts for compounding frequency. A 5.00% APY compounded daily is
+  slightly better than 5.00% compounded monthly. Always compare APY (not APR) when evaluating savings products.
+</p>
+
+<h3>The Rule of 72</h3>
+<p>
+  A quick mental shortcut: divide 72 by the annual interest rate to estimate how many years your money takes
+  to double. At 6%, your investment doubles in about <strong>12 years</strong> (72 ÷ 6). At 9%, it doubles
+  in <strong>8 years</strong>. This works because compound growth is roughly logarithmic over shorter periods.
+</p>
+
+<p>
+  For projecting retirement savings with regular contributions, see our
+  <a href="retirement-calculator.html">retirement calculator</a>. For comparing investment strategies
+  or one-off investments, try the <a href="investment-calculator.html">investment calculator</a>.
+</p>
+
+      </article>
+
+      <div class="related-calcs">
+        <p class="related-title">Related Calculators</p>
+        <div class="related-grid">
+          <a href="investment-calculator.html" class="related-card"><span class="related-card-icon">📊</span><span class="related-card-name">Investment Calculator</span></a>
+          <a href="retirement-calculator.html" class="related-card"><span class="related-card-icon">👴</span><span class="related-card-name">Retirement Calculator</span></a>
+          <a href="interest-calculator.html" class="related-card"><span class="related-card-icon">📈</span><span class="related-card-name">Interest Calculator</span></a>
+          <a href="inflation-calculator.html" class="related-card"><span class="related-card-icon">💸</span><span class="related-card-name">Inflation Calculator</span></a>
+          <a href="savings-calculator.html" class="related-card"><span class="related-card-icon">💰</span><span class="related-card-name">Mortgage Calculator</span></a>
+          <a href="salary-calculator.html" class="related-card"><span class="related-card-icon">💼</span><span class="related-card-name">Salary Calculator</span></a>
+        </div>
+      </div>
+
+      <section class="faq-section" aria-label="Frequently asked questions">
+        <h2>Frequently Asked Questions</h2>
+        <p class="faq-intro">Common questions about how does compound interest... and more.</p>
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary class="faq-q">
+              <span>How does compound interest work?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>Compound interest works by <strong>adding earned interest back to the principal</strong>, so that in subsequent periods you earn interest on a larger base. For example: $1,000 at 10% earns $100 in year one (total: $1,100). In year two, you earn 10% of $1,100 = $110 (total: $1,210). Year three: 10% of $1,210 = $121 (total: $1,331). Each year the interest payment grows because the base grows. Over decades, this creates exponential growth — which is why compound interest is so powerful for long-term savings and so costly for long-term debt.</p></div>
+          </details>          <details class="faq-item">
+            <summary class="faq-q">
+              <span>What is the difference between APR and APY?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p><strong>APR (Annual Percentage Rate)</strong> is the stated interest rate without accounting for compounding within the year. <strong>APY (Annual Percentage Yield)</strong> includes the effect of compounding and represents the actual return you'll earn over a year. APY is always equal to or higher than APR. For savings accounts, banks advertise APY so you can compare apples to apples. For loans, lenders advertise APR (plus fees). When investing, always focus on APY — it's the true return you'll compound on.</p></div>
+          </details>          <details class="faq-item">
+            <summary class="faq-q">
+              <span>How long does it take to double money with compound interest?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>Use the <strong>Rule of 72</strong>: divide 72 by the annual interest rate to get the approximate doubling time in years. At 4%: 18 years. At 6%: 12 years. At 8%: 9 years. At 10%: 7.2 years. At 12%: 6 years. For more precision, use the exact formula: t = ln(2) / ln(1+r). The Rule of 72 is accurate to within a few months for rates between 4–15% and is useful for quick mental estimates. Enter your rate above to see the exact answer for your situation.</p></div>
+          </details>          <details class="faq-item">
+            <summary class="faq-q">
+              <span>Is compound interest good or bad?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>Compound interest is <strong>powerful in both directions</strong>. For savings and investments, it's enormously beneficial — your wealth grows exponentially over time. For debt (credit cards, personal loans), it works against you — unpaid balances grow exponentially, which is why credit card debt can spiral so quickly. A $5,000 credit card balance at 24% APR compounded monthly grows to $15,987 after 10 years with no payments. The key: maximize compound interest working for you (invest early, invest consistently) and minimize it working against you (pay off high-interest debt aggressively).</p></div>
+          </details>          <details class="faq-item">
+            <summary class="faq-q">
+              <span>How much does $1,000 grow with compound interest?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>It depends on the rate and time. At <strong>7% compounded annually</strong>: 10 years → $1,967 | 20 years → $3,870 | 30 years → $7,612 | 40 years → $14,974. At <strong>10%</strong>: 10 years → $2,594 | 20 years → $6,727 | 30 years → $17,449 | 40 years → $45,259. Notice how the gains accelerate in later years — this is the compounding effect at work. The longer your time horizon, the more dramatic the growth. Enter your own numbers above to see your specific projection.</p></div>
+          </details>
+        </div>
+      </section>
+
+    </div><!-- /.seo-content-wrap -->
+
+  </main>
+</div>
+
+<site-footer></site-footer>
+<script src="js/page-init.js"></script>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#07070f">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Loan Calculator – Monthly EMI Payment &amp; Interest | CalcHub</title>
+  <meta name="description" content="Free loan calculator — calculate your monthly EMI, total interest payable, and full principal vs interest breakdown for any personal, home, or car loan.">
+  <meta name="keywords" content="loan calculator, EMI calculator, monthly payment calculator, personal loan calculator, loan interest calculator, loan repayment calculator, EMI formula, loan amortization, home loan EMI, car loan calculator">
+  <meta name="author" content="CalcHub">
+  <meta name="robots" content="index, follow">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Loan &amp; EMI Calculator – Monthly Payment &amp; Interest">
+  <meta name="twitter:description" content="Instantly calculate monthly EMI, total interest, and loan cost breakdown for any loan amount, rate, and tenure.">
+  <meta property="og:title" content="Free Loan &amp; EMI Calculator – Monthly Payment &amp; Interest">
+  <meta property="og:description" content="Instantly calculate monthly EMI, total interest, and loan cost breakdown for any loan amount, rate, and tenure.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calchub.com/loan-calculator.html">
+  <meta property="og:site_name" content="CalcHub">
+  <link rel="canonical" href="https://calchub.com/loan-calculator.html">
+  <!-- Critical: preconnect to both font origins BEFORE font request -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Non-blocking async font load — eliminates render-blocking resource -->
+    <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Inter:wght@400;500;600;700;900&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Inter:wght@400;500;600;700;900&display=swap">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+  </noscript>
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="stylesheet" href="css/home-tailwind.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Loan Calculator",
+  "url": "https://calchub.com/loan-calculator.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "description": "Free loan calculator \u2014 calculate your monthly EMI, total interest payable, and full principal vs interest breakdown for any personal, home, or car loan.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "Free loan calculation",
+    "Instant results",
+    "Mobile-friendly interface",
+    "No sign-up required"
+  ],
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "CalcHub",
+    "url": "https://calchub.com"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is EMI and how is it calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EMI (Equated Monthly Installment) is the fixed amount you pay to your lender every month until the loan is fully repaid. It includes both a principal component and an interest component. The formula is: EMI = P \u00d7 r(1+r)\u207f / [(1+r)\u207f \u2212 1], where P is the principal, r is the monthly interest rate (annual \u00f7 12), and n is the number of months. Each month, the interest portion decreases and the principal portion increases \u2014 this is called amortization."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between interest rate and APR?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The interest rate is the basic cost of borrowing the principal, expressed as a percentage per year. APR (Annual Percentage Rate) includes the interest rate plus all fees, origination charges, and other costs, expressed as a yearly rate. APR gives a more complete picture of the true cost of a loan. When comparing loans, always compare APRs \u2014 a loan with a lower interest rate but higher fees may actually cost more than one with a slightly higher rate and no fees."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I lower my monthly loan payment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There are four main levers: (1) Borrow less \u2014 a smaller principal directly reduces your payment. (2) Get a lower interest rate \u2014 improve your credit score, shop multiple lenders, or offer collateral. (3) Extend the loan tenure \u2014 spreading payments over more months reduces each payment, though you pay more total interest. (4) Refinance \u2014 if rates have fallen since you took your original loan, refinancing to a lower rate can significantly cut your monthly payment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if I pay more than my EMI each month?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Any amount above your regular EMI goes directly toward reducing your principal balance. This has two compounding benefits: you pay less interest in future months (since interest is calculated on the remaining balance), and you pay off the loan earlier than scheduled. Even a modest overpayment of $50\u2013$100 per month can save hundreds to thousands in interest over a multi-year loan. Check your loan agreement for any prepayment penalties before doing this \u2014 some lenders charge a fee for early payoff."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it better to take a shorter or longer loan tenure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A shorter tenure means higher monthly payments but significantly less total interest paid \u2014 the right choice if cash flow allows. A longer tenure keeps monthly payments low and frees up cash for other needs, but you pay substantially more in interest over time. Example: $15,000 at 9% for 3 years costs $477/month and $2,172 in interest. The same loan for 5 years costs $311/month but $3,680 in interest \u2014 $1,508 more for the convenience of lower payments. Use the rate comparison table above to model both scenarios side by side."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://calchub.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Financial Calculators",
+      "item": "https://calchub.com/#financial"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Loan Calculator",
+      "item": "https://calchub.com/loan-calculator.html"
+    }
+  ]
+}
+  </script>
+
+  <script src="js/common.js" defer></script>
+  <script src="js/site-header.js" defer></script>
+  <script src="js/site-footer.js" defer></script>
+  <script src="js/ads.js" defer></script>
+</head>
+<body>
+
+<site-header category="financial"></site-header>
+
+<div class="page-wrap">
+  <main class="calc-page">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="index.html#financial">Financial Calculators</a>
+      <span>›</span>
+      <span>Loan Calculator</span>
+    </nav>
+
+    <a href="index.html" class="back-btn">← All Calculators</a>
+
+    <h1 class="calc-title">🏦 Loan Calculator</h1>
+    <p class="calc-subtitle">Calculate your monthly EMI (Equated Monthly Installment), total interest payable, and see the complete principal vs interest breakdown for any loan.</p>
+
+
+    <div class="fg"><label class="fl" for="ln-amt">Loan Amount ($)</label><input class="fi" id="ln-amt" type="number" placeholder="e.g. 20,000"></div>
+    <div class="row2">
+      <div class="fg"><label class="fl" for="ln-rate">Annual Interest Rate (%)</label><input class="fi" id="ln-rate" type="number" placeholder="e.g. 8.5" step="0.01"></div>
+      <div class="fg"><label class="fl" for="ln-yr">Loan Term (years)</label><input class="fi" id="ln-yr" type="number" placeholder="e.g. 5"></div>
+    </div>
+    <button class="calc-btn" onclick="calcLoan()">Calculate EMI</button>
+    <div class="result-box" id="r" role="region">
+      <div class="rr big"><span class="rl">Monthly EMI</span><span class="rv" id="r-emi">—</span></div>
+      <div class="rr"><span class="rl">Total Interest</span><span class="rv bad" id="r-int">—</span></div>
+      <div class="rr"><span class="rl">Total Payment</span><span class="rv" id="r-tot">—</span></div>
+    </div>
+    <script>
+    function calcLoan(){
+      const P=parseFloat($('ln-amt').value),r=parseFloat($('ln-rate').value)/100/12,n=parseFloat($('ln-yr').value)*12;
+      if(!P||!r||!n)return alert('Fill all fields.');
+      const emi=P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1),tot=emi*n,int=tot-P;
+      $('r-emi').textContent='$'+fmt(emi);$('r-int').textContent='$'+fmt(int);$('r-tot').textContent='$'+fmt(tot);
+      showResult('r');
+    }
+    </script>
+
+    
+    <!-- ── AD SLOT A: Post-result (highest intent) ─────────
+         User just got their answer. Natural pause before article.
+         Replace slot-id with real value from AdSense dashboard. -->
+    <ad-unit slot-id="1111111111" format="auto"></ad-unit>
+
+    <div class="seo-content-wrap">
+
+      <article class="seo-article" aria-label="Guide to Loan Calculator">
+
+<h2>How to Calculate Your Loan EMI</h2>
+<p>
+  Enter your <strong>loan amount</strong>, <strong>annual interest rate</strong>, and <strong>loan tenure</strong>
+  (in years or months) to instantly see your fixed monthly EMI. The rate comparison table will also show how
+  your payment changes at ±1% and ±2% from your entered rate — useful when shopping between lenders.
+</p>
+<p>
+  Use the quick-rate pills to set common benchmarks instantly, or type any custom rate. Your EMI stays fixed
+  for the full term of a standard fixed-rate loan, though the split between principal and interest shifts each month.
+</p>
+
+<h2>The EMI Formula Explained</h2>
+<p>
+  All fixed-rate loan payments are calculated using the standard amortization formula:
+</p>
+<div class="formula-box">
+  <span class="formula-label">Monthly EMI</span>
+  <span class="formula">EMI = P &times; r(1+r)&sup;n / [(1+r)&sup;n &minus; 1]</span>
+  <div class="formula-vars">
+    <span><strong>P</strong> = Principal loan amount</span>
+    <span><strong>r</strong> = Monthly interest rate (annual rate &divide; 12)</span>
+    <span><strong>n</strong> = Total months (years &times; 12)</span>
+  </div>
+</div>
+<p>
+  For example, a <strong>$20,000 personal loan</strong> at <strong>10% APR</strong> for <strong>5 years</strong>
+  gives a monthly EMI of $424.94, total payments of $25,496, and total interest of $5,496.
+</p>
+
+<h3>How Interest Erodes Early Payments</h3>
+<p>
+  In the first month of a 10% loan, almost all of your EMI goes to interest. By the final month, nearly all
+  goes to principal. This front-loading of interest is called <strong>amortization</strong> and is why paying
+  even slightly more each month dramatically reduces your total interest cost. An extra $50/month on a
+  $20,000 five-year loan saves you over $400 in interest and pays it off two months early.
+</p>
+
+
+
+        <!-- ── AD SLOT B: Mid-article ─────────────────────────────
+             Placed between article sections. High viewability — user
+             is actively reading. Replace slot-id with real AdSense value. -->
+        <ad-unit slot-id="2222222222" format="rectangle"></ad-unit>
+<h3>Fixed vs Variable Rate Loans</h3>
+<p>
+  A <strong>fixed-rate loan</strong> keeps the same EMI for the entire term — predictable and easy to budget.
+  A <strong>variable-rate loan</strong> ties your rate to a benchmark index; your payment can rise or fall over
+  time. Fixed rates are typically higher than variable introductory rates but eliminate the risk of payment
+  shock if market rates rise.
+</p>
+
+<h3>How to Reduce Your Total Loan Cost</h3>
+<ul class="seo-list">
+  <li><strong>Improve your credit score before applying</strong> — Moving from 680 to 740 can cut your rate by 1–2%, saving thousands.</li>
+  <li><strong>Choose a shorter tenure</strong> — A 3-year loan costs far less in total interest than a 5-year loan, though monthly payments are higher.</li>
+  <li><strong>Make one extra payment per year</strong> — This alone can cut a 5-year loan to under 4.5 years.</li>
+  <li><strong>Refinance if rates drop</strong> — Use our <a href="interest-rate-calculator.html">interest rate calculator</a> to check if refinancing makes sense.</li>
+  <li><strong>Compare lenders</strong> — Even 0.5% difference on a $50,000 loan saves $1,300+ over 5 years.</li>
+</ul>
+<p>
+  For secured borrowing against property, see our <a href="mortgage-calculator.html">mortgage calculator</a>.
+  For vehicle financing, try the <a href="auto-loan-calculator.html">auto loan calculator</a>.
+</p>
+
+      </article>
+
+      <div class="related-calcs">
+        <p class="related-title">Related Calculators</p>
+        <div class="related-grid">
+          <a href="mortgage-calculator.html" class="related-card"><span class="related-card-icon">🏠</span><span class="related-card-name">Mortgage Calculator</span></a>
+          <a href="auto-loan-calculator.html" class="related-card"><span class="related-card-icon">🚗</span><span class="related-card-name">Auto Loan Calculator</span></a>
+          <a href="amortization-calculator.html" class="related-card"><span class="related-card-icon">📋</span><span class="related-card-name">Amortization Schedule</span></a>
+          <a href="interest-rate-calculator.html" class="related-card"><span class="related-card-icon">🔢</span><span class="related-card-name">Interest Rate Calculator</span></a>
+          <a href="payment-calculator.html" class="related-card"><span class="related-card-icon">💳</span><span class="related-card-name">Payment Calculator</span></a>
+          <a href="compound-interest-calculator.html" class="related-card"><span class="related-card-icon">🌱</span><span class="related-card-name">Compound Interest</span></a>
+        </div>
+      </div>
+
+      <section class="faq-section" aria-label="Frequently asked questions">
+        <h2>Frequently Asked Questions</h2>
+        <p class="faq-intro">Common questions about EMI, interest rates, loan tenures, and how to borrow smarter — answered clearly.</p>
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary class="faq-q">
+              <span>What is EMI and how is it calculated?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p><strong>EMI (Equated Monthly Installment)</strong> is the fixed amount you pay to your lender every month until the loan is fully repaid. It includes both a principal component and an interest component. The formula is: EMI = P × r(1+r)ⁿ / [(1+r)ⁿ − 1], where P is the principal, r is the monthly interest rate (annual ÷ 12), and n is the number of months. Each month, the interest portion decreases and the principal portion increases — this is called amortization.</p></div>
+          </details>          <details class="faq-item">
+            <summary class="faq-q">
+              <span>What is the difference between interest rate and APR?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>The <strong>interest rate</strong> is the basic cost of borrowing the principal, expressed as a percentage per year. <strong>APR (Annual Percentage Rate)</strong> includes the interest rate plus all fees, origination charges, and other costs, expressed as a yearly rate. APR gives a more complete picture of the true cost of a loan. When comparing loans, always compare APRs — a loan with a lower interest rate but higher fees may actually cost more than one with a slightly higher rate and no fees.</p></div>
+          </details>          <details class="faq-item">
+            <summary class="faq-q">
+              <span>How can I lower my monthly loan payment?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>There are four main levers: (1) <strong>Borrow less</strong> — a smaller principal directly reduces your payment. (2) <strong>Get a lower interest rate</strong> — improve your credit score, shop multiple lenders, or offer collateral. (3) <strong>Extend the loan tenure</strong> — spreading payments over more months reduces each payment, though you pay more total interest. (4) <strong>Refinance</strong> — if rates have fallen since you took your original loan, refinancing to a lower rate can significantly cut your monthly payment.</p></div>
+          </details>          <details class="faq-item">
+            <summary class="faq-q">
+              <span>What happens if I pay more than my EMI each month?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>Any amount above your regular EMI goes directly toward reducing your principal balance. This has two compounding benefits: you pay less interest in future months (since interest is calculated on the remaining balance), and you pay off the loan earlier than scheduled. Even a modest overpayment of $50–$100 per month can save hundreds to thousands in interest over a multi-year loan. Check your loan agreement for any prepayment penalties before doing this — some lenders charge a fee for early payoff.</p></div>
+          </details>          <details class="faq-item">
+            <summary class="faq-q">
+              <span>Is it better to take a shorter or longer loan tenure?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>A <strong>shorter tenure</strong> means higher monthly payments but significantly less total interest paid — the right choice if cash flow allows. A <strong>longer tenure</strong> keeps monthly payments low and frees up cash for other needs, but you pay substantially more in interest over time. Example: $15,000 at 9% for 3 years costs $477/month and $2,172 in interest. The same loan for 5 years costs $311/month but $3,680 in interest — $1,508 more for the convenience of lower payments. Use the rate comparison table above to model both scenarios side by side.</p></div>
+          </details>
+        </div>
+      </section>
+
+    </div><!-- /.seo-content-wrap -->
+
+  </main>
+</div>
+
+<site-footer></site-footer>
+<script src="js/page-init.js"></script>
+</body>
+</html>

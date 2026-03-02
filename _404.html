@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#07070f">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Page Not Found – CalcHub</title>
+  <meta name="description" content="The calculator page you were looking for couldn't be found. Browse 40+ free calculators on CalcHub.">
+  <meta name="robots" content="noindex, follow">
+  <!-- Critical: preconnect to both font origins BEFORE font request -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Non-blocking async font load — eliminates render-blocking resource -->
+    <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Inter:wght@400;500;600;700;900&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Inter:wght@400;500;600;700;900&display=swap">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+  </noscript>
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="stylesheet" href="css/home-tailwind.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script src="js/common.js" defer></script>
+  <script src="js/site-header.js" defer></script>
+  <script src="js/site-footer.js" defer></script>
+
+  <style>
+    .error-page {
+      max-width: 540px;
+      margin: 0 auto;
+      padding: 80px 24px;
+      text-align: center;
+    }
+
+    .error-code {
+      font-family: 'Space Mono', monospace;
+      font-size: 7rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .error-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .error-msg {
+      color: var(--muted2);
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .error-search {
+      background: var(--surf2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 28px;
+    }
+
+    .error-search input {
+      width: 100%;
+      background: var(--surf);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 12px 16px;
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+      font-size: .9rem;
+      outline: none;
+      transition: border-color .2s;
+    }
+
+    .error-search input:focus { border-color: var(--accent); }
+
+    .popular-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 10px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+<site-header></site-header>
+
+<div class="page-wrap">
+  <main class="error-page" role="main">
+
+    <div class="error-code" aria-label="404">404</div>
+    <h1 class="error-title">Page Not Found</h1>
+    <p class="error-msg">
+      That calculator doesn't seem to exist — or it may have moved.
+      Try searching below, or browse the full list on our home page.
+    </p>
+
+    <!-- Quick search -->
+    <div class="error-search">
+      <input
+        type="search"
+        id="err-search"
+        placeholder="Search 40+ calculators…"
+        autocomplete="off"
+        oninput="errSearch(this.value)"
+      >
+      <div id="err-results" style="margin-top:10px;"></div>
+    </div>
+
+    <!-- Go home -->
+    <a href="index.html" class="calc-btn" style="display:inline-block;text-decoration:none;margin-bottom:32px;">
+      ⌂ Browse All Calculators
+    </a>
+
+    <!-- Popular picks -->
+    <p style="font-size:.75rem;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;">Popular Calculators</p>
+    <div class="popular-grid">
+      <a href="mortgage-calculator.html"         class="related-card"><span class="related-card-icon">🏠</span><span class="related-card-name">Mortgage</span></a>
+      <a href="bmi-calculator.html"              class="related-card"><span class="related-card-icon">⚖️</span><span class="related-card-name">BMI</span></a>
+      <a href="compound-interest-calculator.html" class="related-card"><span class="related-card-icon">🌱</span><span class="related-card-name">Compound Interest</span></a>
+      <a href="scientific-calculator.html"       class="related-card"><span class="related-card-icon">🔬</span><span class="related-card-name">Scientific</span></a>
+      <a href="age-calculator.html"              class="related-card"><span class="related-card-icon">🎂</span><span class="related-card-name">Age</span></a>
+      <a href="gpa-calculator.html"              class="related-card"><span class="related-card-icon">🎓</span><span class="related-card-name">GPA</span></a>
+    </div>
+
+  </main>
+</div>
+
+<site-footer></site-footer>
+<script src="js/page-init.js"></script>
+
+<script>
+  function errSearch(q) {
+    const box = $('err-results');
+    q = q.trim().toLowerCase();
+    if (!q) { box.innerHTML = ''; return; }
+
+    const hits = (window.CALCS || [])
+      .filter(c =>
+        c.name.toLowerCase().includes(q) ||
+        c.cat.toLowerCase().includes(q)  ||
+        (c.tags || []).some(t => t.includes(q))
+      )
+      .slice(0, 6);
+
+    if (!hits.length) {
+      box.innerHTML = `<p style="color:var(--muted);font-size:.85rem;">No results for "${q}"</p>`;
+    } else {
+      box.innerHTML = hits.map(c =>
+        `<a href="${c.url}" style="display:flex;align-items:center;gap:10px;padding:10px 12px;
+          background:var(--surf);border:1px solid var(--border);border-radius:9px;
+          margin-bottom:6px;text-decoration:none;color:var(--text);transition:border-color .15s;"
+          onmouseover="this.style.borderColor='var(--accent)'"
+          onmouseout="this.style.borderColor='var(--border)'">
+          <span style="font-size:1.1rem">${c.icon}</span>
+          <span>
+            <strong style="font-size:.88rem">${c.name}</strong>
+            <span style="font-size:.75rem;color:var(--muted);display:block">${c.cat}</span>
+          </span>
+        </a>`
+      ).join('');
+    }
+  }
+
+  // Auto-focus search on 404
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => $('err-search')?.focus(), 300);
+  });
+</script>
+
+</body>
+</html>

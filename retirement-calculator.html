@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#07070f">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Retirement Calculator – How Much Do You Need to Retire? | CalcHub</title>
+  <meta name="description" content="Free retirement calculator — find out how much you need to retire, project your savings growth, and estimate monthly retirement income. Plan your financial independence.">
+  <meta name="keywords" content="retirement calculator, how much to retire, retirement savings calculator, 401k calculator, retirement planning calculator, FIRE calculator, how much do I need to retire, retirement income calculator, nest egg calculator">
+  <meta name="author" content="CalcHub">
+  <meta name="robots" content="index, follow">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Retirement Calculator – Project Your Nest Egg">
+  <meta name="twitter:description" content="Calculate how much you need to retire, project your savings growth, and see how much monthly income your nest egg will generate.">
+  <meta property="og:title" content="Free Retirement Calculator – Project Your Nest Egg">
+  <meta property="og:description" content="Calculate how much you need to retire, project your savings growth, and see how much monthly income your nest egg will generate.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calchub.com/retirement-calculator.html">
+  <meta property="og:site_name" content="CalcHub">
+  <link rel="canonical" href="https://calchub.com/retirement-calculator.html">
+  <!-- Critical: preconnect to both font origins BEFORE font request -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Non-blocking async font load — eliminates render-blocking resource -->
+    <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Inter:wght@400;500;600;700;900&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Inter:wght@400;500;600;700;900&display=swap">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+  </noscript>
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="stylesheet" href="css/home-tailwind.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Retirement Calculator",
+  "url": "https://calchub.com/retirement-calculator.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "description": "Free retirement calculator \u2014 find out how much you need to retire, project your savings growth, and estimate monthly retirement income. Plan your financial independence.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "Free retirement calculation",
+    "Instant results",
+    "Mobile-friendly interface",
+    "No sign-up required"
+  ],
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "CalcHub",
+    "url": "https://calchub.com"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much should I save for retirement by age?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fidelity's widely cited benchmarks: save 1\u00d7 your salary by 30, 3\u00d7 by 40, 6\u00d7 by 50, 8\u00d7 by 60, 10\u00d7 by 67. These assume retirement at 67, a 15% savings rate, and a 67/33 stock/bond allocation. Example: earning $70,000/year, you should have roughly $210,000 saved by 40 and $490,000 by 55. These are milestones, not absolute rules \u2014 retire earlier and you need more; plan to work part-time in retirement and you may need less. Enter your current savings and contribution rate above to see your personal trajectory."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the 4% rule in retirement planning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 4% rule (or \"safe withdrawal rate\") states that retirees can withdraw 4% of their portfolio in the first year of retirement, then adjust that amount for inflation each year, and have a high probability of not outliving their money over a 30-year retirement. It comes from the 1994 \"Trinity Study\" which analyzed historical stock/bond portfolios. The formula flipped: to determine your target nest egg, multiply your desired annual spending by 25. $50,000/year \u2192 $1.25M. $80,000/year \u2192 $2M. Note: for 40+ year retirements, a 3.5% rate (28\u00d7 rule) is more conservative."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does a 401(k) match work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A 401(k) match is free money from your employer. A common structure is \"100% match on the first 3% of salary, 50% match on the next 2%\" \u2014 meaning if you contribute 5%, the employer adds 4%, giving you an immediate 80% return on that portion. Always contribute at least enough to capture the full employer match \u2014 it's the highest guaranteed return available. If your employer matches 50% up to 6% and you earn $60,000, they'll add up to $1,800/year for free if you contribute $3,600/year."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I choose a Traditional or Roth 401(k)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The core question is: will your tax rate be higher now or in retirement? Choose Traditional if you expect to be in a lower tax bracket in retirement (saves taxes now, pays taxes later at lower rate). Choose Roth if you expect higher taxes in retirement or want tax-free withdrawals (pay taxes now, withdraw tax-free later). Most financial planners suggest younger earners favor Roth (low current income, likely higher future income), while high-earners near retirement favor Traditional. When uncertain, split contributions between both for tax diversification."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to my retirement savings if the market crashes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Market crashes are a normal part of investing \u2014 the S&P 500 has experienced drops of 20%+ roughly every 7\u201310 years, yet has recovered every time and gone on to new highs. Key principles: don't panic sell (locking in losses), keep contributing (you're buying shares at lower prices), and adjust your allocation as you approach retirement (shifting to more bonds reduces volatility). Sequence-of-returns risk (a crash early in retirement) is most dangerous; that's why target-date funds and bond allocations increase as retirement approaches. A diversified portfolio across index funds minimizes single-stock risk."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://calchub.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Financial Calculators",
+      "item": "https://calchub.com/#financial"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Retirement Calculator",
+      "item": "https://calchub.com/retirement-calculator.html"
+    }
+  ]
+}
+  </script>
+
+  <script src="js/common.js" defer></script>
+  <script src="js/site-header.js" defer></script>
+  <script src="js/site-footer.js" defer></script>
+  <script src="js/ads.js" defer></script>
+</head>
+<body>
+
+<site-header category="financial"></site-header>
+
+<div class="page-wrap">
+  <main class="calc-page">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="index.html#financial">Financial Calculators</a>
+      <span>›</span>
+      <span>Retirement Calculator</span>
+    </nav>
+
+    <a href="index.html" class="back-btn">← All Calculators</a>
+
+    <h1 class="calc-title">👴 Retirement Calculator</h1>
+    <p class="calc-subtitle">Find out how much you need to retire comfortably, project your savings to retirement age, and estimate the monthly income your nest egg will generate.</p>
+
+
+    <div class="fg"><label class="fl" for="inp1">Enter Value</label><input class="fi" id="inp1" type="number" placeholder="Enter a value"></div>
+    <button class="calc-btn" onclick="alert('This calculator is coming soon!')">Calculate</button>
+    <div class="info-box" style="margin-top:20px;">⚙️ Full calculator functionality for this tool is being added. The SEO content and structure are complete.</div>
+
+    
+    <!-- ── AD SLOT A: Post-result (highest intent) ─────────
+         User just got their answer. Natural pause before article.
+         Replace slot-id with real value from AdSense dashboard. -->
+    <ad-unit slot-id="1111111111" format="auto"></ad-unit>
+
+    <div class="seo-content-wrap">
+
+      <article class="seo-article" aria-label="Guide to Retirement Calculator">
+
+<h2>How Much Money Do You Need to Retire?</h2>
+<p>
+  The most widely used benchmark is the <strong>4% Rule (25× Rule)</strong>: multiply your desired
+  annual retirement income by 25 to find your target nest egg. If you want $60,000/year in retirement,
+  you need $1,500,000. This rule is based on research showing a 4% annual withdrawal rate has historically
+  sustained a 30-year retirement across most market environments.
+</p>
+<p>
+  A more conservative version uses 3.3% withdrawal (30× multiplier) for 40-year retirements or those
+  with significant market risk concerns. This calculator shows both the savings you'll accumulate and
+  the monthly income they can sustain.
+</p>
+
+<h2>How Retirement Savings Grow</h2>
+<div class="formula-box">
+  <span class="formula-label">Future Value of Regular Contributions</span>
+  <span class="formula">FV = P(1+r)&sup;t + PMT &times; [(1+r)&sup;t &minus; 1] / r</span>
+  <div class="formula-vars">
+    <span><strong>P</strong> = Current savings balance</span>
+    <span><strong>r</strong> = Annual return rate</span>
+    <span><strong>t</strong> = Years until retirement</span>
+    <span><strong>PMT</strong> = Annual contribution</span>
+  </div>
+</div>
+
+<h3>The Impact of Starting Early</h3>
+<p>
+  If you invest <strong>$500/month starting at 25</strong> with a 7% return, you'll have $1,311,000 by 65.
+  Starting at 35 with the same contributions yields only $612,000 — less than half, for only 10 years less
+  of investing. Those first ten years account for the majority of the final balance.
+  <a href="compound-interest-calculator.html">Compound interest</a> rewards those who start early
+  far more than those who invest more later.
+</p>
+
+
+
+        <!-- ── AD SLOT B: Mid-article ─────────────────────────────
+             Placed between article sections. High viewability — user
+             is actively reading. Replace slot-id with real AdSense value. -->
+        <ad-unit slot-id="2222222222" format="rectangle"></ad-unit>
+<h3>Retirement Account Types to Know</h3>
+<ul class="seo-list">
+  <li><strong>401(k) / 403(b)</strong> — Employer-sponsored plans. 2024 contribution limit: $23,000 ($30,500 if 50+). Many employers match contributions — always capture the full match first.</li>
+  <li><strong>Traditional IRA</strong> — Tax-deductible contributions; taxed at withdrawal. 2024 limit: $7,000 ($8,000 if 50+).</li>
+  <li><strong>Roth IRA</strong> — After-tax contributions; tax-free growth and withdrawals. Same limits as Traditional. Best if you expect higher taxes in retirement.</li>
+  <li><strong>HSA</strong> — Health Savings Account doubles as a retirement vehicle; triple tax-advantaged for medical expenses.</li>
+</ul>
+
+<h3>The FIRE Movement and Early Retirement</h3>
+<p>
+  <strong>FIRE (Financial Independence, Retire Early)</strong> uses the same 4% rule but targets retirement
+  in your 40s or 50s. Because the retirement period is 40–50 years, many FIRE adherents use a more
+  conservative 3–3.5% withdrawal rate (28–33× annual expenses). Reaching FIRE requires a high savings rate —
+  typically 40–70% of income — and often lowers the target date dramatically. Our calculator models
+  any retirement age; enter your target to see if your trajectory gets you there.
+</p>
+<p>
+  Complement this with our <a href="investment-calculator.html">investment calculator</a> and
+  <a href="compound-interest-calculator.html">compound interest calculator</a> to model different
+  contribution and return scenarios.
+</p>
+
+      </article>
+
+      <div class="related-calcs">
+        <p class="related-title">Related Calculators</p>
+        <div class="related-grid">
+          <a href="compound-interest-calculator.html" class="related-card"><span class="related-card-icon">🌱</span><span class="related-card-name">Compound Interest</span></a>
+          <a href="investment-calculator.html" class="related-card"><span class="related-card-icon">📊</span><span class="related-card-name">Investment Calculator</span></a>
+          <a href="inflation-calculator.html" class="related-card"><span class="related-card-icon">💸</span><span class="related-card-name">Inflation Calculator</span></a>
+          <a href="salary-calculator.html" class="related-card"><span class="related-card-icon">💼</span><span class="related-card-name">Salary Calculator</span></a>
+          <a href="income-tax-calculator.html" class="related-card"><span class="related-card-icon">🧾</span><span class="related-card-name">Income Tax Calculator</span></a>
+          <a href="mortgage-calculator.html" class="related-card"><span class="related-card-icon">🏠</span><span class="related-card-name">Mortgage Calculator</span></a>
+        </div>
+      </div>
+
+      <section class="faq-section" aria-label="Frequently asked questions">
+        <h2>Frequently Asked Questions</h2>
+        <p class="faq-intro">Common questions about how much should i... and more.</p>
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary class="faq-q">
+              <span>How much should I save for retirement by age?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>Fidelity's widely cited benchmarks: save <strong>1× your salary by 30, 3× by 40, 6× by 50, 8× by 60, 10× by 67</strong>. These assume retirement at 67, a 15% savings rate, and a 67/33 stock/bond allocation. Example: earning $70,000/year, you should have roughly $210,000 saved by 40 and $490,000 by 55. These are milestones, not absolute rules — retire earlier and you need more; plan to work part-time in retirement and you may need less. Enter your current savings and contribution rate above to see your personal trajectory.</p></div>
+          </details>          <details class="faq-item">
+            <summary class="faq-q">
+              <span>What is the 4% rule in retirement planning?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>The <strong>4% rule</strong> (or "safe withdrawal rate") states that retirees can withdraw 4% of their portfolio in the first year of retirement, then adjust that amount for inflation each year, and have a high probability of not outliving their money over a 30-year retirement. It comes from the 1994 "Trinity Study" which analyzed historical stock/bond portfolios. The formula flipped: to determine your target nest egg, multiply your desired annual spending by 25. $50,000/year → $1.25M. $80,000/year → $2M. Note: for 40+ year retirements, a 3.5% rate (28× rule) is more conservative.</p></div>
+          </details>          <details class="faq-item">
+            <summary class="faq-q">
+              <span>How does a 401(k) match work?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>A 401(k) match is <strong>free money from your employer</strong>. A common structure is "100% match on the first 3% of salary, 50% match on the next 2%" — meaning if you contribute 5%, the employer adds 4%, giving you an immediate 80% return on that portion. Always contribute at least enough to capture the full employer match — it's the highest guaranteed return available. If your employer matches 50% up to 6% and you earn $60,000, they'll add up to $1,800/year for free if you contribute $3,600/year.</p></div>
+          </details>          <details class="faq-item">
+            <summary class="faq-q">
+              <span>Should I choose a Traditional or Roth 401(k)?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>The core question is: will your <strong>tax rate be higher now or in retirement</strong>? Choose <strong>Traditional</strong> if you expect to be in a lower tax bracket in retirement (saves taxes now, pays taxes later at lower rate). Choose <strong>Roth</strong> if you expect higher taxes in retirement or want tax-free withdrawals (pay taxes now, withdraw tax-free later). Most financial planners suggest younger earners favor Roth (low current income, likely higher future income), while high-earners near retirement favor Traditional. When uncertain, split contributions between both for tax diversification.</p></div>
+          </details>          <details class="faq-item">
+            <summary class="faq-q">
+              <span>What happens to my retirement savings if the market crashes?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>Market crashes are a normal part of investing — the S&P 500 has experienced drops of 20%+ roughly every 7–10 years, yet has recovered every time and gone on to new highs. Key principles: <strong>don't panic sell</strong> (locking in losses), <strong>keep contributing</strong> (you're buying shares at lower prices), and <strong>adjust your allocation</strong> as you approach retirement (shifting to more bonds reduces volatility). Sequence-of-returns risk (a crash early in retirement) is most dangerous; that's why target-date funds and bond allocations increase as retirement approaches. A diversified portfolio across index funds minimizes single-stock risk.</p></div>
+          </details>
+        </div>
+      </section>
+
+    </div><!-- /.seo-content-wrap -->
+
+  </main>
+</div>
+
+<site-footer></site-footer>
+<script src="js/page-init.js"></script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#07070f">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Percentage Calculator – Percent Of, Change &amp; Increase | CalcHub</title>
+  <meta name="description" content="Free percentage calculator — calculate what percent of a number is, find percentage change or increase/decrease, or find what percent one number is of another. Instant results.">
+  <meta name="keywords" content="percentage calculator, percent calculator, percentage change calculator, percent of number, percentage increase calculator, percentage decrease, what percent is, calculate percentage, percentage difference">
+  <meta name="author" content="CalcHub">
+  <meta name="robots" content="index, follow">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Percentage Calculator – 3 Types of Percent Calculations">
+  <meta name="twitter:description" content="Calculate percentages instantly: what percent of a number is, percentage change, or what percent one number is of another.">
+  <meta property="og:title" content="Free Percentage Calculator – 3 Types of Percent Calculations">
+  <meta property="og:description" content="Calculate percentages instantly: what percent of a number is, percentage change, or what percent one number is of another.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calchub.com/percentage-calculator.html">
+  <meta property="og:site_name" content="CalcHub">
+  <link rel="canonical" href="https://calchub.com/percentage-calculator.html">
+  <!-- Critical: preconnect to both font origins BEFORE font request -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Non-blocking async font load — eliminates render-blocking resource -->
+    <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Inter:wght@400;500;600;700;900&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Inter:wght@400;500;600;700;900&display=swap">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+  </noscript>
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="stylesheet" href="css/home-tailwind.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Percentage Calculator",
+  "url": "https://calchub.com/percentage-calculator.html",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "description": "Free percentage calculator \u2014 calculate what percent of a number is, find percentage change or increase/decrease, or find what percent one number is of another. Instant results.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "Free percentage calculation",
+    "Instant results",
+    "Mobile-friendly interface",
+    "No sign-up required"
+  ],
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "CalcHub",
+    "url": "https://calchub.com"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate a percentage of a number?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To find a percentage of a number, multiply the number by the percentage divided by 100. Formula: Result = (Percentage \u00f7 100) \u00d7 Number. Examples: 20% of 150 = 0.20 \u00d7 150 = 30. 7.5% of $240 = 0.075 \u00d7 240 = $18. 1% of any number = that number \u00f7 100 (so 1% of 3,500 = 35). You can also use a quick mental trick: 10% is always the number with the decimal moved one place left, then multiply or divide from there (10% of 450 = 45; 5% = 22.5; 20% = 90)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate the percentage change between two numbers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Percentage change = (New Value \u2212 Old Value) / |Old Value| \u00d7 100. If the result is positive, it's an increase; if negative, a decrease. Example: a salary went from $55,000 to $62,000. Change = (62,000 \u2212 55,000) / 55,000 \u00d7 100 = 7,000 / 55,000 \u00d7 100 = 12.73% increase. A stock dropped from $85 to $72: (72 \u2212 85) / 85 \u00d7 100 = \u221213/85 \u00d7 100 = \u221215.3% decrease. Always divide by the original value, not the new one \u2014 that's the most common mistake."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the percentage difference between two numbers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Percentage difference is used when there's no clear \"original\" value \u2014 you just want to know how different two numbers are relative to their average. Formula: |A \u2212 B| / ((A + B) / 2) \u00d7 100. Example: comparing two prices, $45 and $55. Difference = |45\u221255| / ((45+55)/2) \u00d7 100 = 10/50 \u00d7 100 = 20% difference. This is different from percentage change. Use percentage change when comparing old vs new; use percentage difference when comparing two alternatives without a defined baseline."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate a percentage increase or discount?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a percentage increase: New Value = Original \u00d7 (1 + Percentage/100). Example: $80 + 25% = $80 \u00d7 1.25 = $100. For a percentage discount: Sale Price = Original \u00d7 (1 \u2212 Discount/100). Example: $120 with 30% off = $120 \u00d7 0.70 = $84. To find the discount amount: $120 \u00d7 0.30 = $36. Quick mental check: if you're taking 15% off a $60 item, 10% = $6, 5% = $3, so 15% = $9 off, final price = $51."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I reverse a percentage (find the original price before discount)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To reverse a percentage, divide by the multiplier. If a price after 20% discount is $64, the original was $64 \u00f7 0.80 = $80 (because $80 \u00d7 0.80 = $64). The formula: Original = Final \u00f7 (1 \u2212 Discount/100). For a tax-included price: if $108 includes 8% tax, the pre-tax price = $108 \u00f7 1.08 = $100. The most common mistake is subtracting the percentage directly from the discounted price \u2014 that gives the wrong answer because the percentage was applied to the original, not the final price."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://calchub.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Math Calculators",
+      "item": "https://calchub.com/#math"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Percentage Calculator",
+      "item": "https://calchub.com/percentage-calculator.html"
+    }
+  ]
+}
+  </script>
+
+  <script src="js/common.js" defer></script>
+  <script src="js/site-header.js" defer></script>
+  <script src="js/site-footer.js" defer></script>
+  <script src="js/ads.js" defer></script>
+</head>
+<body>
+
+<site-header category="math"></site-header>
+
+<div class="page-wrap">
+  <main class="calc-page">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="index.html#math">Math Calculators</a>
+      <span>›</span>
+      <span>Percentage Calculator</span>
+    </nav>
+
+    <a href="index.html" class="back-btn">← All Calculators</a>
+
+    <h1 class="calc-title">% Percentage Calculator</h1>
+    <p class="calc-subtitle">Three essential percentage calculations in one tool: find a percentage of a number, calculate percentage change between two values, or find what percent one number is of another.</p>
+
+
+    <div class="fg"><label class="fl" for="inp1">Enter Value</label><input class="fi" id="inp1" type="number" placeholder="Enter a value"></div>
+    <button class="calc-btn" onclick="alert('This calculator is coming soon!')">Calculate</button>
+    <div class="info-box" style="margin-top:20px;">⚙️ Full calculator functionality for this tool is being added. The SEO content and structure are complete.</div>
+
+    
+    <!-- ── AD SLOT A: Post-result (highest intent) ─────────
+         User just got their answer. Natural pause before article.
+         Replace slot-id with real value from AdSense dashboard. -->
+    <ad-unit slot-id="1111111111" format="auto"></ad-unit>
+
+    <div class="seo-content-wrap">
+
+      <article class="seo-article" aria-label="Guide to Percentage Calculator">
+
+<h2>Three Ways to Calculate Percentages</h2>
+<p>
+  The word "percentage" covers three different types of calculations that people confuse constantly.
+  This calculator handles all three — switch between tabs above to use whichever you need.
+</p>
+<ul class="seo-list">
+  <li><strong>Type 1 — Percent of a number:</strong> "What is 15% of $80?" → 0.15 × 80 = $12.00</li>
+  <li><strong>Type 2 — Percentage change:</strong> "A stock went from $50 to $65 — what % increase is that?" → (65−50)/50 × 100 = +30%</li>
+  <li><strong>Type 3 — What percent is X of Y:</strong> "42 is what percent of 168?" → 42/168 × 100 = 25%</li>
+</ul>
+
+<h2>The Percentage Formula</h2>
+<div class="formula-box">
+  <span class="formula-label">Core Percentage Formulas</span>
+  <span class="formula">Part = (Percent / 100) &times; Whole</span>
+  <span class="formula">Percent Change = (New &minus; Old) / |Old| &times; 100</span>
+  <span class="formula">Percent of = (Part / Whole) &times; 100</span>
+</div>
+
+<h3>Percentage Increase vs Percentage Difference</h3>
+<p>
+  <strong>Percentage increase/decrease</strong> compares a new value to a specific original value and has
+  a direction (positive = increase, negative = decrease). A price going from $100 to $125 is a 25% increase.
+  <strong>Percentage difference</strong> compares two values without implying direction and uses the average
+  as the denominator: |A−B| / ((A+B)/2) × 100. For comparing two alternatives without a clear "original"
+  value, use percentage difference.
+</p>
+
+
+
+        <!-- ── AD SLOT B: Mid-article ─────────────────────────────
+             Placed between article sections. High viewability — user
+             is actively reading. Replace slot-id with real AdSense value. -->
+        <ad-unit slot-id="2222222222" format="rectangle"></ad-unit>
+<h3>Common Percentage Mistakes to Avoid</h3>
+<ul class="seo-list">
+  <li><strong>Asymmetry of percentages:</strong> A 50% decrease followed by a 50% increase does NOT return to the original. $100 → $50 → $75. You need a 100% gain after a 50% loss to break even.</li>
+  <li><strong>Percent vs percentage points:</strong> If interest rates rise from 2% to 3%, that's an increase of <em>1 percentage point</em>, but a <em>50% increase</em> in the rate. Both statements are correct but mean very different things.</li>
+  <li><strong>Base confusion:</strong> "20% off, then 20% off again" is NOT 40% off. It's 20% off the already-reduced price: 0.8 × 0.8 = 0.64, so 36% total reduction.</li>
+</ul>
+
+<h3>Percentage Calculations in Real Life</h3>
+<p>
+  Percentages appear everywhere: <strong>discounts and sales</strong> (20% off a $79.99 item = $63.99),
+  <strong>tax calculations</strong> (use our <a href="sales-tax-calculator.html">sales tax calculator</a>),
+  <strong>investment returns</strong> (see our <a href="investment-calculator.html">investment calculator</a>),
+  <strong>grade calculations</strong> (see our <a href="grade-calculator.html">grade calculator</a>),
+  and <strong>tip calculations</strong> (15% tip on $47.80 = $7.17). Mastering the three formulas
+  above handles virtually every percentage question you'll encounter.
+</p>
+
+      </article>
+
+      <div class="related-calcs">
+        <p class="related-title">Related Calculators</p>
+        <div class="related-grid">
+          <a href="fraction-calculator.html" class="related-card"><span class="related-card-icon">½</span><span class="related-card-name">Fraction Calculator</span></a>
+          <a href="sales-tax-calculator.html" class="related-card"><span class="related-card-icon">🏷️</span><span class="related-card-name">Sales Tax Calculator</span></a>
+          <a href="grade-calculator.html" class="related-card"><span class="related-card-icon">📝</span><span class="related-card-name">Grade Calculator</span></a>
+          <a href="interest-calculator.html" class="related-card"><span class="related-card-icon">📈</span><span class="related-card-name">Interest Calculator</span></a>
+          <a href="standard-deviation-calculator.html" class="related-card"><span class="related-card-icon">σ</span><span class="related-card-name">Standard Deviation</span></a>
+          <a href="scientific-calculator.html" class="related-card"><span class="related-card-icon">🔬</span><span class="related-card-name">Scientific Calculator</span></a>
+        </div>
+      </div>
+
+      <section class="faq-section" aria-label="Frequently asked questions">
+        <h2>Frequently Asked Questions</h2>
+        <p class="faq-intro">Common questions about how do i calculate... and more.</p>
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary class="faq-q">
+              <span>How do I calculate a percentage of a number?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>To find a percentage of a number, <strong>multiply the number by the percentage divided by 100</strong>. Formula: Result = (Percentage ÷ 100) × Number. Examples: 20% of 150 = 0.20 × 150 = 30. 7.5% of $240 = 0.075 × 240 = $18. 1% of any number = that number ÷ 100 (so 1% of 3,500 = 35). You can also use a quick mental trick: 10% is always the number with the decimal moved one place left, then multiply or divide from there (10% of 450 = 45; 5% = 22.5; 20% = 90).</p></div>
+          </details>          <details class="faq-item">
+            <summary class="faq-q">
+              <span>How do I calculate the percentage change between two numbers?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>Percentage change = <strong>(New Value − Old Value) / |Old Value| × 100</strong>. If the result is positive, it's an increase; if negative, a decrease. Example: a salary went from $55,000 to $62,000. Change = (62,000 − 55,000) / 55,000 × 100 = 7,000 / 55,000 × 100 = 12.73% increase. A stock dropped from $85 to $72: (72 − 85) / 85 × 100 = −13/85 × 100 = −15.3% decrease. Always divide by the <em>original</em> value, not the new one — that's the most common mistake.</p></div>
+          </details>          <details class="faq-item">
+            <summary class="faq-q">
+              <span>What is the percentage difference between two numbers?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>Percentage difference is used when there's no clear "original" value — you just want to know how different two numbers are relative to their average. Formula: <strong>|A − B| / ((A + B) / 2) × 100</strong>. Example: comparing two prices, $45 and $55. Difference = |45−55| / ((45+55)/2) × 100 = 10/50 × 100 = 20% difference. This is different from percentage change. Use percentage change when comparing old vs new; use percentage difference when comparing two alternatives without a defined baseline.</p></div>
+          </details>          <details class="faq-item">
+            <summary class="faq-q">
+              <span>How do I calculate a percentage increase or discount?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>For a <strong>percentage increase</strong>: New Value = Original × (1 + Percentage/100). Example: $80 + 25% = $80 × 1.25 = $100. For a <strong>percentage discount</strong>: Sale Price = Original × (1 − Discount/100). Example: $120 with 30% off = $120 × 0.70 = $84. To find the discount amount: $120 × 0.30 = $36. Quick mental check: if you're taking 15% off a $60 item, 10% = $6, 5% = $3, so 15% = $9 off, final price = $51.</p></div>
+          </details>          <details class="faq-item">
+            <summary class="faq-q">
+              <span>How do I reverse a percentage (find the original price before discount)?</span>
+              <span class="faq-arrow" aria-hidden="true">›</span>
+            </summary>
+            <div class="faq-a"><p>To reverse a percentage, divide by the multiplier. If a price after 20% discount is $64, the original was <strong>$64 ÷ 0.80 = $80</strong> (because $80 × 0.80 = $64). The formula: Original = Final ÷ (1 − Discount/100). For a tax-included price: if $108 includes 8% tax, the pre-tax price = $108 ÷ 1.08 = $100. The most common mistake is subtracting the percentage directly from the discounted price — that gives the wrong answer because the percentage was applied to the original, not the final price.</p></div>
+          </details>
+        </div>
+      </section>
+
+    </div><!-- /.seo-content-wrap -->
+
+  </main>
+</div>
+
+<site-footer></site-footer>
+<script src="js/page-init.js"></script>
+</body>
+</html>

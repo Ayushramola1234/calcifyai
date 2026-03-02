@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#07070f">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>BMI Calculator – Body Mass Index Chart &amp; Healthy Weight | CalcHub</title>
+  <meta name="description"
+    content="Free BMI calculator — calculate your Body Mass Index in metric or imperial units. Get your health category, ideal weight range, and visual gauge. Instant results.">
+  <meta name="keywords"
+    content="BMI calculator, body mass index calculator, BMI chart, healthy weight calculator, BMI categories, overweight calculator, obesity BMI, underweight BMI, imperial BMI, metric BMI, adult BMI">
+  <meta name="author" content="CalcHub">
+  <meta name="robots" content="index, follow">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free BMI Calculator – Body Mass Index &amp; Healthy Weight Range">
+  <meta name="twitter:description"
+    content="Calculate your BMI instantly in kg/cm or lbs/in. See your health category and ideal weight range with a visual gauge.">
+  <meta property="og:title" content="Free BMI Calculator – Body Mass Index &amp; Healthy Weight Range">
+  <meta property="og:description"
+    content="Calculate your BMI instantly in kg/cm or lbs/in. See your health category and ideal weight range with a visual gauge.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calchub.com/bmi-calculator.html">
+  <meta property="og:site_name" content="CalcHub">
+  <link rel="canonical" href="https://calchub.com/bmi-calculator.html">
+  <!-- Critical: preconnect to both font origins BEFORE font request -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Non-blocking async font load — eliminates render-blocking resource -->
+    <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Inter:wght@400;500;600;700;900&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Inter:wght@400;500;600;700;900&display=swap">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+  </noscript>
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="stylesheet" href="css/home-tailwind.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    .seo-content-wrap {
+      margin-top: 56px;
+      border-top: 1px solid var(--border);
+      padding-top: 40px;
+    }
+
+    .seo-article {
+      color: var(--muted2);
+      font-size: .88rem;
+      line-height: 1.85;
+      margin-bottom: 48px;
+    }
+
+    .seo-article h2 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text);
+      margin: 32px 0 12px;
+      line-height: 1.3;
+    }
+
+    .seo-article h2:first-child {
+      margin-top: 0;
+    }
+
+    .seo-article h3 {
+      font-size: .98rem;
+      font-weight: 700;
+      color: var(--muted2);
+      margin: 24px 0 10px;
+      line-height: 1.3;
+    }
+
+    .seo-article p {
+      margin-bottom: 14px;
+    }
+
+    .seo-article p:last-child {
+      margin-bottom: 0;
+    }
+
+    .seo-article strong {
+      color: var(--text);
+    }
+
+    .seo-article a {
+      color: var(--accent2);
+      text-decoration: underline;
+      text-decoration-color: rgba(0, 212, 255, .35);
+      text-underline-offset: 3px;
+      transition: color .2s, text-decoration-color .2s;
+    }
+
+    .seo-article a:hover {
+      color: var(--accent);
+      text-decoration-color: var(--accent);
+    }
+
+    .seo-list {
+      padding-left: 20px;
+      margin: 12px 0 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .seo-list li {
+      line-height: 1.6;
+    }
+
+    .seo-list li strong {
+      color: var(--text);
+    }
+
+    .formula-box {
+      background: rgba(108, 99, 255, .07);
+      border: 1px solid rgba(108, 99, 255, .25);
+      border-left: 3px solid var(--accent);
+      border-radius: 11px;
+      padding: 18px 20px;
+      margin: 18px 0;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .formula-label {
+      display: block;
+      font-family: 'Syne', sans-serif;
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin-bottom: 8px;
+    }
+
+    .formula {
+      display: block;
+      font-size: .95rem;
+      color: var(--text);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .formula-vars {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: .78rem;
+      color: var(--muted2);
+      font-family: 'Syne', sans-serif;
+    }
+
+    .formula-vars strong {
+      color: var(--accent2);
+      font-family: 'Space Mono', monospace;
+    }
+
+    .faq-section {
+      margin-top: 0;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-section>h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .faq-intro {
+      color: var(--muted2);
+      font-size: .88rem;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .faq-item {
+      background: var(--surf);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color .2s;
+    }
+
+    .faq-item[open] {
+      border-color: var(--accent);
+    }
+
+    .faq-q {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 18px;
+      cursor: pointer;
+      font-size: .9rem;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      user-select: none;
+      transition: color .2s;
+    }
+
+    .faq-q::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-q::marker {
+      display: none;
+    }
+
+    .faq-item[open] .faq-q {
+      color: var(--accent);
+    }
+
+    .faq-arrow {
+      font-size: 1.3rem;
+      color: var(--muted);
+      flex-shrink: 0;
+      transition: transform .25s ease;
+      line-height: 1;
+    }
+
+    .faq-item[open] .faq-arrow {
+      transform: rotate(90deg);
+      color: var(--accent);
+    }
+
+    .faq-a {
+      padding: 0 18px 18px;
+      font-size: .86rem;
+      color: var(--muted2);
+      line-height: 1.8;
+    }
+
+    .faq-a p {
+      margin-bottom: 12px;
+    }
+
+    .faq-a p:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-a strong {
+      color: var(--text);
+    }
+
+    .faq-a a {
+      color: var(--accent2);
+      text-decoration: underline;
+      text-decoration-color: rgba(0, 212, 255, .35);
+      text-underline-offset: 3px;
+    }
+
+    .faq-a a:hover {
+      color: var(--accent);
+    }
+
+    .faq-list-inner {
+      padding-left: 18px;
+      margin: 10px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .faq-list-inner li strong {
+      color: var(--text);
+    }
+
+    .related-calcs {
+      margin-bottom: 48px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "BMI Calculator",
+  "url": "https://calchub.com/bmi-calculator.html",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "description": "Free BMI calculator \u2014 calculate your Body Mass Index in metric or imperial units. Get your health category, ideal weight range, and visual gauge. Instant results.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "Free bmi calculation",
+    "Instant results",
+    "Mobile-friendly interface",
+    "No sign-up required"
+  ],
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "CalcHub",
+    "url": "https://calchub.com"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is BMI an accurate measure of body fat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BMI is a proxy for body fatness, not a direct measurement. It correlates reasonably well with body fat at the population level but can misclassify individuals \u2014 particularly athletes (who may be \"overweight\" BMI due to muscle), older adults (who have more fat at the same BMI), and certain ethnic groups. For greater accuracy, consider body fat percentage tests (DEXA scan, hydrostatic weighing, or the Navy method in our body fat calculator). That said, for most people without extreme muscle mass, BMI is a useful and quick screening tool."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What BMI is considered overweight?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A BMI of 25.0 to 29.9 is classified as overweight according to WHO standards. This range is associated with modestly elevated risk for cardiovascular disease, type 2 diabetes, sleep apnea, and joint problems \u2014 though risk is also strongly influenced by other factors like diet, physical activity, smoking status, and genetics. Being at the lower end of the overweight range (25\u201327) with high physical fitness carries much lower risk than being sedentary at normal BMI."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a healthy BMI for women vs men?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The WHO's standard healthy BMI range of 18.5\u201324.9 applies to both men and women. However, women naturally carry more body fat than men at the same BMI due to hormonal differences and reproductive needs (typically 6\u201311% more fat). Some researchers argue the normal range upper limit should be slightly higher for women. In practice, both sexes use the same 18.5\u201324.9 threshold clinically, though interpretation should account for individual context including age, muscle mass, and ethnic background."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you have a normal BMI but still be unhealthy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes \u2014 a condition called \"normal weight obesity\" or \"skinny fat\" occurs when someone has a normal BMI but a high percentage of body fat relative to lean muscle mass. This often results from being sedentary (losing muscle without gaining weight), aging, or crash dieting. Conversely, you can be overweight by BMI but metabolically healthy if you're physically active and have good cardiovascular fitness. This is why BMI is best used alongside other markers: waist circumference, fasting blood glucose, blood pressure, and cholesterol."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much weight do I need to lose to reach a normal BMI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Calculate the target weight using the normal BMI upper limit of 24.9: Target weight = 24.9 \u00d7 height(m)\u00b2. For a 5'8\" (1.73m) person, that's 24.9 \u00d7 1.73\u00b2 = 74.5 kg (164 lbs). The difference between your current weight and this target is the minimum you'd need to lose to enter the normal range. Enter your measurements above \u2014 the calculator shows this gap automatically. A safe rate of loss is 0.5\u20131 kg (1\u20132 lbs) per week, achievable through a 500\u2013750 kcal daily deficit."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://calchub.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Health & Fitness Calculators",
+      "item": "https://calchub.com/#health"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "BMI Calculator",
+      "item": "https://calchub.com/bmi-calculator.html"
+    }
+  ]
+}
+  </script>
+
+  <script src="js/common.js" defer></script>
+  <script src="js/site-header.js" defer></script>
+  <script src="js/site-footer.js" defer></script>
+  <script src="js/ads.js" defer></script>
+</head>
+
+<body>
+
+  <site-header category="health"></site-header>
+
+  <div class="page-wrap">
+    <main class="calc-page">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <a href="index.html#health">Health &amp; Fitness Calculators</a>
+        <span>›</span>
+        <span>BMI Calculator</span>
+      </nav>
+
+      <a href="index.html" class="back-btn">← All Calculators</a>
+
+      <h1 class="calc-title">⚖️ BMI Calculator</h1>
+      <p class="calc-subtitle">Calculate your Body Mass Index (BMI) using metric or imperial measurements. Find your
+        health category, ideal weight range, and understand what your number means.</p>
+
+
+      <div class="row2">
+        <div class="fg"><label class="fl" for="bh">Height (cm)</label><input class="fi" id="bh" type="number"
+            placeholder="e.g. 175"></div>
+        <div class="fg"><label class="fl" for="bw">Weight (kg)</label><input class="fi" id="bw" type="number"
+            placeholder="e.g. 70"></div>
+      </div>
+      <button class="calc-btn" onclick="calcBMI()">Calculate BMI</button>
+      <div class="result-box" id="r" role="region">
+        <div class="rr big"><span class="rl">BMI</span><span class="rv" id="r-bmi">—</span></div>
+        <div class="rr"><span class="rl">Category</span><span class="rv" id="r-cat">—</span></div>
+        <div class="rr"><span class="rl">Ideal Weight Range</span><span class="rv" id="r-ideal">—</span></div>
+      </div>
+      <script>
+        function calcBMI() {
+          const h = parseFloat($('bh').value) / 100, w = parseFloat($('bw').value);
+          if (!h || !w) return alert('Fill all fields.');
+          const bmi = w / (h * h);
+          const cat = bmi < 18.5 ? 'Underweight' : bmi < 25 ? 'Normal Weight ✓' : bmi < 30 ? 'Overweight' : 'Obese';
+          $('r-bmi').textContent = bmi.toFixed(1); $('r-cat').textContent = cat;
+          $('r-ideal').textContent = fmt(18.5 * h * h, 1) + ' – ' + fmt(24.9 * h * h, 1) + ' kg';
+          showResult('r');
+        }
+      </script>
+
+
+      <!-- ── AD SLOT A: Post-result (highest intent) ─────────
+         User just got their answer. Natural pause before article.
+         Replace slot-id with real value from AdSense dashboard. -->
+      <ad-unit slot-id="1111111111" format="auto"></ad-unit>
+
+      <div class="seo-content-wrap">
+
+        <article class="seo-article" aria-label="Guide to BMI Calculator">
+
+          <h2>What Is BMI and How Is It Calculated?</h2>
+          <p>
+            <strong>Body Mass Index (BMI)</strong> is a numerical value derived from your height and weight. It's the
+            most widely used screening tool for assessing whether an adult has a healthy body weight relative to their
+            height. While it's not a direct measure of body fat, it correlates strongly with more precise measurements
+            and is a practical starting point for health risk assessment.
+          </p>
+          <p>
+            The formula is simple: divide your weight in kilograms by the square of your height in meters
+            (<strong>BMI = kg/m²</strong>). In imperial units: <strong>BMI = 703 × lbs / inches²</strong>.
+          </p>
+
+          <h2>BMI Categories: What Your Number Means</h2>
+          <p>The World Health Organization defines four standard adult BMI categories:</p>
+          <ul class="seo-list">
+            <li><strong>Underweight — Below 18.5:</strong> May indicate nutritional deficiency, eating disorders, or
+              underlying medical conditions. Associated with increased risk of osteoporosis, immune deficiency, and
+              fertility problems.</li>
+            <li><strong>Normal weight — 18.5 to 24.9:</strong> Associated with the lowest health risks for most adults.
+              This is the target range for weight management goals.</li>
+            <li><strong>Overweight — 25 to 29.9:</strong> Modestly elevated risk for cardiovascular disease, type 2
+              diabetes, and hypertension. Lifestyle changes can often bring this into the normal range.</li>
+            <li><strong>Obese — 30 and above:</strong> Significantly higher risk for serious health conditions. Further
+              classified into Class I (30–34.9), Class II (35–39.9), and Class III (40+) obesity.</li>
+          </ul>
+
+          <h3>Limitations of BMI: What It Doesn't Measure</h3>
+          <p>
+            BMI is a population-level screening tool, not a personal diagnostic. It has well-documented limitations:
+            <strong>muscle mass</strong> — athletes and bodybuilders often register as "overweight" despite very low
+            body fat; <strong>age</strong> — older adults typically have more body fat at the same BMI than younger
+            adults; <strong>sex</strong> — women naturally carry more fat than men at the same BMI; and
+            <strong>ethnicity</strong> — some populations (notably South Asian) have higher health risks at lower BMI
+            values than the standard thresholds suggest.
+          </p>
+          <p>
+            For a more complete picture, pair BMI with waist circumference, body fat percentage (see our
+            <a href="body-fat-calculator.html">body fat calculator</a>), and a discussion with your doctor.
+          </p>
+
+
+
+          <!-- ── AD SLOT B: Mid-article ─────────────────────────────
+             Placed between article sections. High viewability — user
+             is actively reading. Replace slot-id with real AdSense value. -->
+          <ad-unit slot-id="2222222222" format="rectangle"></ad-unit>
+          <h3>How to Reach a Healthy BMI</h3>
+          <p>
+            If your BMI is above 24.9, the most evidence-backed approach is a modest <strong>calorie deficit
+              of 500–750 kcal/day</strong>, which produces 1–1.5 lbs of weight loss per week. Use our
+            <a href="calorie-calculator.html">calorie calculator</a> to find your TDEE and set a target intake.
+            Combined with regular physical activity and adequate protein (0.7–1g per lb of body weight), most
+            people can reach a healthy BMI within months to a year depending on the gap to close.
+          </p>
+
+          <h3>BMI for Children and Teens</h3>
+          <p>
+            This calculator is designed for adults aged 18+. For children and adolescents (ages 2–19), BMI is
+            interpreted using age- and sex-specific percentile charts because healthy ranges change significantly
+            through development. A child at the 85th–94th percentile for their age/sex group is considered
+            overweight; at or above the 95th percentile is obese.
+          </p>
+
+        </article>
+
+        <div class="related-calcs">
+          <p class="related-title">Related Calculators</p>
+          <div class="related-grid">
+            <a href="calorie-calculator.html" class="related-card"><span class="related-card-icon">🔥</span><span
+                class="related-card-name">Calorie / TDEE Calculator</span></a>
+            <a href="bmr-calculator.html" class="related-card"><span class="related-card-icon">💗</span><span
+                class="related-card-name">BMR Calculator</span></a>
+            <a href="body-fat-calculator.html" class="related-card"><span class="related-card-icon">📐</span><span
+                class="related-card-name">Body Fat Calculator</span></a>
+            <a href="ideal-weight-calculator.html" class="related-card"><span class="related-card-icon">🎯</span><span
+                class="related-card-name">Ideal Weight Calculator</span></a>
+            <a href="calorie-calculator.html" class="related-card"><span class="related-card-icon">🔥</span><span
+                class="related-card-name">Calorie Calculator</span></a>
+            <a href="pace-calculator.html" class="related-card"><span class="related-card-icon">🏃</span><span
+                class="related-card-name">Pace Calculator</span></a>
+          </div>
+        </div>
+
+        <section class="faq-section" aria-label="Frequently asked questions">
+          <h2>Frequently Asked Questions</h2>
+          <p class="faq-intro">Common questions about BMI accuracy, healthy ranges, and what to do once you know your
+            number — answered clearly.</p>
+          <div class="faq-list">
+            <details class="faq-item" open>
+              <summary class="faq-q">
+                <span>Is BMI an accurate measure of body fat?</span>
+                <span class="faq-arrow" aria-hidden="true">›</span>
+              </summary>
+              <div class="faq-a">
+                <p>BMI is a <strong>proxy</strong> for body fatness, not a direct measurement. It correlates reasonably
+                  well with body fat at the population level but can misclassify individuals — particularly athletes
+                  (who may be "overweight" BMI due to muscle), older adults (who have more fat at the same BMI), and
+                  certain ethnic groups. For greater accuracy, consider body fat percentage tests (DEXA scan,
+                  hydrostatic weighing, or the Navy method in our <a href="body-fat-calculator.html">body fat
+                    calculator</a>). That said, for most people without extreme muscle mass, BMI is a useful and quick
+                  screening tool.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-q">
+                <span>What BMI is considered overweight?</span>
+                <span class="faq-arrow" aria-hidden="true">›</span>
+              </summary>
+              <div class="faq-a">
+                <p>A BMI of <strong>25.0 to 29.9</strong> is classified as overweight according to WHO standards. This
+                  range is associated with modestly elevated risk for cardiovascular disease, type 2 diabetes, sleep
+                  apnea, and joint problems — though risk is also strongly influenced by other factors like diet,
+                  physical activity, smoking status, and genetics. Being at the lower end of the overweight range
+                  (25–27) with high physical fitness carries much lower risk than being sedentary at normal BMI.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-q">
+                <span>What is a healthy BMI for women vs men?</span>
+                <span class="faq-arrow" aria-hidden="true">›</span>
+              </summary>
+              <div class="faq-a">
+                <p>The WHO's standard healthy BMI range of <strong>18.5–24.9</strong> applies to both men and women.
+                  However, women naturally carry more body fat than men at the same BMI due to hormonal differences and
+                  reproductive needs (typically 6–11% more fat). Some researchers argue the normal range upper limit
+                  should be slightly higher for women. In practice, both sexes use the same 18.5–24.9 threshold
+                  clinically, though interpretation should account for individual context including age, muscle mass,
+                  and ethnic background.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-q">
+                <span>Can you have a normal BMI but still be unhealthy?</span>
+                <span class="faq-arrow" aria-hidden="true">›</span>
+              </summary>
+              <div class="faq-a">
+                <p>Yes — a condition called <strong>"normal weight obesity"</strong> or "skinny fat" occurs when someone
+                  has a normal BMI but a high percentage of body fat relative to lean muscle mass. This often results
+                  from being sedentary (losing muscle without gaining weight), aging, or crash dieting. Conversely, you
+                  can be overweight by BMI but metabolically healthy if you're physically active and have good
+                  cardiovascular fitness. This is why BMI is best used alongside other markers: waist circumference,
+                  fasting blood glucose, blood pressure, and cholesterol.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-q">
+                <span>How much weight do I need to lose to reach a normal BMI?</span>
+                <span class="faq-arrow" aria-hidden="true">›</span>
+              </summary>
+              <div class="faq-a">
+                <p>Calculate the target weight using the normal BMI upper limit of 24.9: <strong>Target weight = 24.9 ×
+                    height(m)²</strong>. For a 5'8" (1.73m) person, that's 24.9 × 1.73² = 74.5 kg (164 lbs). The
+                  difference between your current weight and this target is the minimum you'd need to lose to enter the
+                  normal range. Enter your measurements above — the calculator shows this gap automatically. A safe rate
+                  of loss is 0.5–1 kg (1–2 lbs) per week, achievable through a 500–750 kcal daily deficit.</p>
+              </div>
+            </details>
+          </div>
+        </section>
+
+      </div><!-- /.seo-content-wrap -->
+
+    </main>
+  </div>
+
+  <site-footer></site-footer>
+  <script src="js/page-init.js"></script>
+</body>
+
+</html>
