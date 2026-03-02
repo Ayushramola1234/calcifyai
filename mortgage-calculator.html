@@ -294,6 +294,36 @@
     .related-calcs {
       margin-bottom: 48px;
     }
+  
+    /* --- FINTECH PRO STYLES --- */
+    .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #475569;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15) !important;
+            border-color: #0ea5e9 !important;
+        }
+
+        .mercury-input {
+            transition: all 250ms ease-in-out;
+        }
   </style>
 
   <!-- Schema 1: WebApplication (enables "Free" rich result label and tool info in SERPs) -->
@@ -410,163 +440,502 @@
   <script src="js/site-header.js" defer></script>
   <script src="js/site-footer.js" defer></script>
   <script src="js/ads.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
 
   <site-header category="financial"></site-header>
 
-  <div class="page-wrap">
-    <main class="calc-page">
-
-      <!-- Breadcrumb -->
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="index.html">Home</a>
-        <span>›</span>
-        <span>Mortgage Calculator</span>
-      </nav>
-
-      <a href="index.html" class="back-btn">← Back to All Calculators</a>
-
-      <h1 class="calc-title">🏠 Mortgage Calculator</h1>
-      <p class="calc-subtitle">
-        Calculate your monthly mortgage payment including principal &amp; interest, property tax,
-        and insurance (PITI). See the full cost breakdown of your home loan.
-      </p>
-
-      <!-- ── INPUTS ── -->
-      <div class="fg">
-        <label class="fl" for="mg-price">Home Price ($)</label>
-        <input class="fi" id="mg-price" type="number" placeholder="e.g. 350,000" min="0">
-      </div>
-
-      <div class="fg">
-        <label class="fl" for="mg-down">Down Payment ($)</label>
-        <input class="fi" id="mg-down" type="number" placeholder="e.g. 70,000" min="0">
-      </div>
-
-      <div class="row2">
-        <div class="fg">
-          <label class="fl" for="mg-term">Loan Term</label>
-          <select class="fs" id="mg-term">
-            <option value="30">30 Years</option>
-            <option value="20">20 Years</option>
-            <option value="15">15 Years</option>
-            <option value="10">10 Years</option>
-          </select>
+  
+  <main class="max-w-[1600px] mx-auto px-4 md:px-[40px] py-12" id="main-content">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <div class="lg:col-span-7 space-y-8">
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-xl p-8 border border-gray-200 dark:border-gray-700 shadow-depth transition-all duration-250 hover:shadow-depth-hover">
+                    <h2
+                        class="text-lg font-extrabold mb-8 flex items-center text-slate-900 dark:text-white uppercase tracking-wider border-b border-gray-100 dark:border-gray-800 pb-4">
+                        <span class="material-symbols-outlined text-sky-600 mr-3 text-2xl">account_balance</span> Loan
+                        Configuration
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                        <div class="space-y-3">
+                            <label class="block text-sm font-bold text-slate-700 dark:text-slate-300">Home Price</label>
+                            <div class="relative rounded-lg shadow-sm">
+                                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                    <span class="text-slate-400 text-lg font-medium">$</span>
+                                </div>
+                                <input
+                                    class="mercury-input block w-full pl-8 pr-4 text-xl font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-3.5 placeholder-gray-400 focus:ring-sky-500 focus:border-sky-500 text-right tabular-nums"
+                                    id="mg-price" placeholder="0.00" type="text" value="1,500,000" />
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <label class="block text-sm font-bold text-slate-700 dark:text-slate-300">Down
+                                Payment</label>
+                            <div class="grid grid-cols-3 gap-3">
+                                <div class="col-span-2 relative rounded-lg shadow-sm">
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                        <span class="text-slate-400 text-lg font-medium">$</span>
+                                    </div>
+                                    <input
+                                        class="mercury-input block w-full pl-8 text-xl font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-3.5 focus:ring-sky-500 focus:border-sky-500 text-right tabular-nums"
+                                        type="text" id="mg-down" value="300,000" />
+                                </div>
+                                <div class="relative rounded-lg shadow-sm">
+                                    <input
+                                        class="mercury-input block w-full pr-10 text-right text-xl font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-3.5 focus:ring-sky-500 focus:border-sky-500 tabular-nums"
+                                        type="text" value="20" />
+                                    <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+                                        <span class="text-slate-400 text-base font-medium">%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <label class="block text-sm font-bold text-slate-700 dark:text-slate-300">Loan Term</label>
+                            <div class="relative">
+                                <select
+                                    class="mercury-input appearance-none block w-full pl-4 pr-10 py-3.5 text-lg font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-sky-500 focus:border-sky-500">
+                                    <option value="30">30 years</option>
+                                    <option value="20">20 years</option>
+                                    <option value="15">15 years</option>
+                                    <option value="10">10 years</option>
+                                </select>
+                                <div
+                                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+                                    <span class="material-symbols-outlined">expand_more</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <label class="block text-sm font-bold text-slate-700 dark:text-slate-300">Interest
+                                Rate</label>
+                            <div class="relative rounded-lg shadow-sm group/input">
+                                <input
+                                    class="mercury-input block w-full pl-4 pr-10 text-xl font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-3.5 focus:ring-sky-500 focus:border-sky-500 text-right tabular-nums"
+                                    type="text" id="mg-rate" value="6.35" />
+                                <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+                                    <span class="text-slate-400 text-base font-medium">%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-100 dark:border-gray-800 pt-8 mt-4">
+                        <h3
+                            class="text-sm font-extrabold text-slate-900 dark:text-slate-200 uppercase tracking-wider mb-6">
+                            Taxes &amp; Insurance</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="space-y-3">
+                                <label class="block text-sm font-bold text-slate-700 dark:text-slate-300">Property Tax /
+                                    Year</label>
+                                <div class="relative rounded-lg shadow-sm">
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                        <span class="text-slate-400 text-lg font-medium">$</span>
+                                    </div>
+                                    <input
+                                        class="mercury-input block w-full pl-8 text-xl font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-3.5 focus:ring-sky-500 focus:border-sky-500 text-right tabular-nums"
+                                        type="text" id="mg-tax" value="18,750" />
+                                    <span
+                                        class="absolute right-4 top-4 text-xs font-bold text-sky-700 dark:text-sky-300 bg-sky-100 dark:bg-sky-900/40 px-2 py-0.5 rounded border border-sky-200 dark:border-sky-800 opacity-0 focus-within:opacity-100 group-hover:opacity-100 transition-opacity duration-250 pointer-events-none">1.25%</span>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <label class="block text-sm font-bold text-slate-700 dark:text-slate-300">Home Insurance
+                                    / Year</label>
+                                <div class="relative rounded-lg shadow-sm">
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                        <span class="text-slate-400 text-lg font-medium">$</span>
+                                    </div>
+                                    <input
+                                        class="mercury-input block w-full pl-8 text-xl font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-3.5 focus:ring-sky-500 focus:border-sky-500 text-right tabular-nums"
+                                        type="text" id="mg-ins" value="4,200" /><input type="hidden" id="mg-pmi" value="0.5">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-xl p-8 border border-gray-200 dark:border-gray-700 shadow-depth transition-all duration-250 hover:shadow-depth-hover">
+                    <div
+                        class="flex justify-between items-center mb-8 border-b border-gray-100 dark:border-gray-800 pb-4">
+                        <h2
+                            class="text-lg font-extrabold flex items-center text-slate-900 dark:text-white uppercase tracking-wider">
+                            <span class="material-symbols-outlined text-slate-400 mr-3 text-2xl">tune</span> Advanced
+                            Settings
+                        </h2>
+                        <span
+                            class="material-symbols-outlined text-gray-400 cursor-pointer hover:text-sky-600 transition-colors duration-250">keyboard_arrow_up</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                        <div class="col-span-2">
+                            <div
+                                class="flex items-center gap-2 mb-4 border-b border-gray-100 dark:border-gray-800 pb-2">
+                                <h4 class="text-sm font-bold text-slate-800 dark:text-slate-200">Annual Cost Growth</h4>
+                                <div class="group relative flex items-center">
+                                    <span
+                                        class="material-symbols-outlined text-slate-400 text-sm cursor-help hover:text-sky-500 transition-colors">info</span>
+                                    <div
+                                        class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-slate-800 text-white text-xs rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 shadow-lg">
+                                        Projected yearly increase for taxes and fees
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-xs text-slate-500 uppercase tracking-wide block font-bold">Tax %
+                                        Inc.</label>
+                                    <input
+                                        class="mercury-input w-full bg-slate-50 dark:bg-slate-800 border border-gray-300 dark:border-gray-600 rounded-lg py-2.5 px-3 text-sm font-medium text-slate-900 dark:text-white focus:ring-sky-500 focus:border-sky-500 text-right"
+                                        type="number" value="2.0" />
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-xs text-slate-500 uppercase tracking-wide block font-bold">Ins. %
+                                        Inc.</label>
+                                    <input
+                                        class="mercury-input w-full bg-slate-50 dark:bg-slate-800 border border-gray-300 dark:border-gray-600 rounded-lg py-2.5 px-3 text-sm font-medium text-slate-900 dark:text-white focus:ring-sky-500 focus:border-sky-500 text-right"
+                                        type="number" value="3.0" />
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-xs text-slate-500 uppercase tracking-wide block font-bold">HOA %
+                                        Inc.</label>
+                                    <input
+                                        class="mercury-input w-full bg-slate-50 dark:bg-slate-800 border border-gray-300 dark:border-gray-600 rounded-lg py-2.5 px-3 text-sm font-medium text-slate-900 dark:text-white focus:ring-sky-500 focus:border-sky-500 text-right"
+                                        type="number" value="1.5" />
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-xs text-slate-500 uppercase tracking-wide block font-bold">Maint
+                                        %</label>
+                                    <input
+                                        class="mercury-input w-full bg-slate-50 dark:bg-slate-800 border border-gray-300 dark:border-gray-600 rounded-lg py-2.5 px-3 text-sm font-medium text-slate-900 dark:text-white focus:ring-sky-500 focus:border-sky-500 text-right"
+                                        type="number" value="1.0" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-span-2 pt-2">
+                            <div
+                                class="flex justify-between items-center mb-4 border-b border-gray-100 dark:border-gray-800 pb-2">
+                                <div class="flex items-center gap-2">
+                                    <h4 class="text-sm font-bold text-slate-800 dark:text-slate-200">Extra Payments</h4>
+                                    <div class="group relative flex items-center">
+                                        <span
+                                            class="material-symbols-outlined text-slate-400 text-sm cursor-help hover:text-sky-500 transition-colors">info</span>
+                                        <div
+                                            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-slate-800 text-white text-xs rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 shadow-lg">
+                                            Simulate additional principal contributions
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span
+                                        class="text-xs uppercase tracking-wide text-slate-500 mr-3 font-bold">Bi-weekly</span>
+                                    <div
+                                        class="relative inline-block w-11 h-6 align-middle select-none transition duration-200 ease-in">
+                                        <input
+                                            class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer border-gray-300 dark:border-gray-600 top-0.5 left-0.5 checked:right-0.5 checked:left-auto checked:border-sky-500 transition-all duration-200"
+                                            id="toggle" name="toggle" type="checkbox" />
+                                        <label
+                                            class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-200 dark:bg-gray-700 cursor-pointer peer-checked:bg-sky-500 transition-colors duration-200"
+                                            for="toggle"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                                <div class="space-y-2">
+                                    <label
+                                        class="text-xs text-slate-500 uppercase tracking-wide block font-bold">Monthly
+                                        Extra</label>
+                                    <div class="relative rounded-lg shadow-sm">
+                                        <div
+                                            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <span class="text-slate-500 text-sm">$</span>
+                                        </div>
+                                        <input
+                                            class="mercury-input block w-full pl-7 text-sm font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white py-2.5 focus:ring-sky-500 focus:border-sky-500 text-right"
+                                            placeholder="0" type="text" />
+                                    </div>
+                                </div>
+                                <div class="space-y-2">
+                                    <label
+                                        class="text-xs text-slate-500 uppercase tracking-wide block font-bold">One-Time
+                                        Lump Sum</label>
+                                    <div class="relative rounded-lg shadow-sm">
+                                        <div
+                                            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <span class="text-slate-500 text-sm">$</span>
+                                        </div>
+                                        <input
+                                            class="mercury-input block w-full pl-7 text-sm font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white py-2.5 focus:ring-sky-500 focus:border-sky-500 text-right"
+                                            placeholder="100,000" type="text" />
+                                    </div>
+                                </div>
+                                <div class="flex items-end">
+                                    <button
+                                        class="w-full py-2.5 text-sm font-bold text-sky-600 dark:text-sky-400 border border-dashed border-sky-300 dark:border-sky-700 rounded-lg hover:bg-sky-50 dark:hover:bg-sky-900/20 transition-all duration-250 flex justify-center items-center h-[42px] focus:outline-none focus:ring-2 focus:ring-sky-500">
+                                        <span class="material-symbols-outlined text-sm mr-1">add_circle</span> Add
+                                        Strategy
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <button
+                        class="w-full bg-slate-900 hover:bg-slate-800 dark:bg-sky-600 dark:hover:bg-sky-500 text-white font-bold text-lg py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-250 transform active:scale-[0.99] flex items-center justify-center gap-3 focus:outline-none focus:ring-4 focus:ring-sky-200 dark:focus:ring-sky-900/50">
+                        <span class="material-symbols-outlined">calculate</span>
+                        <span>CALCULATE MORTGAGE</span>
+                    </button>
+                    <div class="flex items-center justify-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+                        <span class="material-symbols-outlined text-sm">lock</span>
+                        <span class="font-medium">Calculations are strictly client-side. No data is stored.</span>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-gray-700 shadow-depth overflow-hidden transition-all duration-250 hover:shadow-depth-hover">
+                    <div
+                        class="p-6 border-b border-gray-100 dark:border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4 bg-slate-50/50 dark:bg-slate-900">
+                        <h2 class="text-base font-extrabold text-slate-800 dark:text-white uppercase tracking-wider">
+                            Amortization Schedule</h2>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="flex items-center bg-gray-200 dark:bg-slate-800 rounded-lg p-1 border border-gray-200 dark:border-gray-700 shadow-inner-light">
+                                <button
+                                    class="px-4 py-1.5 text-xs font-bold rounded-md bg-white dark:bg-slate-600 text-slate-900 dark:text-white shadow-toggle transition-all duration-250">Monthly</button>
+                                <button
+                                    class="px-4 py-1.5 text-xs font-bold rounded-md text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-white transition-all duration-250">Yearly</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto custom-scrollbar">
+                        <table class="min-w-full text-left text-sm whitespace-nowrap">
+                            <thead
+                                class="bg-slate-100 dark:bg-slate-950 text-slate-600 dark:text-slate-300 font-bold border-b border-gray-200 dark:border-gray-800 uppercase tracking-wide text-xs">
+                                <tr>
+                                    <th class="px-6 py-4" scope="col">Date</th>
+                                    <th class="px-6 py-4 text-right" scope="col">Payment</th>
+                                    <th class="px-6 py-4 text-right" scope="col">Principal</th>
+                                    <th class="px-6 py-4 text-right" scope="col">Interest</th>
+                                    <th class="px-6 py-4 text-right" scope="col">Total Interest</th>
+                                    <th class="px-6 py-4 text-right" scope="col">Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody id="amort-table-body" class="divide-y divide-gray-100 dark:divide-gray-800 bg-transparent">
+                                <tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors duration-250">
+                                    <td class="px-6 py-4 font-bold text-slate-900 dark:text-slate-200">Sep 2024</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">
+                                        $2,145</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">
+                                        $1,158.09</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">
+                                        $2,584</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">
+                                        $8,233</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-bold text-slate-800 dark:text-white tabular-nums">
+                                        $3,893.00</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors duration-250">
+                                    <td class="px-6 py-4 font-bold text-slate-900 dark:text-slate-200">Oct 2024</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">
+                                        $2,145</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">
+                                        $1,172.08</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">
+                                        $1,508</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">
+                                        $8,778</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-bold text-slate-800 dark:text-white tabular-nums">
+                                        $2,325.98</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors duration-250">
+                                    <td class="px-6 py-4 font-bold text-slate-900 dark:text-slate-200">Nov 2024</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">
+                                        $2,145</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">
+                                        $1,198.33</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">
+                                        $1,536</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">
+                                        $5,068</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-bold text-slate-800 dark:text-white tabular-nums">
+                                        $2,932.08</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-5 space-y-8">
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-xl p-8 border border-gray-200 dark:border-gray-700 shadow-depth relative transition-all duration-250 hover:shadow-depth-hover">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-base font-extrabold text-slate-800 dark:text-white uppercase tracking-wider">
+                            Payment Breakdown</h2>
+                        <span
+                            class="text-xs font-bold font-mono text-sky-700 dark:text-sky-300 bg-sky-50 dark:bg-sky-900/30 px-3 py-1.5 rounded-full border border-sky-200 dark:border-sky-800/50">LIVE
+                            ESTIMATE</span>
+                    </div>
+                    <div class="relative w-64 h-64 mx-auto mb-10">
+                        <canvas id="paymentDonutChart"></canvas>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                            <span
+                                class="text-slate-400 dark:text-slate-500 text-xs uppercase tracking-widest font-bold">Monthly</span>
+                            <span
+                                class="text-4xl font-extrabold text-slate-900 dark:text-white mt-1 tracking-tight">$7,488</span>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="group cursor-pointer">
+                            <div class="flex justify-between items-end mb-2">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-3 h-3 rounded bg-sky-500 shadow-sm"></div>
+                                    <span class="text-sm font-bold text-slate-600 dark:text-slate-300">Principal &amp;
+                                        Interest</span>
+                                </div>
+                                <span
+                                    class="text-base font-extrabold text-slate-800 dark:text-white tabular-nums">$7,145.00</span>
+                            </div>
+                            <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
+                                <div class="bg-sky-500 h-2 rounded-full shadow-sm" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="group cursor-pointer">
+                            <div class="flex justify-between items-end mb-2">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-3 h-3 rounded bg-slate-400 dark:bg-slate-500 shadow-sm"></div>
+                                    <span class="text-sm font-bold text-slate-600 dark:text-slate-300">Taxes</span>
+                                </div>
+                                <span
+                                    class="text-base font-extrabold text-slate-800 dark:text-white tabular-nums">$1,562.50</span>
+                            </div>
+                            <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
+                                <div class="bg-slate-400 dark:bg-slate-500 h-2 rounded-full shadow-sm"
+                                    style="width: 18%"></div>
+                            </div>
+                        </div>
+                        <div class="group cursor-pointer">
+                            <div class="flex justify-between items-end mb-2">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-3 h-3 rounded bg-slate-600 dark:bg-slate-700 shadow-sm"></div>
+                                    <span class="text-sm font-bold text-slate-600 dark:text-slate-300">Insurance</span>
+                                </div>
+                                <span
+                                    class="text-base font-extrabold text-slate-800 dark:text-white tabular-nums">$350.00</span>
+                            </div>
+                            <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
+                                <div class="bg-slate-600 dark:bg-slate-700 h-2 rounded-full shadow-sm"
+                                    style="width: 7%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-8 pt-8 border-t border-gray-100 dark:border-gray-800">
+                        <div>
+                            <p class="text-xs text-slate-500 uppercase tracking-wide font-bold">Total Interest</p>
+                            <p class="text-lg font-extrabold text-slate-900 dark:text-white mt-1 tabular-nums">$582,450
+                            </p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-xs text-slate-500 uppercase tracking-wide font-bold">Total Cost of Loan</p>
+                            <p class="text-lg font-extrabold text-slate-900 dark:text-white mt-1 tabular-nums">
+                                $2,082,450</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-emerald-50/50 dark:bg-emerald-950/20 rounded-xl p-8 border border-emerald-100 dark:border-emerald-900 shadow-sm relative overflow-hidden transition-all duration-250">
+                    <h3
+                        class="text-emerald-700 dark:text-emerald-400 font-extrabold uppercase tracking-wide text-xs mb-6 flex items-center">
+                        <span class="material-symbols-outlined mr-2 text-lg">trending_up</span> Savings Projection
+                    </h3>
+                    <div class="grid grid-cols-2 gap-6 relative z-10 mb-6">
+                        <div
+                            class="p-4 rounded-lg bg-white dark:bg-slate-900 border border-emerald-100 dark:border-emerald-900 shadow-sm">
+                            <p
+                                class="text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wide mb-2 font-bold">
+                                Interest Saved</p>
+                            <p class="text-2xl font-extrabold text-emerald-600 dark:text-emerald-400 tabular-nums">
+                                $82,450</p>
+                        </div>
+                        <div
+                            class="p-4 rounded-lg bg-white dark:bg-slate-900 border border-emerald-100 dark:border-emerald-900 shadow-sm">
+                            <p
+                                class="text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wide mb-2 font-bold">
+                                Time Saved</p>
+                            <p class="text-2xl font-extrabold text-emerald-600 dark:text-emerald-400 tabular-nums">4y
+                                <span class="text-lg font-normal text-slate-400">3m</span></p>
+                        </div>
+                    </div>
+                    <div
+                        class="text-sm text-emerald-800 dark:text-emerald-200/80 leading-relaxed border-t border-emerald-200 dark:border-emerald-900 pt-4 font-medium">
+                        Based on your inputs, a <strong class="text-emerald-700 dark:text-emerald-300">$100k</strong>
+                        injection in Jan 2021 yields maximal efficiency.
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-xl p-8 border border-gray-200 dark:border-gray-700 shadow-depth transition-all duration-250 hover:shadow-depth-hover">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-base font-extrabold text-slate-800 dark:text-white uppercase tracking-wider">
+                            Equity Curve</h2>
+                        <div class="flex items-center gap-4 text-xs uppercase tracking-wide font-bold">
+                            <div class="flex items-center gap-2">
+                                <span class="w-3 h-3 rounded bg-sky-500 shadow-sm"></span>
+                                <span class="text-slate-500">Principal</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="w-3 h-3 rounded bg-slate-400"></span>
+                                <span class="text-slate-500">Interest</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h-56 w-full">
+                        <canvas id="amortizationChart"></canvas>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                    <div
+                        class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-depth flex flex-col justify-between h-32 transition-all duration-250 hover:shadow-depth-hover">
+                        <span class="text-xs text-slate-400 uppercase tracking-widest font-extrabold">Principal
+                            Paid</span>
+                        <div class="flex items-end justify-between">
+                            <p class="text-2xl font-extrabold text-slate-800 dark:text-white tabular-nums">$12,145</p>
+                            <span
+                                class="material-symbols-outlined text-sky-500 text-2xl bg-sky-50 dark:bg-sky-900/20 p-2 rounded-lg">home</span>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-depth flex flex-col justify-between h-32 transition-all duration-250 hover:shadow-depth-hover">
+                        <span class="text-xs text-slate-400 uppercase tracking-widest font-extrabold">Equity
+                            Gained</span>
+                        <div class="flex items-end justify-between">
+                            <p class="text-2xl font-extrabold text-slate-800 dark:text-white tabular-nums">$342k</p>
+                            <span
+                                class="material-symbols-outlined text-emerald-500 text-2xl bg-emerald-50 dark:bg-emerald-900/20 p-2 rounded-lg">trending_up</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="fg">
-          <label class="fl" for="mg-rate">Interest Rate (%)</label>
-          <input class="fi" id="mg-rate" type="number" placeholder="e.g. 7.0" step="0.01" min="0">
-        </div>
-      </div>
 
-      <div class="row2">
-        <div class="fg">
-          <label class="fl" for="mg-tax">Property Tax ($/yr)</label>
-          <input class="fi" id="mg-tax" type="number" placeholder="e.g. 3,600" min="0">
-        </div>
-        <div class="fg">
-          <label class="fl" for="mg-ins">Home Insurance ($/yr)</label>
-          <input class="fi" id="mg-ins" type="number" placeholder="e.g. 1,200" min="0">
-        </div>
-      </div>
-
-      <div class="fg">
-        <label class="fl" for="mg-pmi">PMI Rate (% of loan/yr — optional)</label>
-        <input class="fi" id="mg-pmi" type="number" placeholder="e.g. 0.5 (if down payment &lt;20%)" step="0.01"
-          min="0">
-      </div>
-
-      <button class="calc-btn" onclick="calcMortgage()">Calculate Mortgage Payment</button>
-
-      <!-- ── RESULTS ── -->
-      <div class="result-box" id="mg-result" role="region" aria-label="Mortgage calculation results">
-
-        <div class="rr big">
-          <span class="rl">Total Monthly Payment</span>
-          <span class="rv" id="mg-monthly">—</span>
-        </div>
-        <div class="rr">
-          <span class="rl">Principal &amp; Interest</span>
-          <span class="rv" id="mg-pi">—</span>
-        </div>
-        <div class="rr">
-          <span class="rl">Property Tax (monthly)</span>
-          <span class="rv" id="mg-taxm">—</span>
-        </div>
-        <div class="rr">
-          <span class="rl">Home Insurance (monthly)</span>
-          <span class="rv" id="mg-insm">—</span>
-        </div>
-        <div class="rr">
-          <span class="rl">PMI (monthly)</span>
-          <span class="rv" id="mg-pmim">—</span>
-        </div>
-
-        <div style="margin:18px 0 12px; border-top:1px solid var(--border); padding-top:16px;">
-          <div
-            style="font-size:.75rem;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:.07em;margin-bottom:10px;">
-            Loan Summary
-          </div>
-        </div>
-
-        <div class="rr">
-          <span class="rl">Loan Amount (financed)</span>
-          <span class="rv" id="mg-loan">—</span>
-        </div>
-        <div class="rr">
-          <span class="rl">Down Payment</span>
-          <span class="rv" id="mg-downr">—</span>
-        </div>
-        <div class="rr">
-          <span class="rl">Total Interest Paid</span>
-          <span class="rv bad" id="mg-tint">—</span>
-        </div>
-        <div class="rr">
-          <span class="rl">Total of All Payments</span>
-          <span class="rv" id="mg-tcost">—</span>
-        </div>
-
-        <!-- Payoff breakdown bar -->
-        <div style="margin-top:20px;">
-          <div
-            style="font-size:.75rem;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px;">
-            Principal vs Interest
-          </div>
-          <div style="display:flex;height:12px;border-radius:6px;overflow:hidden;">
-            <div id="mg-bar-p" style="background:var(--accent);transition:width .5s;"></div>
-            <div style="background:var(--red);flex:1;"></div>
-          </div>
-          <div style="display:flex;gap:16px;margin-top:8px;font-size:.75rem;">
-            <span style="color:var(--accent)">■ Principal</span>
-            <span style="color:var(--red)">■ Interest</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- ── AMORTIZATION TABLE ── -->
-      <div id="mg-amort-wrap" style="display:none; margin-top:24px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-          <span style="font-size:.85rem;font-weight:700;color:var(--muted2);">PAYMENT SCHEDULE (first 24 months)</span>
-          <button class="pill" onclick="toggleAmort()" id="mg-amort-btn">Show All</button>
-        </div>
-        <div class="table-wrap" id="mg-amort-table" style="max-height:320px;overflow-y:auto;"></div>
-      </div>
-
-      <!-- ── INFO ── -->
-      <div class="info-box" style="margin-top:24px;">
-        💡 <strong>Tip:</strong> A 20% down payment avoids PMI and significantly reduces your total cost.
-        Consider a 15-year loan to save thousands in interest — your monthly payment will be higher, but
-        you'll own your home much faster.
-      </div>
-
-      <!-- ══════════════════════════════════════════════════════
+    <!-- ══════════════════════════════════════════════════════
          SEO CONTENT — Optimised article + FAQ
-         Placed below the tool so the calculator is above the fold.
          ══════════════════════════════════════════════════════ -->
-
-      <!-- ── AD SLOT A: Post-result (highest intent) ─────────
+    <div class="max-w-[1200px] mx-auto mt-24">
+<!-- ── AD SLOT A: Post-result (highest intent) ─────────
          User just got their answer. Natural pause before article.
          Replace slot-id with real value from AdSense dashboard. -->
       <ad-unit slot-id="1111111111" format="auto"></ad-unit>
@@ -846,13 +1215,15 @@
 
       </div><!-- /.seo-content-wrap -->
 
-    </main>
-  </div><!-- end page-wrap -->
+        </div><!-- /.max-w-[1200px] -->
+  </main>
+
 
   <site-footer></site-footer>
   <script src="js/page-init.js"></script>
   <script>
-    /* ── PAGE-SPECIFIC JAVASCRIPT ── */
+    /* ── PAGE-SPECIFIC JAVASCRIPT (FINTECH PRO) ── */
+
 
     let amortData = [];
     let showingAllAmort = false;
@@ -883,15 +1254,42 @@
       const totalInt = totalPaid - loan;
       const pPct = (loan / totalPaid * 100).toFixed(1);
 
-      $('mg-monthly').textContent = '$' + fmt(totalM);
-      $('mg-pi').textContent = '$' + fmt(pi);
-      $('mg-taxm').textContent = '$' + fmt(taxM);
-      $('mg-insm').textContent = '$' + fmt(insM);
-      $('mg-pmim').textContent = pmiPct ? '$' + fmt(pmiM) : 'N/A';
-      $('mg-loan').textContent = '$' + fmt(loan);
-      $('mg-downr').textContent = '$' + fmt(down) + ' (' + ((down / price) * 100).toFixed(1) + '%)';
-      $('mg-tint').textContent = '$' + fmt(totalInt);
-      $('mg-tcost').textContent = '$' + fmt(totalPaid + down);
+      $('mg-monthly').textContent = '
+</body>
+
+</html> + fmt(totalM);
+      $('mg-pi').textContent = '
+</body>
+
+</html> + fmt(pi);
+      $('mg-taxm').textContent = '
+</body>
+
+</html> + fmt(taxM);
+      $('mg-insm').textContent = '
+</body>
+
+</html> + fmt(insM);
+      $('mg-pmim').textContent = pmiPct ? '
+</body>
+
+</html> + fmt(pmiM) : 'N/A';
+      $('mg-loan').textContent = '
+</body>
+
+</html> + fmt(loan);
+      $('mg-downr').textContent = '
+</body>
+
+</html> + fmt(down) + ' (' + ((down / price) * 100).toFixed(1) + '%)';
+      $('mg-tint').textContent = '
+</body>
+
+</html> + fmt(totalInt);
+      $('mg-tcost').textContent = '
+</body>
+
+</html> + fmt(totalPaid + down);
       $('mg-bar-p').style.width = pPct + '%';
 
       showResult('mg-result');
@@ -920,10 +1318,10 @@
       data.forEach(r => {
         html += `<tr>
         <td>${r.month}</td>
-        <td>$${fmt(r.payment)}</td>
-        <td>$${fmt(r.princ)}</td>
-        <td>$${fmt(r.interest)}</td>
-        <td>$${fmt(r.balance)}</td>
+        <td>${fmt(r.payment)}</td>
+        <td>${fmt(r.princ)}</td>
+        <td>${fmt(r.interest)}</td>
+        <td>${fmt(r.balance)}</td>
       </tr>`;
       });
       if (rows < amortData.length) {
@@ -941,7 +1339,148 @@
       $('mg-amort-btn').textContent = showingAllAmort ? 'Show Less' : 'Show All';
       $('mg-amort-table').style.maxHeight = showingAllAmort ? 'none' : '320px';
     }
-  </script>
+  
+    // CALCULATION LOGIC
+    function $(id) { return document.getElementById(id); }
+    function fmt(num) { return num.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2}); }
+
+    function parseFormat(val) {
+        if(!val) return 0;
+        return parseFloat(val.toString().replace(/,/g, ''));
+    }
+
+    function calcMortgage() {
+      const price = parseFormat($('mg-price').value);
+      const down = parseFormat($('mg-down').value) || 0;
+      const term = parseInt($('mg-term').value);
+      const rate = parseFormat($('mg-rate').value) / 100 / 12;
+      const taxYr = parseFormat($('mg-tax').value) || 0;
+      const insYr = parseFormat($('mg-ins').value) || 0;
+      const pmiPct = parseFormat($('mg-pmi').value) || 0;
+
+      if (!price || !rate) {
+        alert('Please enter at least the home price and interest rate.');
+        return;
+      }
+
+      const loan = price - down;
+      const n = term * 12;
+      const pi = loan * (rate * Math.pow(1 + rate, n)) / (Math.pow(1 + rate, n) - 1);
+      
+      const taxM = taxYr / 12;
+      const insM = insYr / 12;
+      
+      // Calculate PMI - if downpayment < 20%
+      let pmiM = 0;
+      if ((down / price) < 0.20) {
+          pmiM = (pmiPct / 100 * loan) / 12;
+      }
+      
+      const totalM = pi + taxM + insM + pmiM;
+
+      const totalPaid = pi * n;
+      const totalInt = totalPaid - loan;
+
+      $('mg-monthly').textContent = '
+</body>
+
+</html> + fmt(totalM);
+      $('mg-pi').textContent = '
+</body>
+
+</html> + fmt(pi);
+      $('mg-taxm').textContent = '
+</body>
+
+</html> + fmt(taxM);
+      $('mg-insm').textContent = '
+</body>
+
+</html> + fmt(insM);
+      
+      $('mg-tint').textContent = '
+</body>
+
+</html> + fmt(totalInt);
+      $('mg-tcost').textContent = '
+</body>
+
+</html> + fmt(totalPaid + down);
+      
+      // Update Donut Chart
+      if (donutChart) {
+          donutChart.data.datasets[0].data = [pi, taxM, insM, pmiM];
+          donutChart.update();
+      }
+      
+      // Build Amortization Curve Data
+      let bal = loan;
+      let amortLabels = [];
+      let amortPrincipal = [];
+      let amortInterest = [];
+      
+      // For the Area Chart we only need yearly markers to match the 10 points
+      for (let y = 0; y <= term; y++) {
+          amortLabels.push(y.toString());
+          if (y === 0) {
+              amortPrincipal.push(0);
+              amortInterest.push(totalInt);
+              continue;
+          }
+          
+          let yearPrincipal = 0;
+          let yearInterest = 0;
+          for (let m = 0; m < 12; m++) {
+              let interestForMonth = bal * rate;
+              let principalForMonth = pi - interestForMonth;
+              bal -= principalForMonth;
+              yearPrincipal += principalForMonth;
+              yearInterest += interestForMonth;
+          }
+          // Cumulative
+          amortPrincipal.push(amortPrincipal[y-1] + yearPrincipal);
+          amortInterest.push(Math.max(0, amortInterest[y-1] - yearPrincipal)); // rough visual representation
+      }
+      
+      if (areaChart) {
+          areaChart.data.labels = amortLabels;
+          areaChart.data.datasets[0].data = amortPrincipal; // Equity
+          areaChart.data.datasets[1].data = amortInterest; // Remaining Interest
+          areaChart.update();
+      }
+      
+      // Build Table (first 3 rows for visual fidelity of the snapshot)
+      const tbody = document.getElementById('amort-table-body');
+      if (tbody) {
+          bal = loan;
+          let tableHtml = '';
+          let d = new Date();
+          for(let i=0; i<3; i++) {
+              let iForM = bal * rate;
+              let pForM = pi - iForM;
+              bal -= pForM;
+              let monthStr = d.toLocaleString('default', { month: 'short' }) + ' ' + d.getFullYear();
+              
+              tableHtml += `
+                <tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors duration-250">
+                    <td class="px-6 py-4 font-bold text-slate-900 dark:text-slate-200">${monthStr}</td>
+                    <td class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">${fmt(totalM)}</td>
+                    <td class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">${fmt(pForM)}</td>
+                    <td class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">${fmt(iForM)}</td>
+                    <td class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">${fmt(totalInt)}</td>
+                    <td class="px-6 py-4 text-right font-bold text-slate-800 dark:text-white tabular-nums">${fmt(bal)}</td>
+                </tr>
+              `;
+              d.setMonth(d.getMonth() + 1);
+          }
+          tbody.innerHTML = tableHtml;
+      }
+    }
+    
+    // Automatically calculate on load
+    document.addEventListener('DOMContentLoaded', calcMortgage);
+    
+</script>
 </body>
 
 </html>

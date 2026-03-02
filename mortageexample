@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Fintech Pro Mortgage Modern Banking V3</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0f172a",
+                        accent: "#0ea5e9",
+                        success: "#10b981",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#0f172a",
+                        "border-light": "#e2e8f0",
+                        "border-dark": "#334155",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    boxShadow: {
+                        'depth': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 10px 15px -3px rgba(0, 0, 0, 0.05)',
+                        'depth-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.01)',
+                        'inner-light': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.02)',
+                        'toggle': '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)',
+                    },
+                    transitionDuration: {
+                        '250': '250ms',
+                    }
+                },
+            },
+        };
+    </script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #475569;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15) !important;
+            border-color: #0ea5e9 !important;
+        }
+
+        .mercury-input {
+            transition: all 250ms ease-in-out;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-gray-50 dark:bg-[#0b1120] text-slate-800 dark:text-gray-300 font-sans min-h-screen relative overflow-x-hidden selection:bg-sky-200 dark:selection:bg-sky-900 selection:text-sky-900 dark:selection:text-sky-100">
+    <nav
+        class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md dark:bg-slate-900/90 border-b border-gray-200 dark:border-gray-800 shadow-sm transition-all duration-250">
+        <div class="max-w-[1600px] mx-auto px-[40px] h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-10 h-10 rounded-lg bg-slate-900 dark:bg-white flex items-center justify-center shadow-lg transform transition-transform duration-250 hover:scale-105">
+                    <span class="material-symbols-outlined text-white dark:text-slate-900 text-2xl">analytics</span>
+                </div>
+                <span class="text-xl font-bold text-slate-900 dark:text-white tracking-tight">Calcify<span
+                        class="text-sky-600">AI</span></span>
+            </div>
+            <div class="flex items-center gap-4">
+                <button
+                    class="flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-slate-700 dark:text-slate-200 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-slate-800 transition-all duration-250 hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500">
+                    <span class="material-symbols-outlined text-lg">download</span>
+                    <span>Download CSV</span>
+                </button>
+                <div class="h-6 w-px bg-gray-300 dark:bg-gray-700 mx-2"></div>
+                <button aria-label="Toggle Dark Mode"
+                    class="p-2.5 rounded-full text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800 transition-all duration-250 focus:outline-none focus:ring-2 focus:ring-sky-500"
+                    id="theme-toggle">
+                    <span class="material-symbols-outlined hidden dark:block">light_mode</span>
+                    <span class="material-symbols-outlined block dark:hidden">dark_mode</span>
+                </button>
+                <div
+                    class="h-10 w-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center text-slate-700 dark:text-slate-300 font-bold text-sm cursor-pointer hover:border-sky-500 transition-colors duration-250 shadow-sm">
+                    JS
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="max-w-[1600px] mx-auto px-[40px] py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <div class="lg:col-span-7 space-y-8">
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-xl p-8 border border-gray-200 dark:border-gray-700 shadow-depth transition-all duration-250 hover:shadow-depth-hover">
+                    <h2
+                        class="text-lg font-extrabold mb-8 flex items-center text-slate-900 dark:text-white uppercase tracking-wider border-b border-gray-100 dark:border-gray-800 pb-4">
+                        <span class="material-symbols-outlined text-sky-600 mr-3 text-2xl">account_balance</span> Loan
+                        Configuration
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                        <div class="space-y-3">
+                            <label class="block text-sm font-bold text-slate-700 dark:text-slate-300">Home Price</label>
+                            <div class="relative rounded-lg shadow-sm">
+                                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                    <span class="text-slate-400 text-lg font-medium">$</span>
+                                </div>
+                                <input
+                                    class="mercury-input block w-full pl-8 pr-4 text-xl font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-3.5 placeholder-gray-400 focus:ring-sky-500 focus:border-sky-500 text-right tabular-nums"
+                                    id="price" name="price" placeholder="0.00" type="text" value="1,500,000" />
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <label class="block text-sm font-bold text-slate-700 dark:text-slate-300">Down
+                                Payment</label>
+                            <div class="grid grid-cols-3 gap-3">
+                                <div class="col-span-2 relative rounded-lg shadow-sm">
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                        <span class="text-slate-400 text-lg font-medium">$</span>
+                                    </div>
+                                    <input
+                                        class="mercury-input block w-full pl-8 text-xl font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-3.5 focus:ring-sky-500 focus:border-sky-500 text-right tabular-nums"
+                                        type="text" value="300,000" />
+                                </div>
+                                <div class="relative rounded-lg shadow-sm">
+                                    <input
+                                        class="mercury-input block w-full pr-10 text-right text-xl font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-3.5 focus:ring-sky-500 focus:border-sky-500 tabular-nums"
+                                        type="text" value="20" />
+                                    <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+                                        <span class="text-slate-400 text-base font-medium">%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <label class="block text-sm font-bold text-slate-700 dark:text-slate-300">Loan Term</label>
+                            <div class="relative">
+                                <select
+                                    class="mercury-input appearance-none block w-full pl-4 pr-10 py-3.5 text-lg font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-sky-500 focus:border-sky-500">
+                                    <option>30 years</option>
+                                    <option>20 years</option>
+                                    <option>15 years</option>
+                                    <option>10 years</option>
+                                </select>
+                                <div
+                                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+                                    <span class="material-symbols-outlined">expand_more</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <label class="block text-sm font-bold text-slate-700 dark:text-slate-300">Interest
+                                Rate</label>
+                            <div class="relative rounded-lg shadow-sm group/input">
+                                <input
+                                    class="mercury-input block w-full pl-4 pr-10 text-xl font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-3.5 focus:ring-sky-500 focus:border-sky-500 text-right tabular-nums"
+                                    type="text" value="6.35" />
+                                <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+                                    <span class="text-slate-400 text-base font-medium">%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-100 dark:border-gray-800 pt-8 mt-4">
+                        <h3
+                            class="text-sm font-extrabold text-slate-900 dark:text-slate-200 uppercase tracking-wider mb-6">
+                            Taxes &amp; Insurance</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="space-y-3">
+                                <label class="block text-sm font-bold text-slate-700 dark:text-slate-300">Property Tax /
+                                    Year</label>
+                                <div class="relative rounded-lg shadow-sm">
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                        <span class="text-slate-400 text-lg font-medium">$</span>
+                                    </div>
+                                    <input
+                                        class="mercury-input block w-full pl-8 text-xl font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-3.5 focus:ring-sky-500 focus:border-sky-500 text-right tabular-nums"
+                                        type="text" value="18,750" />
+                                    <span
+                                        class="absolute right-4 top-4 text-xs font-bold text-sky-700 dark:text-sky-300 bg-sky-100 dark:bg-sky-900/40 px-2 py-0.5 rounded border border-sky-200 dark:border-sky-800 opacity-0 focus-within:opacity-100 group-hover:opacity-100 transition-opacity duration-250 pointer-events-none">1.25%</span>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <label class="block text-sm font-bold text-slate-700 dark:text-slate-300">Home Insurance
+                                    / Year</label>
+                                <div class="relative rounded-lg shadow-sm">
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                        <span class="text-slate-400 text-lg font-medium">$</span>
+                                    </div>
+                                    <input
+                                        class="mercury-input block w-full pl-8 text-xl font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-3.5 focus:ring-sky-500 focus:border-sky-500 text-right tabular-nums"
+                                        type="text" value="4,200" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-xl p-8 border border-gray-200 dark:border-gray-700 shadow-depth transition-all duration-250 hover:shadow-depth-hover">
+                    <div
+                        class="flex justify-between items-center mb-8 border-b border-gray-100 dark:border-gray-800 pb-4">
+                        <h2
+                            class="text-lg font-extrabold flex items-center text-slate-900 dark:text-white uppercase tracking-wider">
+                            <span class="material-symbols-outlined text-slate-400 mr-3 text-2xl">tune</span> Advanced
+                            Settings
+                        </h2>
+                        <span
+                            class="material-symbols-outlined text-gray-400 cursor-pointer hover:text-sky-600 transition-colors duration-250">keyboard_arrow_up</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                        <div class="col-span-2">
+                            <div
+                                class="flex items-center gap-2 mb-4 border-b border-gray-100 dark:border-gray-800 pb-2">
+                                <h4 class="text-sm font-bold text-slate-800 dark:text-slate-200">Annual Cost Growth</h4>
+                                <div class="group relative flex items-center">
+                                    <span
+                                        class="material-symbols-outlined text-slate-400 text-sm cursor-help hover:text-sky-500 transition-colors">info</span>
+                                    <div
+                                        class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-slate-800 text-white text-xs rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 shadow-lg">
+                                        Projected yearly increase for taxes and fees
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-xs text-slate-500 uppercase tracking-wide block font-bold">Tax %
+                                        Inc.</label>
+                                    <input
+                                        class="mercury-input w-full bg-slate-50 dark:bg-slate-800 border border-gray-300 dark:border-gray-600 rounded-lg py-2.5 px-3 text-sm font-medium text-slate-900 dark:text-white focus:ring-sky-500 focus:border-sky-500 text-right"
+                                        type="number" value="2.0" />
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-xs text-slate-500 uppercase tracking-wide block font-bold">Ins. %
+                                        Inc.</label>
+                                    <input
+                                        class="mercury-input w-full bg-slate-50 dark:bg-slate-800 border border-gray-300 dark:border-gray-600 rounded-lg py-2.5 px-3 text-sm font-medium text-slate-900 dark:text-white focus:ring-sky-500 focus:border-sky-500 text-right"
+                                        type="number" value="3.0" />
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-xs text-slate-500 uppercase tracking-wide block font-bold">HOA %
+                                        Inc.</label>
+                                    <input
+                                        class="mercury-input w-full bg-slate-50 dark:bg-slate-800 border border-gray-300 dark:border-gray-600 rounded-lg py-2.5 px-3 text-sm font-medium text-slate-900 dark:text-white focus:ring-sky-500 focus:border-sky-500 text-right"
+                                        type="number" value="1.5" />
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-xs text-slate-500 uppercase tracking-wide block font-bold">Maint
+                                        %</label>
+                                    <input
+                                        class="mercury-input w-full bg-slate-50 dark:bg-slate-800 border border-gray-300 dark:border-gray-600 rounded-lg py-2.5 px-3 text-sm font-medium text-slate-900 dark:text-white focus:ring-sky-500 focus:border-sky-500 text-right"
+                                        type="number" value="1.0" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-span-2 pt-2">
+                            <div
+                                class="flex justify-between items-center mb-4 border-b border-gray-100 dark:border-gray-800 pb-2">
+                                <div class="flex items-center gap-2">
+                                    <h4 class="text-sm font-bold text-slate-800 dark:text-slate-200">Extra Payments</h4>
+                                    <div class="group relative flex items-center">
+                                        <span
+                                            class="material-symbols-outlined text-slate-400 text-sm cursor-help hover:text-sky-500 transition-colors">info</span>
+                                        <div
+                                            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-slate-800 text-white text-xs rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 shadow-lg">
+                                            Simulate additional principal contributions
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span
+                                        class="text-xs uppercase tracking-wide text-slate-500 mr-3 font-bold">Bi-weekly</span>
+                                    <div
+                                        class="relative inline-block w-11 h-6 align-middle select-none transition duration-200 ease-in">
+                                        <input
+                                            class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer border-gray-300 dark:border-gray-600 top-0.5 left-0.5 checked:right-0.5 checked:left-auto checked:border-sky-500 transition-all duration-200"
+                                            id="toggle" name="toggle" type="checkbox" />
+                                        <label
+                                            class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-200 dark:bg-gray-700 cursor-pointer peer-checked:bg-sky-500 transition-colors duration-200"
+                                            for="toggle"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                                <div class="space-y-2">
+                                    <label
+                                        class="text-xs text-slate-500 uppercase tracking-wide block font-bold">Monthly
+                                        Extra</label>
+                                    <div class="relative rounded-lg shadow-sm">
+                                        <div
+                                            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <span class="text-slate-500 text-sm">$</span>
+                                        </div>
+                                        <input
+                                            class="mercury-input block w-full pl-7 text-sm font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white py-2.5 focus:ring-sky-500 focus:border-sky-500 text-right"
+                                            placeholder="0" type="text" />
+                                    </div>
+                                </div>
+                                <div class="space-y-2">
+                                    <label
+                                        class="text-xs text-slate-500 uppercase tracking-wide block font-bold">One-Time
+                                        Lump Sum</label>
+                                    <div class="relative rounded-lg shadow-sm">
+                                        <div
+                                            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <span class="text-slate-500 text-sm">$</span>
+                                        </div>
+                                        <input
+                                            class="mercury-input block w-full pl-7 text-sm font-medium border-gray-300 dark:border-gray-600 rounded-lg bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white py-2.5 focus:ring-sky-500 focus:border-sky-500 text-right"
+                                            placeholder="100,000" type="text" />
+                                    </div>
+                                </div>
+                                <div class="flex items-end">
+                                    <button
+                                        class="w-full py-2.5 text-sm font-bold text-sky-600 dark:text-sky-400 border border-dashed border-sky-300 dark:border-sky-700 rounded-lg hover:bg-sky-50 dark:hover:bg-sky-900/20 transition-all duration-250 flex justify-center items-center h-[42px] focus:outline-none focus:ring-2 focus:ring-sky-500">
+                                        <span class="material-symbols-outlined text-sm mr-1">add_circle</span> Add
+                                        Strategy
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <button
+                        class="w-full bg-slate-900 hover:bg-slate-800 dark:bg-sky-600 dark:hover:bg-sky-500 text-white font-bold text-lg py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-250 transform active:scale-[0.99] flex items-center justify-center gap-3 focus:outline-none focus:ring-4 focus:ring-sky-200 dark:focus:ring-sky-900/50">
+                        <span class="material-symbols-outlined">calculate</span>
+                        <span>CALCULATE MORTGAGE</span>
+                    </button>
+                    <div class="flex items-center justify-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+                        <span class="material-symbols-outlined text-sm">lock</span>
+                        <span class="font-medium">Calculations are strictly client-side. No data is stored.</span>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-gray-700 shadow-depth overflow-hidden transition-all duration-250 hover:shadow-depth-hover">
+                    <div
+                        class="p-6 border-b border-gray-100 dark:border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4 bg-slate-50/50 dark:bg-slate-900">
+                        <h2 class="text-base font-extrabold text-slate-800 dark:text-white uppercase tracking-wider">
+                            Amortization Schedule</h2>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="flex items-center bg-gray-200 dark:bg-slate-800 rounded-lg p-1 border border-gray-200 dark:border-gray-700 shadow-inner-light">
+                                <button
+                                    class="px-4 py-1.5 text-xs font-bold rounded-md bg-white dark:bg-slate-600 text-slate-900 dark:text-white shadow-toggle transition-all duration-250">Monthly</button>
+                                <button
+                                    class="px-4 py-1.5 text-xs font-bold rounded-md text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-white transition-all duration-250">Yearly</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto custom-scrollbar">
+                        <table class="min-w-full text-left text-sm whitespace-nowrap">
+                            <thead
+                                class="bg-slate-100 dark:bg-slate-950 text-slate-600 dark:text-slate-300 font-bold border-b border-gray-200 dark:border-gray-800 uppercase tracking-wide text-xs">
+                                <tr>
+                                    <th class="px-6 py-4" scope="col">Date</th>
+                                    <th class="px-6 py-4 text-right" scope="col">Payment</th>
+                                    <th class="px-6 py-4 text-right" scope="col">Principal</th>
+                                    <th class="px-6 py-4 text-right" scope="col">Interest</th>
+                                    <th class="px-6 py-4 text-right" scope="col">Total Interest</th>
+                                    <th class="px-6 py-4 text-right" scope="col">Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100 dark:divide-gray-800 bg-transparent">
+                                <tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors duration-250">
+                                    <td class="px-6 py-4 font-bold text-slate-900 dark:text-slate-200">Sep 2024</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">
+                                        $2,145</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">
+                                        $1,158.09</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">
+                                        $2,584</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">
+                                        $8,233</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-bold text-slate-800 dark:text-white tabular-nums">
+                                        $3,893.00</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors duration-250">
+                                    <td class="px-6 py-4 font-bold text-slate-900 dark:text-slate-200">Oct 2024</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">
+                                        $2,145</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">
+                                        $1,172.08</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">
+                                        $1,508</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">
+                                        $8,778</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-bold text-slate-800 dark:text-white tabular-nums">
+                                        $2,325.98</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors duration-250">
+                                    <td class="px-6 py-4 font-bold text-slate-900 dark:text-slate-200">Nov 2024</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">
+                                        $2,145</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">
+                                        $1,198.33</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">
+                                        $1,536</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-medium text-slate-600 dark:text-slate-400 tabular-nums">
+                                        $5,068</td>
+                                    <td
+                                        class="px-6 py-4 text-right font-bold text-slate-800 dark:text-white tabular-nums">
+                                        $2,932.08</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-5 space-y-8">
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-xl p-8 border border-gray-200 dark:border-gray-700 shadow-depth relative transition-all duration-250 hover:shadow-depth-hover">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-base font-extrabold text-slate-800 dark:text-white uppercase tracking-wider">
+                            Payment Breakdown</h2>
+                        <span
+                            class="text-xs font-bold font-mono text-sky-700 dark:text-sky-300 bg-sky-50 dark:bg-sky-900/30 px-3 py-1.5 rounded-full border border-sky-200 dark:border-sky-800/50">LIVE
+                            ESTIMATE</span>
+                    </div>
+                    <div class="relative w-64 h-64 mx-auto mb-10">
+                        <canvas id="paymentDonutChart"></canvas>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                            <span
+                                class="text-slate-400 dark:text-slate-500 text-xs uppercase tracking-widest font-bold">Monthly</span>
+                            <span
+                                class="text-4xl font-extrabold text-slate-900 dark:text-white mt-1 tracking-tight">$7,488</span>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="group cursor-pointer">
+                            <div class="flex justify-between items-end mb-2">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-3 h-3 rounded bg-sky-500 shadow-sm"></div>
+                                    <span class="text-sm font-bold text-slate-600 dark:text-slate-300">Principal &amp;
+                                        Interest</span>
+                                </div>
+                                <span
+                                    class="text-base font-extrabold text-slate-800 dark:text-white tabular-nums">$7,145.00</span>
+                            </div>
+                            <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
+                                <div class="bg-sky-500 h-2 rounded-full shadow-sm" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="group cursor-pointer">
+                            <div class="flex justify-between items-end mb-2">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-3 h-3 rounded bg-slate-400 dark:bg-slate-500 shadow-sm"></div>
+                                    <span class="text-sm font-bold text-slate-600 dark:text-slate-300">Taxes</span>
+                                </div>
+                                <span
+                                    class="text-base font-extrabold text-slate-800 dark:text-white tabular-nums">$1,562.50</span>
+                            </div>
+                            <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
+                                <div class="bg-slate-400 dark:bg-slate-500 h-2 rounded-full shadow-sm"
+                                    style="width: 18%"></div>
+                            </div>
+                        </div>
+                        <div class="group cursor-pointer">
+                            <div class="flex justify-between items-end mb-2">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-3 h-3 rounded bg-slate-600 dark:bg-slate-700 shadow-sm"></div>
+                                    <span class="text-sm font-bold text-slate-600 dark:text-slate-300">Insurance</span>
+                                </div>
+                                <span
+                                    class="text-base font-extrabold text-slate-800 dark:text-white tabular-nums">$350.00</span>
+                            </div>
+                            <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
+                                <div class="bg-slate-600 dark:bg-slate-700 h-2 rounded-full shadow-sm"
+                                    style="width: 7%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-8 pt-8 border-t border-gray-100 dark:border-gray-800">
+                        <div>
+                            <p class="text-xs text-slate-500 uppercase tracking-wide font-bold">Total Interest</p>
+                            <p class="text-lg font-extrabold text-slate-900 dark:text-white mt-1 tabular-nums">$582,450
+                            </p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-xs text-slate-500 uppercase tracking-wide font-bold">Total Cost of Loan</p>
+                            <p class="text-lg font-extrabold text-slate-900 dark:text-white mt-1 tabular-nums">
+                                $2,082,450</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-emerald-50/50 dark:bg-emerald-950/20 rounded-xl p-8 border border-emerald-100 dark:border-emerald-900 shadow-sm relative overflow-hidden transition-all duration-250">
+                    <h3
+                        class="text-emerald-700 dark:text-emerald-400 font-extrabold uppercase tracking-wide text-xs mb-6 flex items-center">
+                        <span class="material-symbols-outlined mr-2 text-lg">trending_up</span> Savings Projection
+                    </h3>
+                    <div class="grid grid-cols-2 gap-6 relative z-10 mb-6">
+                        <div
+                            class="p-4 rounded-lg bg-white dark:bg-slate-900 border border-emerald-100 dark:border-emerald-900 shadow-sm">
+                            <p
+                                class="text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wide mb-2 font-bold">
+                                Interest Saved</p>
+                            <p class="text-2xl font-extrabold text-emerald-600 dark:text-emerald-400 tabular-nums">
+                                $82,450</p>
+                        </div>
+                        <div
+                            class="p-4 rounded-lg bg-white dark:bg-slate-900 border border-emerald-100 dark:border-emerald-900 shadow-sm">
+                            <p
+                                class="text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wide mb-2 font-bold">
+                                Time Saved</p>
+                            <p class="text-2xl font-extrabold text-emerald-600 dark:text-emerald-400 tabular-nums">4y
+                                <span class="text-lg font-normal text-slate-400">3m</span></p>
+                        </div>
+                    </div>
+                    <div
+                        class="text-sm text-emerald-800 dark:text-emerald-200/80 leading-relaxed border-t border-emerald-200 dark:border-emerald-900 pt-4 font-medium">
+                        Based on your inputs, a <strong class="text-emerald-700 dark:text-emerald-300">$100k</strong>
+                        injection in Jan 2021 yields maximal efficiency.
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-xl p-8 border border-gray-200 dark:border-gray-700 shadow-depth transition-all duration-250 hover:shadow-depth-hover">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-base font-extrabold text-slate-800 dark:text-white uppercase tracking-wider">
+                            Equity Curve</h2>
+                        <div class="flex items-center gap-4 text-xs uppercase tracking-wide font-bold">
+                            <div class="flex items-center gap-2">
+                                <span class="w-3 h-3 rounded bg-sky-500 shadow-sm"></span>
+                                <span class="text-slate-500">Principal</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="w-3 h-3 rounded bg-slate-400"></span>
+                                <span class="text-slate-500">Interest</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h-56 w-full">
+                        <canvas id="amortizationChart"></canvas>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                    <div
+                        class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-depth flex flex-col justify-between h-32 transition-all duration-250 hover:shadow-depth-hover">
+                        <span class="text-xs text-slate-400 uppercase tracking-widest font-extrabold">Principal
+                            Paid</span>
+                        <div class="flex items-end justify-between">
+                            <p class="text-2xl font-extrabold text-slate-800 dark:text-white tabular-nums">$12,145</p>
+                            <span
+                                class="material-symbols-outlined text-sky-500 text-2xl bg-sky-50 dark:bg-sky-900/20 p-2 rounded-lg">home</span>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-depth flex flex-col justify-between h-32 transition-all duration-250 hover:shadow-depth-hover">
+                        <span class="text-xs text-slate-400 uppercase tracking-widest font-extrabold">Equity
+                            Gained</span>
+                        <div class="flex items-end justify-between">
+                            <p class="text-2xl font-extrabold text-slate-800 dark:text-white tabular-nums">$342k</p>
+                            <span
+                                class="material-symbols-outlined text-emerald-500 text-2xl bg-emerald-50 dark:bg-emerald-900/20 p-2 rounded-lg">trending_up</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer
+            class="mt-24 border-t border-gray-200 dark:border-gray-800 pt-16 pb-12 max-w-[1200px] mx-auto text-center md:text-left opacity-90">
+            <div class="grid md:grid-cols-2 gap-12 mb-12">
+                <div>
+                    <h2
+                        class="text-lg font-extrabold text-slate-800 dark:text-gray-200 mb-4 tracking-tight flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        System Status: Operational
+                    </h2>
+                    <p class="text-sm font-medium text-slate-500 dark:text-gray-500 leading-relaxed max-w-md">
+                        This high-fidelity simulation uses real-time algorithmic processing to project mortgage
+                        amortization. All calculations are estimates intended for planning purposes.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-slate-700 dark:text-gray-300 mb-3 uppercase tracking-wide">
+                        Methodology</h3>
+                    <p class="text-sm font-medium text-slate-500 dark:text-gray-500 leading-relaxed max-w-md">
+                        Visualizations render the "tipping point" of loan maturity. Advanced inputs allow for bi-weekly
+                        strategy simulation.
+                    </p>
+                </div>
+            </div>
+            <div
+                class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-200 dark:border-gray-800 text-xs uppercase tracking-widest text-slate-400 dark:text-slate-600 font-bold">
+                <p>© 2024 CalcifyAI. v3.0 Pro.</p>
+                <div class="flex gap-8 mt-4 md:mt-0">
+                    <a class="hover:text-sky-600 transition-colors duration-250" href="#">Privacy</a>
+                    <a class="hover:text-sky-600 transition-colors duration-250" href="#">Terms</a>
+                    <a class="hover:text-sky-600 transition-colors duration-250" href="#">API</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script>
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const toggleCheckbox = document.getElementById('toggle');
+        // Check for saved user preference, if any, on load
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        themeToggleBtn.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+            updateCharts();
+        });
+        // Chart Configuration
+        Chart.defaults.font.family = 'Inter';
+        let donutChart, areaChart;
+        function getChartColors() {
+            const isDark = document.documentElement.classList.contains('dark');
+            return {
+                text: isDark ? '#94a3b8' : '#64748b', // Slate-400 / Slate-500
+                grid: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)',
+                donutColors: isDark
+                    ? ['#0ea5e9', '#94a3b8', '#475569', '#1e293b'] // Sky-500, Slate-400...
+                    : ['#0ea5e9', '#94a3b8', '#64748b', '#cbd5e1'],
+                areaPrincipal: '#0ea5e9',
+                areaInterest: '#94a3b8'
+            };
+        }
+        function initCharts() {
+            const colors = getChartColors();
+            // 1. Donut Chart
+            const ctxDonut = document.getElementById('paymentDonutChart').getContext('2d');
+            donutChart = new Chart(ctxDonut, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Principal', 'Taxes', 'Insurance', 'PMI'],
+                    datasets: [{
+                        data: [75, 18, 7, 0],
+                        backgroundColor: colors.donutColors,
+                        borderWidth: 0,
+                        hoverOffset: 6
+                    }]
+                },
+                options: {
+                    cutout: '82%',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: {
+                        animateScale: true,
+                        animateRotate: true,
+                        duration: 1000,
+                        easing: 'easeOutQuart'
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: '#0f172a',
+                            titleColor: '#fff',
+                            bodyColor: '#e2e8f0',
+                            borderColor: '#334155',
+                            borderWidth: 1,
+                            padding: 16,
+                            cornerRadius: 8,
+                            displayColors: true,
+                            boxPadding: 6,
+                            titleFont: { family: 'Inter', size: 14, weight: 'bold' },
+                            bodyFont: { family: 'Inter', size: 13 }
+                        }
+                    }
+                }
+            });
+            // 2. Area Chart (Amortization)
+            const ctxArea = document.getElementById('amortizationChart').getContext('2d');
+            // Gradient Setup
+            const gradientPrincipal = ctxArea.createLinearGradient(0, 0, 0, 400);
+            gradientPrincipal.addColorStop(0, 'rgba(14, 165, 233, 0.15)'); // Sky-500 low opacity
+            gradientPrincipal.addColorStop(1, 'rgba(14, 165, 233, 0.0)');
+            const gradientInterest = ctxArea.createLinearGradient(0, 0, 0, 400);
+            gradientInterest.addColorStop(0, 'rgba(148, 163, 184, 0.15)'); // Slate low opacity
+            gradientInterest.addColorStop(1, 'rgba(148, 163, 184, 0.0)');
+            areaChart = new Chart(ctxArea, {
+                type: 'line',
+                data: {
+                    labels: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+                    datasets: [
+                        {
+                            label: 'Principal',
+                            data: [500, 650, 850, 1100, 1350, 1600, 1850, 2000, 2150, 2300, 2500],
+                            borderColor: colors.areaPrincipal,
+                            backgroundColor: gradientPrincipal,
+                            fill: true,
+                            tension: 0.4,
+                            pointRadius: 0,
+                            pointHoverRadius: 6,
+                            pointHoverBackgroundColor: colors.areaPrincipal,
+                            pointHoverBorderColor: '#fff',
+                            pointHoverBorderWidth: 2,
+                            borderWidth: 3
+                        },
+                        {
+                            label: 'Interest',
+                            data: [2200, 2050, 1850, 1600, 1350, 1100, 950, 800, 650, 500, 350],
+                            borderColor: colors.areaInterest,
+                            backgroundColor: gradientInterest,
+                            fill: true,
+                            tension: 0.4,
+                            pointRadius: 0,
+                            pointHoverRadius: 6,
+                            pointHoverBackgroundColor: colors.areaInterest,
+                            pointHoverBorderColor: '#fff',
+                            pointHoverBorderWidth: 2,
+                            borderWidth: 3
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: {
+                        duration: 1200,
+                        easing: 'easeOutQuart'
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: '#0f172a',
+                            titleColor: '#fff',
+                            bodyColor: '#e2e8f0',
+                            borderColor: '#334155',
+                            borderWidth: 1,
+                            padding: 12,
+                            intersect: false,
+                            mode: 'index',
+                            titleFont: { family: 'Inter', size: 13, weight: 'bold' },
+                            bodyFont: { family: 'Inter', size: 12 }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { display: false, drawBorder: false },
+                            ticks: {
+                                font: { size: 11, family: 'Inter', weight: 500 },
+                                color: colors.text
+                            }
+                        },
+                        y: {
+                            grid: {
+                                color: colors.grid,
+                                drawBorder: false,
+                                borderDash: [4, 4]
+                            },
+                            ticks: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+        function updateCharts() {
+            if (donutChart) donutChart.destroy();
+            if (areaChart) areaChart.destroy();
+            initCharts();
+        }
+        // Init
+        initCharts();
+    </script>
+</body>
+
+</html>
